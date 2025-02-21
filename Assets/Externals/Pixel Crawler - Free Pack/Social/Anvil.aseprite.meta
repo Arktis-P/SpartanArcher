@@ -1,0 +1,1119 @@
+fileFormatVersion: 2
+guid: d49ef0001df9925459750b32039b4f19
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Anvil_Frame_0
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 400
+      height: 400
+    spriteID: e5ce97fb58181fb4f854a0c33672e95a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Anvil_Frame_1
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 412
+      width: 400
+      height: 400
+    spriteID: ac7d1e6909f395d44a36db8f439f7c65
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 412}
+  - name: Anvil_Frame_2
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 26891e4c01cbbf142ad5f871133b7850
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 820}
+  - name: Anvil_Frame_3
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 284e2d894818d1746935c7accfdb3fa2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1228}
+  - name: Anvil_Frame_4
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: bf493dfcb9ce30a45b485091b2c81c75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1636}
+  - name: Anvil_Frame_5
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 391e21d4516a33a46bf768a8d6ae1d61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2044}
+  - name: Anvil_Frame_6
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: 9bed534f96b13884db12873ba75d874d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2452}
+  - name: Anvil_Frame_7
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: ffdc15e38b7fc7343a310171f08eba12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2860}
+  - name: Anvil_Frame_8
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 2c76decaefa5a6c4f82adb6452229ecf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3268}
+  - name: Anvil_Frame_9
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: ee3b2e6276cf5aa4ea96261e6f5648fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3676}
+  - name: Anvil_Frame_10
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 4
+      width: 400
+      height: 400
+    spriteID: 7a451f6a4e60c904889cce74db2e5ed0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 4}
+  - name: Anvil_Frame_11
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 2c88b916bdf86d946a6fc9b09df6df24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 412}
+  - name: Anvil_Frame_12
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 820
+      width: 400
+      height: 400
+    spriteID: a1c14da97d9e44249a33bacec0c93d73
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 820}
+  - name: Anvil_Frame_13
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: dcbf903ec70894642a14de92dc470cef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 1228}
+  - name: Anvil_Frame_14
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 23ad53ba4ff979341804821c09365d53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 1636}
+  - name: Anvil_Frame_15
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 3d557dc1d8044b149b40e49395ea7035
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2044}
+  - name: Anvil_Frame_16
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: eda13b6194e219a4e9015f3ec0a24e9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2452}
+  - name: Anvil_Frame_17
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: 8d7d65622e058f74c976465405145975
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2860}
+  - name: Anvil_Frame_18
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 02b0ddff8cd0cbc4ebfc0e0d41b965b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 3268}
+  - name: Anvil_Frame_19
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: 604a553d79fda5e46a0170173553cd59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 3676}
+  - name: Anvil_Frame_20
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 4
+      width: 400
+      height: 400
+    spriteID: ed0c8730304fb8e469aed2758669399e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 4}
+  - name: Anvil_Frame_21
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 176cbdfded9569d4fbbedc92c82536e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 412}
+  - name: Anvil_Frame_22
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 4c457ac07a931e34c817f864e5f74f46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 820}
+  - name: Anvil_Frame_23
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 71c68e491554ed14cbe93eb0407c33fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 1228}
+  - name: Anvil_Frame_24
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 37976a672fece7b409e28e5738ebd11c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 1636}
+  - name: Anvil_Frame_25
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 97f3ebeb85ae94649a7e373d31646d4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2044}
+  - name: Anvil_Frame_26
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: 6455d981fd3bbb24d95ca705bb9802f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2452}
+  - name: Anvil_Frame_27
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: 93b95c8020b983946829a5552e13924a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2860}
+  - name: Anvil_Frame_28
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: a288022964ff63e4b9301b101e0e33ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 3268}
+  - name: Anvil_Frame_29
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: c585ee0c509058b4d961a89fc352c913
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 3676}
+  - name: Anvil_Frame_30
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 4
+      width: 400
+      height: 400
+    spriteID: 9aee316695a40e243a15ed280cb7bf19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 4}
+  - name: Anvil_Frame_31
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 54972a38428b10b48baa090824cd1a89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 412}
+  - name: Anvil_Frame_32
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 820
+      width: 400
+      height: 400
+    spriteID: d8d9f08532aed434f97be2cd7d30c669
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 820}
+  - name: Anvil_Frame_33
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 34fa450f257bf8b4a89b962ca71dad5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 1228}
+  - name: Anvil_Frame_34
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 5ff79055b90608d48bf9d0d68e75f053
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 1636}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -402550104
+    name: Anvil
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Anvil_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: e5ce97fb58181fb4f854a0c33672e95a
+    - name: Anvil_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ac7d1e6909f395d44a36db8f439f7c65
+    - name: Anvil_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 26891e4c01cbbf142ad5f871133b7850
+    - name: Anvil_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 284e2d894818d1746935c7accfdb3fa2
+    - name: Anvil_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: bf493dfcb9ce30a45b485091b2c81c75
+    - name: Anvil_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 391e21d4516a33a46bf768a8d6ae1d61
+    - name: Anvil_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 9bed534f96b13884db12873ba75d874d
+    - name: Anvil_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ffdc15e38b7fc7343a310171f08eba12
+    - name: Anvil_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 2c76decaefa5a6c4f82adb6452229ecf
+    - name: Anvil_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ee3b2e6276cf5aa4ea96261e6f5648fe
+    - name: Anvil_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 7a451f6a4e60c904889cce74db2e5ed0
+    - name: Anvil_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 2c88b916bdf86d946a6fc9b09df6df24
+    - name: Anvil_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: a1c14da97d9e44249a33bacec0c93d73
+    - name: Anvil_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: dcbf903ec70894642a14de92dc470cef
+    - name: Anvil_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 23ad53ba4ff979341804821c09365d53
+    - name: Anvil_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 3d557dc1d8044b149b40e49395ea7035
+    - name: Anvil_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: eda13b6194e219a4e9015f3ec0a24e9f
+    - name: Anvil_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 8d7d65622e058f74c976465405145975
+    - name: Anvil_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 02b0ddff8cd0cbc4ebfc0e0d41b965b2
+    - name: Anvil_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 604a553d79fda5e46a0170173553cd59
+    - name: Anvil_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ed0c8730304fb8e469aed2758669399e
+    - name: Anvil_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 176cbdfded9569d4fbbedc92c82536e0
+    - name: Anvil_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 4c457ac07a931e34c817f864e5f74f46
+    - name: Anvil_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 71c68e491554ed14cbe93eb0407c33fe
+    - name: Anvil_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 37976a672fece7b409e28e5738ebd11c
+    - name: Anvil_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 97f3ebeb85ae94649a7e373d31646d4f
+    - name: Anvil_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 6455d981fd3bbb24d95ca705bb9802f6
+    - name: Anvil_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 93b95c8020b983946829a5552e13924a
+    - name: Anvil_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: a288022964ff63e4b9301b101e0e33ff
+    - name: Anvil_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: c585ee0c509058b4d961a89fc352c913
+    - name: Anvil_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 9aee316695a40e243a15ed280cb7bf19
+    - name: Anvil_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 54972a38428b10b48baa090824cd1a89
+    - name: Anvil_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: d8d9f08532aed434f97be2cd7d30c669
+    - name: Anvil_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 34fa450f257bf8b4a89b962ca71dad5c
+    - name: Anvil_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 5ff79055b90608d48bf9d0d68e75f053
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 272, y: 272}

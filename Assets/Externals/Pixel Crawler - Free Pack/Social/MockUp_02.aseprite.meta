@@ -1,0 +1,1819 @@
+fileFormatVersion: 2
+guid: 5ceed0953fc571c49bcaa31fc45ffcb1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: MockUp_02_Frame_0
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 400
+      height: 400
+    spriteID: dc6f4b2f44d8ae34cb960be8109d58bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: MockUp_02_Frame_1
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 412
+      width: 400
+      height: 400
+    spriteID: e3dfc69fb497d1242a9d59c8de25ffd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 412}
+  - name: MockUp_02_Frame_2
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 498e165cef4706047b27d2802a473961
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 820}
+  - name: MockUp_02_Frame_3
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: b40f6b19c58b1c54e9b07c50cc27eaf2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1228}
+  - name: MockUp_02_Frame_4
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 5013fd2048013204387ac8e8c75f5074
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1636}
+  - name: MockUp_02_Frame_5
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 4f989c2a9afaa0f4ca59b16c92b3d6f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2044}
+  - name: MockUp_02_Frame_6
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: e7c948079433de24086f9906f81969c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2452}
+  - name: MockUp_02_Frame_7
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: 279bcc97caea98347a084327c07f630a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2860}
+  - name: MockUp_02_Frame_8
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 6331e9f2b80f8a5489a3a9d6189e12dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3268}
+  - name: MockUp_02_Frame_9
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: 63bd90d18fa8e584299772680655906b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3676}
+  - name: MockUp_02_Frame_10
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 4
+      width: 400
+      height: 400
+    spriteID: af1e01d67b3eefa4abd8e19eac55d918
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 4}
+  - name: MockUp_02_Frame_11
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 98bcdf22e33af734e84683294125784e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 412}
+  - name: MockUp_02_Frame_12
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 820
+      width: 400
+      height: 400
+    spriteID: ef67c1fcfc5686a4b99f84c7acf863ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 820}
+  - name: MockUp_02_Frame_13
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: bcd3f1c60b38ae24c80e95b018e0f16e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 1228}
+  - name: MockUp_02_Frame_14
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 39cc12e822c749244b977d6259dfe493
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 1636}
+  - name: MockUp_02_Frame_15
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 3458fa0a9c697884b84c71fa1fd7764a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2044}
+  - name: MockUp_02_Frame_16
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: d614822addcd85545bf30b0cc5d2f68e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2452}
+  - name: MockUp_02_Frame_17
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: cffcb036c7ab10c4aa4b491fbaef3043
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 2860}
+  - name: MockUp_02_Frame_18
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: c1c5a169ad64fb641a73be667362729b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 3268}
+  - name: MockUp_02_Frame_19
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: b9157e0f0b8d9b049938524a4bbb0d43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 3676}
+  - name: MockUp_02_Frame_20
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 4
+      width: 400
+      height: 400
+    spriteID: 2d21c389cab2e0141b330e94e29c0a37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 4}
+  - name: MockUp_02_Frame_21
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 401a48abd7ca55f4f98599e537b903ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 412}
+  - name: MockUp_02_Frame_22
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 6498d59df52d0044186bfa53359b470f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 820}
+  - name: MockUp_02_Frame_23
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 37b2f0ca5cb4b3e45bc02ed371c1142c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 1228}
+  - name: MockUp_02_Frame_24
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 54ee465a1e0e1824c8f79edecbff08f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 1636}
+  - name: MockUp_02_Frame_25
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 89b19718b68fd2542ad50a4bd7421dd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2044}
+  - name: MockUp_02_Frame_26
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: 3506d78d6bca2894e9dfae9231046221
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2452}
+  - name: MockUp_02_Frame_27
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: b7c72331c42e33f48bb38cfaab2998c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 2860}
+  - name: MockUp_02_Frame_28
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 3e32408cf1a6e5f4fbb65903277afe93
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 3268}
+  - name: MockUp_02_Frame_29
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: ecf9978407468fd4183b95a6d087db92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 820, y: 3676}
+  - name: MockUp_02_Frame_30
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 4
+      width: 400
+      height: 400
+    spriteID: d870fb25e75d62f419af9b15987514d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 4}
+  - name: MockUp_02_Frame_31
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 9a9d542ef574b3449972e6dd268996d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 412}
+  - name: MockUp_02_Frame_32
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 6d751cd7c39502e4eadbdbd0851096b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 820}
+  - name: MockUp_02_Frame_33
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 5c543e3d1bed29849969674ebe9437cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 1228}
+  - name: MockUp_02_Frame_34
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: 2dd2f6517b5844d458c48cd3dad50482
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 1636}
+  - name: MockUp_02_Frame_35
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: c51123299eed779489c48ab81e044509
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 2044}
+  - name: MockUp_02_Frame_36
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: ae1515bd4cc5ac8489bd5270fbcd9e7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 2452}
+  - name: MockUp_02_Frame_37
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: a90dcff9b5ef1af408dbdebeda1e4c9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 2860}
+  - name: MockUp_02_Frame_38
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 3a82750809360a049971f21ad69b645c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 3268}
+  - name: MockUp_02_Frame_39
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1228
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: 17d52c7ff7ab1da47bdee5f188aa30c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1228, y: 3676}
+  - name: MockUp_02_Frame_40
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 4
+      width: 400
+      height: 400
+    spriteID: f34b82a4ad468ee45b453c6307dba4bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 4}
+  - name: MockUp_02_Frame_41
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 412
+      width: 400
+      height: 400
+    spriteID: c1819fc79dc68984ab8885a6a749a3d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 412}
+  - name: MockUp_02_Frame_42
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 820
+      width: 400
+      height: 400
+    spriteID: 282d49b3837cebf4aa3b8e17a06c570c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 820}
+  - name: MockUp_02_Frame_43
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 2c71cb0609f72544b923a64c1d55b4a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 1228}
+  - name: MockUp_02_Frame_44
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: ccf3743df59a9fe409cc85d02381ace3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 1636}
+  - name: MockUp_02_Frame_45
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 1a8b27fc184f140469798a88540046e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 2044}
+  - name: MockUp_02_Frame_46
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: 1b8bb4069a998664ebf3483df347decc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 2452}
+  - name: MockUp_02_Frame_47
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: cf0de45ba040a9c49aae92b9a0f8c9ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 2860}
+  - name: MockUp_02_Frame_48
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: 496e542e9e2459548b7c360759102436
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 3268}
+  - name: MockUp_02_Frame_49
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1636
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: 571d9a1ffe5ff984ca17981ec900cdeb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1636, y: 3676}
+  - name: MockUp_02_Frame_50
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 4
+      width: 400
+      height: 400
+    spriteID: 50d75ad674e95a1498d2e77bbf0dd0e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 4}
+  - name: MockUp_02_Frame_51
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 412
+      width: 400
+      height: 400
+    spriteID: 62958fcebb331444cad74d61ec24cb83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 412}
+  - name: MockUp_02_Frame_52
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 820
+      width: 400
+      height: 400
+    spriteID: e2ba242b4ff91be42ac0a3f2a3902baf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 820}
+  - name: MockUp_02_Frame_53
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 1228
+      width: 400
+      height: 400
+    spriteID: 0bd2936eb0310904a9568d3a5c37adae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 1228}
+  - name: MockUp_02_Frame_54
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 1636
+      width: 400
+      height: 400
+    spriteID: c85746313bcba2346bc70dde46c7fa50
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 1636}
+  - name: MockUp_02_Frame_55
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 2044
+      width: 400
+      height: 400
+    spriteID: 959dcd29bfe68c84384e04b2fd152227
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 2044}
+  - name: MockUp_02_Frame_56
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 2452
+      width: 400
+      height: 400
+    spriteID: b0941380149f02e478173074fdcfaef3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 2452}
+  - name: MockUp_02_Frame_57
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 2860
+      width: 400
+      height: 400
+    spriteID: 381f2a112d0c78e4a9940baa9cdecf52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 2860}
+  - name: MockUp_02_Frame_58
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 3268
+      width: 400
+      height: 400
+    spriteID: f066a3a35d5554a40ad42b91b3449f6f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 3268}
+  - name: MockUp_02_Frame_59
+    originalName: 
+    pivot: {x: 0.34, y: 0.32}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2044
+      y: 3676
+      width: 400
+      height: 400
+    spriteID: edaac65bcd4af9a48872cf386767e6d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2044, y: 3676}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 696319768
+    name: MockUp_02
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MockUp_02_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: dc6f4b2f44d8ae34cb960be8109d58bf
+    - name: MockUp_02_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: e3dfc69fb497d1242a9d59c8de25ffd1
+    - name: MockUp_02_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 498e165cef4706047b27d2802a473961
+    - name: MockUp_02_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: b40f6b19c58b1c54e9b07c50cc27eaf2
+    - name: MockUp_02_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 5013fd2048013204387ac8e8c75f5074
+    - name: MockUp_02_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 4f989c2a9afaa0f4ca59b16c92b3d6f4
+    - name: MockUp_02_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: e7c948079433de24086f9906f81969c2
+    - name: MockUp_02_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 279bcc97caea98347a084327c07f630a
+    - name: MockUp_02_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 6331e9f2b80f8a5489a3a9d6189e12dc
+    - name: MockUp_02_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 63bd90d18fa8e584299772680655906b
+    - name: MockUp_02_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: af1e01d67b3eefa4abd8e19eac55d918
+    - name: MockUp_02_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 98bcdf22e33af734e84683294125784e
+    - name: MockUp_02_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ef67c1fcfc5686a4b99f84c7acf863ce
+    - name: MockUp_02_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: bcd3f1c60b38ae24c80e95b018e0f16e
+    - name: MockUp_02_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 39cc12e822c749244b977d6259dfe493
+    - name: MockUp_02_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 3458fa0a9c697884b84c71fa1fd7764a
+    - name: MockUp_02_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: d614822addcd85545bf30b0cc5d2f68e
+    - name: MockUp_02_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: cffcb036c7ab10c4aa4b491fbaef3043
+    - name: MockUp_02_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: c1c5a169ad64fb641a73be667362729b
+    - name: MockUp_02_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: b9157e0f0b8d9b049938524a4bbb0d43
+    - name: MockUp_02_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 2d21c389cab2e0141b330e94e29c0a37
+    - name: MockUp_02_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 401a48abd7ca55f4f98599e537b903ea
+    - name: MockUp_02_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 6498d59df52d0044186bfa53359b470f
+    - name: MockUp_02_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 37b2f0ca5cb4b3e45bc02ed371c1142c
+    - name: MockUp_02_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 54ee465a1e0e1824c8f79edecbff08f9
+    - name: MockUp_02_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 89b19718b68fd2542ad50a4bd7421dd1
+    - name: MockUp_02_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 3506d78d6bca2894e9dfae9231046221
+    - name: MockUp_02_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: b7c72331c42e33f48bb38cfaab2998c6
+    - name: MockUp_02_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 3e32408cf1a6e5f4fbb65903277afe93
+    - name: MockUp_02_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ecf9978407468fd4183b95a6d087db92
+    - name: MockUp_02_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: d870fb25e75d62f419af9b15987514d8
+    - name: MockUp_02_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 9a9d542ef574b3449972e6dd268996d7
+    - name: MockUp_02_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 6d751cd7c39502e4eadbdbd0851096b8
+    - name: MockUp_02_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 5c543e3d1bed29849969674ebe9437cf
+    - name: MockUp_02_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 2dd2f6517b5844d458c48cd3dad50482
+    - name: MockUp_02_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: c51123299eed779489c48ab81e044509
+    - name: MockUp_02_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ae1515bd4cc5ac8489bd5270fbcd9e7b
+    - name: MockUp_02_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: a90dcff9b5ef1af408dbdebeda1e4c9c
+    - name: MockUp_02_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 3a82750809360a049971f21ad69b645c
+    - name: MockUp_02_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 17d52c7ff7ab1da47bdee5f188aa30c2
+    - name: MockUp_02_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: f34b82a4ad468ee45b453c6307dba4bb
+    - name: MockUp_02_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: c1819fc79dc68984ab8885a6a749a3d5
+    - name: MockUp_02_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 282d49b3837cebf4aa3b8e17a06c570c
+    - name: MockUp_02_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 2c71cb0609f72544b923a64c1d55b4a0
+    - name: MockUp_02_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: ccf3743df59a9fe409cc85d02381ace3
+    - name: MockUp_02_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 1a8b27fc184f140469798a88540046e8
+    - name: MockUp_02_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 1b8bb4069a998664ebf3483df347decc
+    - name: MockUp_02_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: cf0de45ba040a9c49aae92b9a0f8c9ce
+    - name: MockUp_02_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 496e542e9e2459548b7c360759102436
+    - name: MockUp_02_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 571d9a1ffe5ff984ca17981ec900cdeb
+    - name: MockUp_02_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 50d75ad674e95a1498d2e77bbf0dd0e8
+    - name: MockUp_02_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 62958fcebb331444cad74d61ec24cb83
+    - name: MockUp_02_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: e2ba242b4ff91be42ac0a3f2a3902baf
+    - name: MockUp_02_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 0bd2936eb0310904a9568d3a5c37adae
+    - name: MockUp_02_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: c85746313bcba2346bc70dde46c7fa50
+    - name: MockUp_02_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 959dcd29bfe68c84384e04b2fd152227
+    - name: MockUp_02_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: b0941380149f02e478173074fdcfaef3
+    - name: MockUp_02_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: 381f2a112d0c78e4a9940baa9cdecf52
+    - name: MockUp_02_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: f066a3a35d5554a40ad42b91b3449f6f
+    - name: MockUp_02_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 400
+      spriteId: edaac65bcd4af9a48872cf386767e6d8
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 272, y: 272}
