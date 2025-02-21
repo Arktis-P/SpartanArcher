@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager : SingleTon<SkillManager>
 {
     // Start is called before the first frame update
     void Start()
