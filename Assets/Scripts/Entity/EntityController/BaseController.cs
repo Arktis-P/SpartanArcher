@@ -44,6 +44,8 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Update()
     {
+        HandleAction();
+        Rotate(lookDirection);
         HandleAttackDelay();
     }
 
@@ -56,6 +58,21 @@ public class BaseController : MonoBehaviour
         }
     }
 
+
+    private void Rotate(Vector2 direction)
+    {
+        float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bool isLeft = Mathf.Abs(rotz) > 90f;
+
+        chracterRenderer.flipX = isLeft;
+
+        if (weaponPivot != null)
+        {
+            weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotz);
+        }
+
+        weaponHandler?.Rotate(isLeft);
+    }
 
     private void Movement(Vector2 direction)
     {
@@ -122,5 +139,10 @@ public class BaseController : MonoBehaviour
         }
 
         Destroy(gameObject, 2f);
+    }
+
+    protected virtual void HandleAction()
+    {
+
     }
 }
