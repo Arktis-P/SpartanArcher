@@ -14,8 +14,8 @@ public enum SkillCategory
 public class SkillInfo : ScriptableObject
 {
     [Header("Skill Info")]
-    [SerializeField] private string name;
-    public string Name { get { return name; } }
+    [SerializeField] private string skillname;
+    public string Name { get { return skillname; } }
 
     [SerializeField] private SkillCategory category;
     public SkillCategory Category { get { return category; } }
@@ -64,8 +64,17 @@ public class SkillInfo : ScriptableObject
 
     [SerializeField] private float knockbackDistance;
     public float KnockbackDistance { get { return knockbackDistance; } }
-    
 
-    
 
+
+    //<액티브>
+    //피버타임 (일정 시간동안 화살 발사 속도 x배 증가)
+    //대시
+
+
+    //<패시브 스킬>
+    //마늘 - 캐릭터 일정 범위 내 근접 시 데미지
+    //책 - 캐릭터 돌면서 충돌 시 데미지
+    //비둘기 - 추가 투사체 발사
+    //오망성 - 맵 전체 몬스터에 일정 데미지
 }
