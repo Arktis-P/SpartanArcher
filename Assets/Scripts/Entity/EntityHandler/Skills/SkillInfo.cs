@@ -21,8 +21,8 @@ public class SkillInfo : ScriptableObject
     public SkillCategory Category { get { return category; } }
 
     [Header("Player State")]
-    [SerializeField] private float health;
-    public float Health { get { return health; } }
+    [SerializeField] private int health;
+    public int Health { get { return health; } }
 
     [SerializeField] private float moveSpeed;
     public float MoveSpeed { get { return moveSpeed; } }

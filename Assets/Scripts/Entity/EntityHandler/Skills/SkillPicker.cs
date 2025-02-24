@@ -66,7 +66,7 @@ public class SkillPicker : MonoBehaviour
         switch (selectedSkill.Category)
         {
             case SkillCategory.Player:
-                playerStat.Health += Mathf.RoundToInt(selectedSkill.Health);
+                playerStat.Health += selectedSkill.Health;
                 playerStat.MoveSpeed += selectedSkill.MoveSpeed;
                 playerStat.AttackFreq += selectedSkill.AttackFreq;
                 playerStat.ShootingRange += selectedSkill.ShootingRange;
