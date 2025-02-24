@@ -6,13 +6,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : BaseController
 {
-    private Camera camera;
     private GameManager gameManager;
 
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        camera = Camera.main;
     }
 
     private void Update()
