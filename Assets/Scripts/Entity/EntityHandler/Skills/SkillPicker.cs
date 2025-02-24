@@ -47,13 +47,13 @@ public class SkillPicker : MonoBehaviour
         //테스트용 UI
         for (int i = 0; i < randomSkill.Count; i++) // 디버그용
         {
-            Debug.Log($"스킬 뽑기 : {randomSkill[i].Name}, {randomSkill[i].Category} , {randomSkill[i].Value}");
+            Debug.Log($"스킬 뽑기 : {randomSkill[i].Name}, {randomSkill[i].Category}");
         }
     }
 
     public void SelectSkill(int select)
     {
-        Debug.Log($"뽑은 스킬 : {randomSkill[select].Name}, {randomSkill[select].Category} , {randomSkill[select].Value} ");
+        Debug.Log($"뽑은 스킬 : {randomSkill[select].Name}, {randomSkill[select].Category}");
         //뽑은 스킬들 플레이어 스텟에 적용 시키기
     }
 }
