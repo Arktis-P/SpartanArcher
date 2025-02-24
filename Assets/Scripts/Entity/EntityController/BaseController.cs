@@ -71,7 +71,7 @@ public class BaseController : MonoBehaviour
             weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotz);
         }
 
-        weaponHandler?.Rotate(isLeft);
+        //weaponHandler?.Rotate(isLeft);  // 공격 방향 전환
     }
 
     private void Movement(Vector2 direction)
