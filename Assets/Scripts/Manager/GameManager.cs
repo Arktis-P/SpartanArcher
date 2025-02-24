@@ -6,6 +6,7 @@ public class GameManager : SingleTon<GameManager>
 {
     private ResourceController _playerResourceController;
     private UIManager uiManager;
+    public PlayerController player { get; private set; }
     private void Awake()
     {
         base.Awake();
