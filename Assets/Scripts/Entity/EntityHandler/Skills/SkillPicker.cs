@@ -76,7 +76,7 @@ public class SkillPicker : MonoBehaviour
                 playerStat.ProjectileNumber += selectedSkill.ProjectileNumber;
                 break;
             case SkillCategory.Projectile:
-
+                //waponHandler에 적용 시키기
                 break;
             case SkillCategory.Active:
                 break;
