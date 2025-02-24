@@ -260,6 +260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfda44f0dbf7b641a0799cd30f1bcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chracterRenderer: {fileID: 6333179478463225669}
+  weaponPivot: {fileID: 6422325266754129915}
+  weaponPrefab: {fileID: 0}
+  followRange: 15
 --- !u!114 &7826434772959290018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69adca4506486ba47b7cf31953456c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!114 &8286661783320972236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,3 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f00ca61720099f48824b3c042a42329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
+  moveSpeed: 3
+  attackFreq: 2
+  shootingRange: 5
