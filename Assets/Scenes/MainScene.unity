@@ -1150,6 +1150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443329995}
+  - component: {fileID: 443329996}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -1173,6 +1174,21 @@ Transform:
   - {fileID: 1345567739}
   m_Father: {fileID: 1592342178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &443329996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443329994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9376b4c5a1f1b459032898cdee47ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillInfo: []
+  SkillList: []
+  randomSkillList: []
 --- !u!1 &470517690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,6 +4028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1345567739}
+  - component: {fileID: 1345567740}
   m_Layer: 0
   m_Name: Skillpick
   m_TagString: Untagged
@@ -4034,6 +4051,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443329995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1345567740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345567738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186044d031eb4b94d92ebbf28a4202d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text1: {fileID: 838733654}
+  text2: {fileID: 172814995}
+  text3: {fileID: 1612888234}
+  buttons: []
 --- !u!1 &1356416544
 GameObject:
   m_ObjectHideFlags: 0
