@@ -18,6 +18,8 @@ public class GameManager : SingleTon<GameManager>
         player = FindObjectOfType<PlayerController>();
         player.Init(this);
 
+        _playerResourceController = player.GetComponent<ResourceController>();
+
         uiManager = FindObjectOfType<UIManager>();
         uiManager.Init();
 
