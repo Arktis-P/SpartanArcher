@@ -20,67 +20,73 @@ public class PlayerController : BaseController
         //gameManager.GameOver();   게임 오버 함수
     }
 
-    void OnMove(InputValue inputValue)
+    void OnMove(InputValue inputValue)  // 캐릭터 움직임
     {
         movementDirection = inputValue.Get<Vector2>().normalized;
     }
 
-    protected override void HandleAction()
+    protected override void HandleAction()  // 캐릭터 바라보는 방향 설정
     {
         base.HandleAction();
 
+        /*
         if (weaponHandler == null)
         {
+            Debug.Log("WeaponHandler is null, returning from HandleAction.");
             return;
         }
+        */
+        
+        Vector2 direction = movementDirection;   // 기본적으로 이동 방향을 바라봄
+                                                 
+        if (movementDirection.x != 0)           // 이동 방향이 좌우일 때만 바라보는 방향을 업데이트
+        {
+            direction = movementDirection;
+        }
+        else
+        {
+            direction = lookDirection;       // y 값이 -1 또는 1일 때는 현재 바라보는 방향을 그대로 유지
+        }
 
-        Vector2 direction = GetAttackDirection();
-        lookDirection = direction;
+        Vector2 enemyDirection = GetNearestEnemyDirection();  // 가장 가까운 적 방향 가져오기
 
+        if (enemyDirection != Vector2.zero)
+        {
+            direction = enemyDirection; // 감지된 몬스터가 있으면 그 방향으로 전환
+        }
+
+        // 최종적으로 바라보는 방향 설정
         if (direction != Vector2.zero)
         {
-            isAttacking = true;
+            lookDirection = direction;
         }
+
+        isAttacking = true;
     }
 
-    private Vector2 GetAttackDirection()
+    
+    private Vector2 GetNearestEnemyDirection()   // 가장 가까운 몬스터의 방향을 반환하는 함수
     {
-        // 몬스터 감지 (타겟이 감지 가능한 범위 내에 있을 때)
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, statHandler.ShootingRange, LayerMask.GetMask("Enemy"));
 
-        if (enemies.Length > 0)
+        if (enemies.Length == 0)
         {
-            // 가장 가까운 몬스터 찾기
-            Transform nearestEnemy = FindNearestEnemy(enemies);
-            if (nearestEnemy != null)
-            {
-                // 몬스터 방향으로 공격
-                return (nearestEnemy.position - transform.position).normalized;
-            }
+            return Vector2.zero;  // 몬스터가 없으면 기본값 반환
         }
 
-        // 몬스터가 없으면 이동 방향으로 공격
-        return movementDirection != Vector2.zero ? movementDirection : Vector2.zero;
-    }
-
-    private Transform FindNearestEnemy(Collider2D[] enemies)
-    {
-        Transform nearestEnemy = null;
+        Collider2D nearestEnemy = null;
         float minDistance = Mathf.Infinity;
 
         foreach (var enemy in enemies)
         {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < minDistance)
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distance < minDistance)
             {
-                minDistance = dist;
-                nearestEnemy = enemy.transform;
+                minDistance = distance;
+                nearestEnemy = enemy;
             }
         }
 
-        return nearestEnemy;
+        return (nearestEnemy.transform.position - transform.position).normalized;
     }
-
-
-
 }

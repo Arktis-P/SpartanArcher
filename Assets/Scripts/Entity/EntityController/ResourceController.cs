@@ -18,6 +18,13 @@ public class ResourceController : MonoBehaviour
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.Health;
 
+    private void Awake()
+    {
+        baseController = GetComponent<BaseController>();
+        statHandler = GetComponent<StatHandler>();
+        //animationHandler = GetComponent<AnimationHandler>();
+    }
+
     private void Start()
     {
         CurrentHealth = statHandler.Health;
