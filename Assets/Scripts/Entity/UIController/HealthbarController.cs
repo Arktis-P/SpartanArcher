@@ -16,7 +16,7 @@ public class HealthbarController : MonoBehaviour
         ChangeHealthBar();
     }
     
-    private void Update()
+    private void Update()  // temporary update(), make it change when there's change in player's health
     {
         ChangeHealthBar();
     }
