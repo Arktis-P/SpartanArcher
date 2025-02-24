@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class SkillPicker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public SkillList skillList;
+
+
+    private void Start()
     {
+        skillList = GetComponent<SkillList>();
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            skillList.GetRandomSkill(3);
+            List<SkillInfo> randomSkill = new List<SkillInfo>(skillList.randomSkillList);
+            
+            
+            for (int i = 0; i < randomSkill.Count; i++) // 디버그용
+            {
+                Debug.Log($"스킬 뽑기 : {randomSkill[i].Name}, {randomSkill[i].Category} , {randomSkill[i].Value}");
+            }
+
+        }
     }
 }

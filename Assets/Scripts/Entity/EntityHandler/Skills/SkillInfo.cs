@@ -11,7 +11,7 @@ public enum SkillCategory
     Passive
 }
 
-public class SkillInfo : MonoBehaviour
+public class SkillInfo
 {
     public string Name { get; private set; }
     public SkillCategory Category { get; private set; }
