@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : BaseController
 {
-    // Start is called before the first frame update
-    void Start()
+    private Camera camera;
+    private GameManager gameManager;
+
+    public void Init(GameManager gameManager)
     {
-        
+        this.gameManager = gameManager;
+        camera = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        OnLook();
     }
+
+    public override void Death()
+    {
+        base.Death();
+        //gameManager.GameOver();   게임 오버 함수
+    }
+
+    void OnMove(InputValue inputValue)
+    {
+        movementDirection = inputValue.Get<Vector2>();
+        movementDirection = movementDirection.normalized;
+    }
+
+    void OnLook()
+    {
+        // 이동 방향을 바라보도록 설정
+        lookDirection = movementDirection;
+    }
+
 }
