@@ -13,14 +13,15 @@ public class SkillManager : SingleTon<SkillManager>
     public void GetRandomSkill(int count)
     {
         randomSkillList.Clear();
-        SkillList = new List<SkillInfo>(skillInfo);
-
-        if (skillInfo == null)
+        
+        if (skillInfo == null || skillInfo.Length == 0)
         {
             Debug.LogWarning("스킬 리스트가 비어있습니다!");
+            return;
         }
+        SkillList = new List<SkillInfo>(skillInfo);
 
-        while (randomSkillList.Count < count || skillInfo.Length == 0)
+        while (randomSkillList.Count < count && SkillList.Count > 0)
         {
             int random = Random.Range(0, SkillList.Count);
             randomSkillList.Add(SkillList[random]);
