@@ -1,0 +1,92 @@
+{
+  "Items": [
+    {
+      "key": 1000,
+      "type": 0,
+      "name": "오크 병사",
+      "health": 10,
+      "maxhealth": 10,
+      "moveSpeed": 5,
+      "attackFreq": 5,
+      "detectionRange": 10,
+      "shootingRange": 1
+    },
+    {
+      "key": 1001,
+      "type": 0,
+      "name": "오크 전사",
+      "health": 20,
+      "maxhealth": 20,
+      "moveSpeed": 3,
+      "attackFreq": 3,
+      "detectionRange": 10,
+      "shootingRange": 1
+    },
+    {
+      "key": 1002,
+      "type": 0,
+      "name": "오크 궁수",
+      "health": 5,
+      "maxhealth": 5,
+      "moveSpeed": 5,
+      "attackFreq": 7,
+      "detectionRange": 5,
+      "shootingRange": 3
+    },
+    {
+      "key": 1003,
+      "type": 0,
+      "name": "오크 법사",
+      "health": 5,
+      "maxhealth": 5,
+      "moveSpeed": 3,
+      "attackFreq": 3,
+      "detectionRange": 10,
+      "shootingRange": 5
+    },
+    {
+      "key": 2000,
+      "type": 1,
+      "name": "해골 병사",
+      "health": 10,
+      "maxhealth": 10,
+      "moveSpeed": 5,
+      "attackFreq": 5,
+      "detectionRange": 10,
+      "shootingRange": 1
+    },
+    {
+      "key": 2001,
+      "type": 1,
+      "name": "해골 전사",
+      "health": 20,
+      "maxhealth": 20,
+      "moveSpeed": 3,
+      "attackFreq": 3,
+      "detectionRange": 10,
+      "shootingRange": 1
+    },
+    {
+      "key": 2002,
+      "type": 1,
+      "name": "해골 궁수",
+      "health": 5,
+      "maxhealth": 5,
+      "moveSpeed": 5,
+      "attackFreq": 7,
+      "detectionRange": 5,
+      "shootingRange": 3
+    },
+    {
+      "key": 2003,
+      "type": 1,
+      "name": "해골 법사",
+      "health": 5,
+      "maxhealth": 5,
+      "moveSpeed": 3,
+      "attackFreq": 3,
+      "detectionRange": 10,
+      "shootingRange": 5
+    }
+  ]
+}
