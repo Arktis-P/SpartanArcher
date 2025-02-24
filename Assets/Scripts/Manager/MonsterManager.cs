@@ -16,9 +16,10 @@ public class MonsterManager : MonoBehaviour
 
     GameManager gameManager;
 
-    private void Init(GameManager gameManager)
+    public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
+        StartStage(1);  // test start
     }
 
     // when start the stage, decide nums of monsters spawn
