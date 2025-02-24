@@ -304,6 +304,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c22778614fb1cce47ac5db4f8be98dd1, type: 2}
   - {fileID: 11400000, guid: fb65d9b96de82044aaaa16cf965f83ef, type: 2}
   - {fileID: 11400000, guid: d0813ec6576501548ac01c876ff305df, type: 2}
+  - {fileID: 11400000, guid: e2fbfd2c63838854da6ae4d0e7f23437, type: 2}
+  - {fileID: 11400000, guid: ab728a264901c944baebb83d74582bd9, type: 2}
+  - {fileID: 11400000, guid: 2fd3bf0b84dcc4344899e4b1a6e8aabd, type: 2}
+  - {fileID: 11400000, guid: a5385c2708ea40740a7b01acfc099d0c, type: 2}
+  - {fileID: 11400000, guid: 148470f5b2897274b866acc71a7c881b, type: 2}
+  - {fileID: 11400000, guid: e087b847486c2d547993360da415b8a1, type: 2}
   SkillList: []
   randomSkillList: []
 --- !u!4 &273182317
