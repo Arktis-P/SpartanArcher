@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e93cfd7f7f538e34ead979f027db632b
+guid: aef686ad0270cb940a6d718c17b4462c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GUI_player1
+      name: Stone_verylarge
       rect:
         serializedVersion: 2
-        x: 96
-        y: 244
-        width: 26
-        height: 24
+        x: 176
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d52ca00fd3b33f844aeaa7832e0bbc5b
-      internalID: 906475698
+      spriteID: cef4ecf75d468e7488acbfcf593b298c
+      internalID: 1496945260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player2
+      name: Stone_large
       rect:
         serializedVersion: 2
-        x: 121
-        y: 244
-        width: 39
-        height: 12
+        x: 112
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,104 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2154c945b8fd1ac4db6e83cfb2d3e873
-      internalID: -165602117
+      spriteID: 2b74fddde3cce9148be3ef0a1307acb2
+      internalID: 2057793629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player3
+      name: Stone_middle2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 295
-        width: 42
-        height: 3
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51e5ebaefe575d146ac721873a1f821f
-      internalID: -1690778013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_player4
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 279
-        width: 49
-        height: 3
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49b83f7d8645a0544b481f2b13e5a6db
-      internalID: -878724455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_player5
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 295
-        width: 42
-        height: 3
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3b5219d18ff8f946b690a4dc793acbb
-      internalID: -1298267536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_player6
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 279
-        width: 49
-        height: 3
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46973425d07aa1147af13f3067407ac6
-      internalID: 247265676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_player7
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 293
-        width: 45
-        height: 7
+        x: 160
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 955f43efed3818b44bc5cc405f8146ff
-      internalID: 1123161434
+      spriteID: c01f13adeff722944a79b667827bb6a0
+      internalID: -240068882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player8
+      name: Stone_middle1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 277
-        width: 52
-        height: 7
+        x: 144
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,8 +226,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfda3b808b71b3842b3830b8dc660db2
-      internalID: 2089651870
+      spriteID: fa72470d6522c854fa3c6ed55e904f6f
+      internalID: 1386394595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone_middle3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f70d55cafb0194ea389ea92935b743
+      internalID: 771875708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone_middle4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95db7b0bb5dff843a146ede02f69c0f
+      internalID: -835533205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone_small1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eed3cca484b5cb40a99e963bb4a8e39
+      internalID: 1522763829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone_small2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b0d4c83dabc5c49940390373655373
+      internalID: -1606210042
       vertices: []
       indices: 
       edges: []
@@ -327,25 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GUI_1: 290368356
-      GUI_6: -210953380
-      GUI_7: 1923872679
-      GUI_8: -1159309744
-      GUI_9: 152751152
-      GUI_bar1: 960853705
-      GUI_bar2: -65165839
-      GUI_bar3: -712870116
-      GUI_bar4: 277437403
-      GUI_bar5: 1485150143
-      GUI_bar6: -210953380
-      GUI_player1: 906475698
-      GUI_player2: -165602117
-      GUI_player3: -1690778013
-      GUI_player4: -878724455
-      GUI_player5: -1298267536
-      GUI_player6: 247265676
-      GUI_player7: 1123161434
-      GUI_player8: 2089651870
+      Stone_large: 2057793629
+      Stone_middle1: 1386394595
+      Stone_middle2: -240068882
+      Stone_middle3: 771875708
+      Stone_middle4: -835533205
+      Stone_small1: 1522763829
+      Stone_small2: -1606210042
+      Stone_verylarge: 1496945260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
