@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6490003993712879642}
   - component: {fileID: 6333179478463225669}
   - component: {fileID: 854519210780605032}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 546298805988477478}
   - component: {fileID: 7527385264680552897}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Goblin King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 1
-  attackFreq: 2
+  attackFreq: 1
   shootingRange: 5
 --- !u!114 &5324493131628853826
 MonoBehaviour:
@@ -270,6 +270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f18defa37b82e44da1b44eaa38581aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chracterRenderer: {fileID: 6333179478463225669}
+  weaponPivot: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  attackDirection: {x: 0, y: 0}
   chracterRenderer: {fileID: 6333179478463225669}
   followRange: 15
   pawnPrefabs:
