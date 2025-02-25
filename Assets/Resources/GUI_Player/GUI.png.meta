@@ -153,9 +153,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 244
+        y: 243
         width: 26
-        height: 24
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,9 +174,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 121
-        y: 244
-        width: 39
-        height: 12
+        y: 243
+        width: 40
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player3
+      name: GUI_bar1
       rect:
         serializedVersion: 2
         x: 8
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player4
+      name: GUI_bar2
       rect:
         serializedVersion: 2
         x: 6
@@ -233,13 +233,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player5
+      name: GUI_bar3
       rect:
         serializedVersion: 2
         x: 72
-        y: 295
+        y: 294
         width: 42
-        height: 3
+        height: 4
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,13 +254,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player6
+      name: GUI_bar4
       rect:
         serializedVersion: 2
         x: 72
-        y: 279
+        y: 278
         width: 49
-        height: 3
+        height: 4
       alignment: 4
       pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,13 +275,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player7
+      name: GUI_barShort
       rect:
         serializedVersion: 2
         x: 135
         y: 293
         width: 45
-        height: 7
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,13 +296,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_player8
+      name: GUI_barLong
       rect:
         serializedVersion: 2
         x: 135
         y: 277
         width: 52
-        height: 7
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +325,7 @@ TextureImporter:
         width: 44
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,12 +341,12 @@ TextureImporter:
       name: GUI_gui2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 243
-        width: 42
-        height: 10
+        x: 50
+        y: 242
+        width: 44
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -354,6 +354,804 @@ TextureImporter:
       bones: []
       spriteID: a4f33e17e57a5d74192f9a3611ea182f
       internalID: -1347499832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 24, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89053b3e03993d45aea2267fea26454
+      internalID: -147473623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64599597b1298064e90d3d6ce11c13c5
+      internalID: 1935781597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6801b1d26f9799545a0fa5b475f1769b
+      internalID: -805029234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155c9b6e784d3bf44b684c32eea25592
+      internalID: -1832981952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19dbc05ce20c81f48b42812648e2b785
+      internalID: -2048131161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_board4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c472aae349db54682ee0c5d6fc0261
+      internalID: 914441975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 192
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4fd2814f99211418b58e2814acae4e
+      internalID: -990995834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae64c9c695c663741af167a94ded4c5a
+      internalID: 466672914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415a05b528db2474184dae425f95cb1d
+      internalID: -1367154826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdbb9da355843241b35a9eef05d2dbe
+      internalID: -336620821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_bluememo1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 192
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2016b2dd47396a14e92b4825b507be8b
+      internalID: -790576333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_bluememo2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df561c9f566d52242b497d1f44519e75
+      internalID: 161583074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_bluememo3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ecf2d0663c9045b547a261c03534e
+      internalID: -2002070555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_bluememo4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd58974d2ce22a34cb8279e2bd2d403a
+      internalID: -1120059012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetag1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55aea5e0290e30a4e9cfbd73b66072c7
+      internalID: 1367538126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetag2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebd837e80d51064eb44da6746a299dd
+      internalID: 1368337911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetag3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d044d89c9f25594f9d8a1e8da6a49ef
+      internalID: 749460012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 200
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5f9788731866f408b59c96c38dca05
+      internalID: 744109799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitememo6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad2908c2b39c2644a138f923bfacbb6
+      internalID: -78140446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf130be7e9d2a594fa226fc992fd0bc2
+      internalID: -656636312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e41563148c404f48be8e4b63e7a91e6
+      internalID: -566295073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 228
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1aef84a181dd44ab9bbfa9df685c84
+      internalID: 796769267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a834665f13c15a4facb93eaf5fad3a6
+      internalID: -3751574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 228
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98065a4ca9fe934cb6e8d7b5f61f28f
+      internalID: -541839047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall6
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152c2132b6c05774d975164f566b3b0b
+      internalID: -1457350302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall7
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0129f5f41e058364d9fb9037e519d4c4
+      internalID: -1587296322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall8
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 228
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de718119b3aa10e49b8f06856d26b558
+      internalID: -174685375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_whitetagsmall9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c7df9bc40551b439ee3b6857c37ddc
+      internalID: 2071725980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_BlueButtonLong1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 208
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cf0668600309549ba881e364f3d7ab
+      internalID: -257476883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_BlueButtonLong2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32009c2d4731e88498b8ceb3e9c39f60
+      internalID: -682014568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_BlueButtonLong3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4504a271e1bcd4b4696b1dbe7abc472c
+      internalID: -1158017133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_bluememo5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 176
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9ad4c490882184b8cd8a4f5a0a27c4
+      internalID: 1088459797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 258
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869e74e1bb4b6134e909ab9168da63dc
+      internalID: -966564173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui5
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 258
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07f0509771667b48bd4640d9c76e52d
+      internalID: 1775385253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 258
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fde2e5b544319f4abd5077758c201ca
+      internalID: 2138154244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 242
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b284e46ab6de6e48ab7edede262c9b8
+      internalID: 554374020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 242
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c2dda5086ca794abeb19f3df338873
+      internalID: 2094144561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_gui8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 242
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947e1862f3d2a2b42997dcc68faa379a
+      internalID: 1542394664
       vertices: []
       indices: 
       edges: []
@@ -369,27 +1167,60 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GUI_1: 290368356
       GUI_6: -210953380
       GUI_7: 1923872679
       GUI_8: -1159309744
       GUI_9: 152751152
-      GUI_bar1: 960853705
-      GUI_bar2: -65165839
-      GUI_bar3: -712870116
-      GUI_bar4: 277437403
+      GUI_BlueButtonLong1: -257476883
+      GUI_BlueButtonLong2: -682014568
+      GUI_BlueButtonLong3: -1158017133
+      GUI_bar1: -1690778013
+      GUI_bar2: -878724455
+      GUI_bar3: -1298267536
+      GUI_bar4: 247265676
       GUI_bar5: 1485150143
       GUI_bar6: -210953380
+      GUI_barLong: 2089651870
+      GUI_barShort: 1123161434
+      GUI_bluememo1: -790576333
+      GUI_bluememo2: 161583074
+      GUI_bluememo3: -2002070555
+      GUI_bluememo4: -1120059012
+      GUI_bluememo5: 1088459797
+      GUI_board1: 290368356
+      GUI_board2: 1935781597
+      GUI_board3: -805029234
+      GUI_board4: 914441975
+      GUI_board5: -2048131161
+      GUI_board6: -1832981952
       GUI_gui1: 330451253
       GUI_gui2: -1347499832
+      GUI_gui3: -966564173
+      GUI_gui4: 2138154244
+      GUI_gui5: 1775385253
+      GUI_gui6: 554374020
+      GUI_gui7: 2094144561
+      GUI_gui8: 1542394664
       GUI_player1: 906475698
       GUI_player2: -165602117
-      GUI_player3: -1690778013
-      GUI_player4: -878724455
-      GUI_player5: -1298267536
-      GUI_player6: 247265676
-      GUI_player7: 1123161434
-      GUI_player8: 2089651870
+      GUI_whitememo1: -990995834
+      GUI_whitememo2: 466672914
+      GUI_whitememo3: -1367154826
+      GUI_whitememo4: -336620821
+      GUI_whitememo5: 744109799
+      GUI_whitememo6: -78140446
+      GUI_whitetag1: 1367538126
+      GUI_whitetag2: 1368337911
+      GUI_whitetag3: 749460012
+      GUI_whitetagsmall1: -656636312
+      GUI_whitetagsmall2: -541839047
+      GUI_whitetagsmall3: -566295073
+      GUI_whitetagsmall4: -3751574
+      GUI_whitetagsmall5: 796769267
+      GUI_whitetagsmall6: -1457350302
+      GUI_whitetagsmall7: -1587296322
+      GUI_whitetagsmall8: -174685375
+      GUI_whitetagsmall9: 2071725980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

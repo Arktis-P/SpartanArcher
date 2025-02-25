@@ -13,7 +13,7 @@ public class SkillManager : SingleTon<SkillManager>
     public void GetRandomSkill(int count)
     {
         randomSkillList.Clear();
-        
+
         if (skillInfo == null || skillInfo.Length == 0)
         {
             Debug.LogWarning("스킬 리스트가 비어있습니다!");
@@ -27,5 +27,11 @@ public class SkillManager : SingleTon<SkillManager>
             randomSkillList.Add(SkillList[random]);
             SkillList.RemoveAt(random);
         }
+    }
+
+    public void SetSkillPicker()
+    {
+        SkillPicker skillpicker = this.GetComponentInChildren<SkillPicker>();
+        skillpicker.SkillPickerList();
     }
 }

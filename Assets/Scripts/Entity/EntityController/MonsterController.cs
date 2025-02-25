@@ -71,7 +71,7 @@ public class MonsterController : BaseController
     public void Death()
     {
         base.Death();
-        //enemyManager.RemoveEnemyOnDeath(this);
+        monsterManager.RemoveMonsterOnDeath(this);
     }
 
 }
