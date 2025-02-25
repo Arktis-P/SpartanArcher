@@ -31,7 +31,7 @@ public class HealthbarController : MonoBehaviour
     {
         GetPlayerStat();
         float healthRatio = health / maxHealth;
-        healthBar.localScale = new Vector3(healthRatio * healthBarMax, 1.0f, 1.0f);
+        healthBar.localScale = new Vector3(healthRatio, 1.0f, 1.0f);
     }
     
     // calculate health ratio compared to max health

@@ -5329,7 +5329,7 @@ GameObject:
   - component: {fileID: 6584221459172674840}
   m_Layer: 0
   m_Name: Map5
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

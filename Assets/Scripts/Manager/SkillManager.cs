@@ -28,4 +28,10 @@ public class SkillManager : SingleTon<SkillManager>
             SkillList.RemoveAt(random);
         }
     }
+
+    public void SetSkillPicker()
+    {
+        SkillPicker skillpicker = this.GetComponentInChildren<SkillPicker>();
+        skillpicker.SkillPickerList();
+    }
 }
