@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3143213663974308131, guid: 2c51a241264c0614eb6d3df425f84599, type: 3}
+  m_Sprite: {fileID: -4450419073253801634, guid: 78b9e74b4ef7ae64cad8b726fb4538c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 3033794081281335311}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e1c7759efed56c44088a0bed90c5b4db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 712c7c436664f7e4086628ef45d846ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
   m_Layer: 0
-  m_Name: Orc Rogue
+  m_Name: Orc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

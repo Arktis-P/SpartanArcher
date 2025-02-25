@@ -25,8 +25,7 @@ public class MonsterController : BaseController
         return (target.position - transform.position).normalized;
     }
 
-    //병합 시 Override 추가 
-    protected void HandleAction()
+    protected override void HandleAction()
     {
         base.HandleAction();
 

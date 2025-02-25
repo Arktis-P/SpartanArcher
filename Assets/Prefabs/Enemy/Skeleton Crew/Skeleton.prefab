@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -1445677671409029519, guid: 1c0c86039fd4c6246b89a823a94a2cad, type: 3}
+  m_Sprite: {fileID: 8501594074266231311, guid: 2c687682ba31e9447a117458238d7281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 3033794081281335311}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 655be1cac52c4da42a01c9343389fb64, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c70cf611c046614eb0844c96aa695cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
   m_Layer: 0
-  m_Name: Orc Warrior
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
