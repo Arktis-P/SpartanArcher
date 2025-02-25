@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerStat : StatHandler
 {
-    [Range(1f, 100f)][SerializeField] private float skillFreq = 2f;
+    [Range(0.01f, 1f)][SerializeField] private float skillFreq = 0.5f;
     public float SkillFreq
     {
         get => skillFreq;
-        set => skillFreq = Mathf.Clamp(value, 0f, 100f);
+        set => skillFreq = Mathf.Clamp(value, 0.01f, 1f);
     }
 
-    [Range(1f, 100f)][SerializeField] private float drainRatio = 2f;
+    [Range(0f, 100f)][SerializeField] private float drainRatio = 0f;
     public float DrainRatio
     {
         get => drainRatio;

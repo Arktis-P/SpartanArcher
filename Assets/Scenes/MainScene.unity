@@ -3379,7 +3379,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.59375, y: 0.875}
   m_EdgeRadius: 0
 --- !u!50 &1155264141
 Rigidbody2D:
@@ -3423,6 +3423,7 @@ MonoBehaviour:
   chracterRenderer: {fileID: 700649240}
   weaponPivot: {fileID: 953961284}
   weaponPrefab: {fileID: 6403442361403232660, guid: 1c5051bfce8fdee42b891e3d91cf0806, type: 3}
+  attackDirection: {x: 0, y: 0}
 --- !u!114 &1155264143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,12 +3439,12 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 3
-  attackFreq: 2
+  attackFreq: 0.5
   shootingRange: 5
-  skillFreq: 2
+  skillFreq: 1
   drainRatio: 2
   knockbackResistance: 2
-  projectileNumber: 1
+  projectileNumber: 2
 --- !u!114 &1155264144
 MonoBehaviour:
   m_ObjectHideFlags: 0

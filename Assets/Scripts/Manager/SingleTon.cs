@@ -35,11 +35,11 @@ public class SingleTon<T> : MonoBehaviour where T : MonoBehaviour
         if (instance == null)
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject);  // 씬 전환 시 객체를 유지
+            //DontDestroyOnLoad(gameObject);  // 씬 전환 시 객체를 유지
         }
-        else
-        {
-            Destroy(gameObject);  // 이미 인스턴스가 있으면 중복 객체 삭제
-        }
+        //else
+        //{
+        //    Destroy(gameObject);  // 이미 인스턴스가 있으면 중복 객체 삭제
+        //}
     }
 }
