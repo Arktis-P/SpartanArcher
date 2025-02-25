@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ProjectileManager : SingleTon<ProjectileManager>
 {
-    [SerializeField]private GameObject[] projectilePrefabs; //ÇÁ·ÎÁ§Å¸ÀÏ ÇÁ¸®ÆÕ Á¤·Ä ¸®½ºÆ®?
+    [SerializeField]private GameObject[] projectilePrefabs; //í”„ë¡œì íƒ€ì¼ í”„ë¦¬íŒ¹ ì •ë ¬ ë¦¬ìŠ¤íŠ¸?
 
     public void ShootBullet(RangeWeaponHandler rangeWeaponHandler, Vector2 startPostion, Vector2 direction)
     {

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6422325266754129915}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6490003993712879642}
   - component: {fileID: 6333179478463225669}
   - component: {fileID: 854519210780605032}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3143213663974308131, guid: 2c51a241264c0614eb6d3df425f84599, type: 3}
+  m_Sprite: {fileID: -1445677671409029519, guid: 1c0c86039fd4c6246b89a823a94a2cad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 3033794081281335311}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e1c7759efed56c44088a0bed90c5b4db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 655be1cac52c4da42a01c9343389fb64, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,8 +152,8 @@ GameObject:
   - component: {fileID: 7826434772959290018}
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
-  m_Layer: 3
-  m_Name: Orc Rogue
+  m_Layer: 7
+  m_Name: Orc Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01, y: 0.15}
+  m_Offset: {x: -0.02, y: 0.16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -246,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.300001}
+  m_Size: {x: 0.2, y: 0.32}
   m_EdgeRadius: 0
 --- !u!114 &5298084618542258437
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chracterRenderer: {fileID: 6333179478463225669}
   weaponPivot: {fileID: 6422325266754129915}
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 4186240390876711266, guid: b8496567c22892a448e01f25be0d024f, type: 3}
   followRange: 15
 --- !u!114 &7826434772959290018
 MonoBehaviour:

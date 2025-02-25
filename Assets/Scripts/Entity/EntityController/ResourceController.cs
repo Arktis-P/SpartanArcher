@@ -9,7 +9,7 @@ public class ResourceController : MonoBehaviour
 
     private BaseController baseController;
     private StatHandler statHandler;
-    //private AnimationHandler animationHandler;
+    private EntityAnimationHandler animationHandler;
 
     private float timeSinceLastChange = float.MaxValue;
 
@@ -22,7 +22,7 @@ public class ResourceController : MonoBehaviour
     {
         baseController = GetComponent<BaseController>();
         statHandler = GetComponent<StatHandler>();
-        //animationHandler = GetComponent<AnimationHandler>();
+        animationHandler = GetComponent<EntityAnimationHandler>();
     }
 
     private void Start()
@@ -31,7 +31,7 @@ public class ResourceController : MonoBehaviour
     }
 
 
-    public bool ChangeHealth(float change)  // WeaponHandler ¶Ç´Â ProjectileController¿¡¼­ Àû¿ë
+    public bool ChangeHealth(float change)  // WeaponHandler ë˜ëŠ” ProjectileControllerì—ì„œ ì ìš©
     {
         if (change == 0 || timeSinceLastChange < healthChangeDelay)
         {
@@ -47,9 +47,9 @@ public class ResourceController : MonoBehaviour
 
         if (change < 0)
         {
-            //animationHandler.Damage();  ÇÇ°İ ¾Ö´Ï¸ŞÀÌ¼Ç
+            animationHandler.Damage();  //í”¼ê²© ì• ë‹ˆë©”ì´ì…˜
 
-            /*  ÇÇ°İ »ç¿îµå
+            /*  í”¼ê²© ì‚¬ìš´ë“œ
             if (damageClip != null)
             {
                 SoundManager.PlayClip(damageClip);
