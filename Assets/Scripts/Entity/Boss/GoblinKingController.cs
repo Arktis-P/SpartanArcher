@@ -42,6 +42,11 @@ namespace Assets.Scripts.Entity.Boss
                 SpawnPawn();
             }
         }
+        protected override void NormalAttack()
+        {
+
+
+        }
 
         private void ThrowAttack()
         {

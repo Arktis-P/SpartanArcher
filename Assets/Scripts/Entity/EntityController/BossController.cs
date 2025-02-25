@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class BossController : MonoBehaviour
 {
     protected StatHandler statHandler;
     protected ResourceController resourceController;
-    [SerializeField] private SpriteRenderer chracterRenderer;
+    [SerializeField] protected SpriteRenderer chracterRenderer;
     protected Rigidbody2D _rigidbody;
-    //protected AnimationHandler animationHandler;
+    private MonsterManager monsterManager;
+    protected EntityAnimationHandler animationHandler;
+
+    private Transform target;
 
     protected Vector2 movementDirection = Vector2.zero;
     public Vector2 MovementDirection { get { return movementDirection; } }
@@ -18,41 +22,44 @@ public class BossController : MonoBehaviour
 
     private Vector2 knockback = Vector2.zero;
     private float knockbackDuration = 0.0f;
+    [SerializeField] private float followRange = 15f;
 
     protected bool isAttacking;
     private float timeSinceLastAttack = float.MaxValue;
 
+    //MonsterManager에서 호출해줘야함.
+    public void Init(MonsterManager monsterManager, Transform target)
+    {
+        this.monsterManager = monsterManager;
+        this.target = target;
+    }
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        //animationHandler = GetComponent<AnimationHandler>();
+        animationHandler = GetComponent<EntityAnimationHandler>();
         statHandler = GetComponent<StatHandler>();
         resourceController = GetComponent<ResourceController>();
 
     }
     protected virtual void Update()
     {
-        HandleAction();
+        NormalAttack();
         Rotate(lookDirection);
         HandleAttackDelay();
     }
     protected virtual void FixedUpdate()
     {
         Movement(movementDirection);
-        if (knockbackDuration > 0.0f)
-        {
-            knockbackDuration -= Time.deltaTime;
-        }
     }
 
-    private void Rotate(Vector2 direction)
+    protected virtual void Rotate(Vector2 direction)
     {
         float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bool isLeft = Mathf.Abs(rotz) > 90f;
 
         chracterRenderer.flipX = isLeft;
     }
-    private void Movement(Vector2 direction)
+    protected virtual void Movement(Vector2 direction)
     {
         direction = direction * statHandler.MoveSpeed;
         if (knockbackDuration > 0.0f)
@@ -61,7 +68,7 @@ public class BossController : MonoBehaviour
             direction += knockback;
         }
         _rigidbody.velocity = direction;
-        //animationHandler.Move(direction);  
+        //animationHandler.Move(direction);
     }
     public void ApplyKnockback(Transform other, float power, float duration) 
     {
@@ -92,13 +99,56 @@ public class BossController : MonoBehaviour
 
         Destroy(gameObject, 3f);
     }
-    public virtual void Attack()
+    protected virtual void NormalAttack()
     {
-        Debug.Log("공격");
-    }
-    protected virtual void HandleAction()
-    {
+        if (/*weaponHandler == null || */target == null)
+        {
+            //타깃 없을때 제로백터가 아니라면 제로백터로 
+            if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
+            return;
+        }
 
+        //타깃과의 방향 거리 구해서 저장
+        float distance = DistanceToTarget();
+        Vector2 direction = DirectionToTarget();
+
+        isAttacking = false;
+        //따라갈 거리 안에 들어왔는지
+        if (distance <= followRange)
+        {
+            //바라보도록 방향을 타겟의 방향을 저장해준다.
+            lookDirection = direction;
+
+            //공격범위 안에 들어왔는지 
+            //if (distance <= weaponHandler.AttackRange)
+            //{
+            //    int layerMaskTarget = weaponHandler.target;
+            //    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
+            //        (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+
+            //    if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+            //    {
+            //        isAttacking = true;
+            //    }
+
+            //    movementDirection = Vector2.zero;
+            //    return;
+            //}
+            //공격범위에 없어서 이동만
+            movementDirection = direction;
+        }
     }
+    protected float DistanceToTarget()
+    {
+        //position간 거리 리턴
+        return Vector3.Distance(transform.position, target.position);
+    }
+
+    protected Vector2 DirectionToTarget()
+    {
+        //포지션을 빼서 normalized로 방향 리턴
+        return (target.position - transform.position).normalized;
+    }
+
 
 }

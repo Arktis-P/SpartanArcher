@@ -26,15 +26,11 @@ namespace Assets.Scripts.Entity.Boss
 
         private void Start()
         {
-            direction = new Vector2(transform.position.x+4,transform.position.y+4);
+            movementDirection = new Vector2(transform.position.x+4,transform.position.y+4);
         }
 
         protected override void Update()
         {
-            if (!isLaserAttack)
-            {
-                MoveAttack();
-            }
             if (isLaserAttack)
                 LaserAttack();
 
@@ -44,7 +40,19 @@ namespace Assets.Scripts.Entity.Boss
                 LaserAttack();
             }
         }
-        public override void Attack()
+
+        protected override void Movement(Vector2 direction)
+        {
+            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime;
+            animationHandler.Move(direction);  
+        }
+        //protected override void Rotate(Vector2 direction)
+        //{
+        //    //플레이어를 바라보는게 아닌 진행방향에따라
+           
+        //}
+
+        protected override void NormalAttack()
         {
             
 
@@ -54,15 +62,8 @@ namespace Assets.Scripts.Entity.Boss
         {
             if(collision != null)
             {
-                direction = Vector3.Reflect(direction, collision.GetContact(0).normal);
+                movementDirection = Vector3.Reflect(movementDirection, collision.GetContact(0).normal);
             }
-        }
-        private void MoveAttack()
-        {
-           //왼쪽방향으로 가는지 오른쪽으로 가는지에 따라 Sprtie Flip 시켜주어야함.
-           transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime;
-
-            //Projectile 일정주기 발사
         }
 
         private void ThrowAttack()
