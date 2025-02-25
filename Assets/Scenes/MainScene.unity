@@ -3138,6 +3138,7 @@ MonoBehaviour:
     y: -4
     width: 27
     height: 8
+  activeMonsters: []
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!1 &1110302298
 GameObject:
@@ -3324,7 +3325,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1155264142
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,7 +55,8 @@ public class GameManager : SingleTon<GameManager>
         uiManager.SwitchStageClear();  // switch off stage clear UI
         uiManager.SwitchOnStageUI();  // switch on on-stage UI again
 
-        monsterManager.Init(this);
+        mapManager.LoadRandomMap();  // load new map
+        monsterManager.Init(this);  // load new mosnters
     }
 
     // when cleared stage == all monsters dead

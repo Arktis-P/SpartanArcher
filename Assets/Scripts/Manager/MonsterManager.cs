@@ -21,17 +21,7 @@ public class MonsterManager : MonoBehaviour
 
     public void Init(GameManager gameManager)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(Instance);
-            Instance = this;
-        }
-
-            this.gameManager = gameManager;
+        this.gameManager = gameManager;
 
         stage = gameManager.Stage;  // get stage from game manager
         StartStage(stage);  // start monster manager
@@ -112,5 +102,17 @@ public class MonsterManager : MonoBehaviour
         // remove monsters only if player cleared the stage
         if (monsterSpawnComplete && activeMonsters.Count == 0)  // == stage clear
             gameManager.StageClear();
+    }
+    // test for stage clearing
+    public void TestDeath()
+    {
+        if (activeMonsters.Count == 0) return;
+        int rand = Random.Range(0, activeMonsters.Count);
+        MonsterController monster = activeMonsters[rand];
+        monster.Death();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) TestDeath();
     }
 }
