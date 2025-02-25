@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3935715413005503268}
-  - component: {fileID: 6403442361403232660}
+  - component: {fileID: 4186240390876711266}
   m_Layer: 0
-  m_Name: testWeapon
+  m_Name: testM_Weapon Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 8237522858167125479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6403442361403232660
+--- !u!114 &4186240390876711266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,28 +43,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 810886431704697351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca25facc79963048a3792c3c71ccda7, type: 3}
+  m_Script: {fileID: 11500000, guid: f62413b15bb37b1438b847dd9863b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
-  weaponSize: 1
+  delay: 1.2
+  weaponSize: 0.8
   power: 1
   speed: 1
-  attackRange: 10
+  attackRange: 1.2
   target:
     serializedVersion: 2
-    m_Bits: 128
-  isOnKnockback: 1
+    m_Bits: 256
+  isOnKnockback: 0
   knockbackPower: 0.1
   knockbackTime: 0.5
-  projectileSpawnPosition: {fileID: 8237522858167125479}
-  bulletIndex: 0
-  bulletSize: 0.5
-  duration: 10
-  spread: 1
-  numberofProjectilesPerShot: 1
-  multipleProjectilesAngel: 3
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  collideBoxSize: {x: 1, y: 1}
 --- !u!1 &2080236369375516467
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 2080236369375516467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.334, y: -0.072, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5283702821666040221}
   - component: {fileID: 1506011196816508727}
-  - component: {fileID: 5046381666790592051}
+  - component: {fileID: 1070555156185902439}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -123,9 +116,9 @@ Transform:
   m_GameObject: {fileID: 6103230142938271385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.465, y: -0.045, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3935715413005503268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -170,9 +163,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: -2020093702, guid: ebd9c570481682c4d8a42bf8d0eb8f2c, type: 3}
+  m_Sprite: {fileID: 1735130784, guid: ebd9c570481682c4d8a42bf8d0eb8f2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.1, y: 0.32}
@@ -181,7 +174,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5046381666790592051
+--- !u!95 &1070555156185902439
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -191,7 +184,7 @@ Animator:
   m_GameObject: {fileID: 6103230142938271385}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ac4be04e16b74947898e5c763560259, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c33865dba571ea44ae6b347c47b221c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

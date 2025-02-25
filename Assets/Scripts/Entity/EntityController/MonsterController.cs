@@ -45,21 +45,19 @@ public class MonsterController : BaseController
         {
             lookDirection = direction;
 
-            if (/*distance <= weaponHandler.AttackRange*/true)
+            if (distance <= weaponHandler.AttackRange)
             {
-                //공격
-                //이동은 X
-                //int layerMaskTarget = weaponHandler.target;
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
-                //    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+                int layerMaskTarget = weaponHandler.target;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
+                    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
 
-                ////레벨과 충돌했을때는 공격하지않음
-                //if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
-                //{
-                //    isAttacking = true;
-                //}
+                if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                {
+                    isAttacking = true;
+                }
 
-                movementDirection = direction;
+                movementDirection = Vector2.zero;
+                return;
             }
 
             //공격범위가 아니면 이동
@@ -68,10 +66,12 @@ public class MonsterController : BaseController
     }
 
     //병합시 override추가
-    public void Death()
+    public override void Death()
     {
         base.Death();
+        animationHandler.Die();
         monsterManager.RemoveMonsterOnDeath(this);
+        
     }
 
 }

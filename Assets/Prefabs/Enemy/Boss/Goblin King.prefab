@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6490003993712879642}
   - component: {fileID: 6333179478463225669}
   - component: {fileID: 854519210780605032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,11 +117,11 @@ GameObject:
   - component: {fileID: 5714419149737204349}
   - component: {fileID: 3621468171116670712}
   - component: {fileID: 7109518190739615354}
-  - component: {fileID: 7826434772959290018}
   - component: {fileID: 8286661783320972236}
   - component: {fileID: 5324493131628853826}
+  - component: {fileID: 546298805988477478}
   - component: {fileID: 7527385264680552897}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goblin King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,18 +216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7826434772959290018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128543812527038501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c314ef0c37117ec46a7a8dd0eb5506b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8286661783320972236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  maxHealth: 10
   moveSpeed: 1
   attackFreq: 2
   shootingRange: 5
@@ -257,6 +246,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+--- !u!114 &546298805988477478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128543812527038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cea35d3a80ae6744b810ed234cb2c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7527385264680552897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterRenderer: {fileID: 6333179478463225669}
+  followRange: 15
   pawnPrefabs:
   - {fileID: 7128543812527038501, guid: 81d2d5450b77c40458b1ea96aa9a91dc, type: 3}
   - {fileID: 7128543812527038501, guid: 59b610bb0870e7b4d9300ebab1331789, type: 3}
   - {fileID: 7128543812527038501, guid: 1576df8f88c2d914d9edbbd7bba25e4c, type: 3}
-  randomSpawnSize: 3

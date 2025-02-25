@@ -35,9 +35,17 @@ namespace Assets.Scripts.Entity.Boss
                 LaserAttack();
 
             //테스트 용
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                LaserAttack();
+                animationHandler.Pattern01();
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                animationHandler.Pattern02();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animationHandler.Pattern03();
             }
         }
 

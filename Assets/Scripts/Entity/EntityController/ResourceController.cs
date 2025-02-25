@@ -9,7 +9,7 @@ public class ResourceController : MonoBehaviour
 
     private BaseController baseController;
     private StatHandler statHandler;
-    //private AnimationHandler animationHandler;
+    private EntityAnimationHandler animationHandler;
 
     private float timeSinceLastChange = float.MaxValue;
 
@@ -22,7 +22,7 @@ public class ResourceController : MonoBehaviour
     {
         baseController = GetComponent<BaseController>();
         statHandler = GetComponent<StatHandler>();
-        //animationHandler = GetComponent<AnimationHandler>();
+        animationHandler = GetComponent<EntityAnimationHandler>();
     }
 
     private void Start()
@@ -47,7 +47,7 @@ public class ResourceController : MonoBehaviour
 
         if (change < 0)
         {
-            //animationHandler.Damage();  피격 애니메이션
+            animationHandler.Damage();  //피격 애니메이션
 
             /*  피격 사운드
             if (damageClip != null)

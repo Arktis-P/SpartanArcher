@@ -11,11 +11,10 @@ namespace Assets.Scripts.Entity.Boss
 {
     internal class GoblinKingController : BossController
     {
-        [SerializeField]
-        private List<GameObject> pawnPrefabs;
+        [SerializeField] private List<GameObject> pawnPrefabs;
         private Vector2 spawnArea;
 
-        public void SpawnPawn()
+        public void SpawnPawn() //Pattern01
         {
             if(pawnPrefabs.Count == 0)
             {
@@ -25,12 +24,12 @@ namespace Assets.Scripts.Entity.Boss
             float y = transform.position.y - 2;
             spawnArea = new Vector2(transform.position.x, transform.position.y-2);
            
+            //pawnPrefabs배열 수만큼 Pawn생성
             for (int i = 0; i < pawnPrefabs.Count; i++)
             {
                 GameObject spawnedEnemy = Instantiate(pawnPrefabs[i], new Vector3(spawnArea.x, spawnArea.y), Quaternion.identity);
                 MonsterController monsterController = spawnedEnemy.GetComponent<MonsterController>();
-                //monsterController.Init(this, gameManager.player.transform);
-
+                //monsterController.Init(this,target);
                 //activeEnemies.Add(monsterController);
             }
         }
@@ -41,6 +40,20 @@ namespace Assets.Scripts.Entity.Boss
             {
                 SpawnPawn();
             }
+
+            //테스트 용
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                animationHandler.Pattern01();
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                animationHandler.Pattern02();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animationHandler.Pattern03();
+            }
         }
         protected override void NormalAttack()
         {
@@ -48,12 +61,12 @@ namespace Assets.Scripts.Entity.Boss
 
         }
 
-        private void ThrowAttack()
+        private void ThrowAttack() //Pattern02
         {
             //Projectile 생기면 구현 예정
         }
 
-        private void Eat()
+        private void Eat() // Pattern03
         {
             resourceController.ChangeHealth(10);
         }
