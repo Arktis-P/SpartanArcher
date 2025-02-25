@@ -43,4 +43,26 @@ public class GameManager : SingleTon<GameManager>
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
         monsterManager.Init(this);  // call monster manager
     }
+    // after clear, after skill selected, continue game
+    public void ContinueGame()
+    {
+        stage++;  // add stage
+
+        uiManager.SwitchStageClear();  // switch off stage clear UI
+        uiManager.SwitchOnStageUI();  // switch on on-stage UI again
+        
+    }
+
+    // when cleared stage == all monsters dead
+    public void StageClear()
+    {
+        uiManager.SwitchOnStageUI();  // switch off on-stage UI
+        uiManager.SwitchStageClear();  // switch on stage-clear UI
+    }   
+    // when failed stage == player dead
+    public void StageFail()
+    {
+        uiManager.SwitchOnStageUI();  // switch off on-stage UI
+        uiManager.SwitchStageFail();  // switch on stage-fail UI
+    }
 }

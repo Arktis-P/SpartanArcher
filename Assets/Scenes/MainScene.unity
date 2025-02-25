@@ -2712,7 +2712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &950843336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3002,6 +3002,8 @@ MonoBehaviour:
   startTitle: {fileID: 1160299686}
   onStageUI: {fileID: 104365880}
   stageText: {fileID: 1708847973}
+  stageClearUI: {fileID: 1356416544}
+  stageFailUI: {fileID: 1642741714}
 --- !u!1 &1051297907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,7 +4146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356416545}
   m_Layer: 5
-  m_Name: ClearStage
+  m_Name: StageClearUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5510,7 +5512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642741715}
   m_Layer: 5
-  m_Name: FailStage
+  m_Name: StageFailUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

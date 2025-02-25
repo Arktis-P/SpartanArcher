@@ -10,11 +10,15 @@ public class UIManager : SingleTon<UIManager>
 
     private bool isOnStartTitle = false;
     private bool isOnStage = false;
+    private bool isOnClear = false;
+    private bool isOnFail = false;
     private int stage;
 
     public GameObject startTitle;
     public GameObject onStageUI;
     public Text stageText;
+    public GameObject stageClearUI;
+    public GameObject stageFailUI;
 
     private GameManager gameManager;
 
@@ -22,9 +26,22 @@ public class UIManager : SingleTon<UIManager>
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
+        
+        CheckExceptions();  // check exceptions
+
         playerHealthBar.Init();
 
         SwitchStartTitle();
+    }
+
+    // check exceptions
+    private void CheckExceptions()
+    {
+        if (startTitle == null) { Debug.LogError("Object Start Title is NOT connected!"); return; }
+        if (onStageUI == null) { Debug.LogError("Object On Stage UI is NOT connected!"); return; }
+        if (stageText == null) { Debug.LogError("Stage Text is NOT connected!"); return; }
+        if (stageClearUI == null) { Debug.LogError("Object Stage Clear UI is NOT connected!"); return; }
+        if (stageFailUI == null) { Debug.LogError("Object Stage Fail UI is NOT connected!"); return; }
     }
 
     // switch on/off start title
@@ -39,5 +56,17 @@ public class UIManager : SingleTon<UIManager>
         isOnStage = !isOnStage;
         onStageUI.SetActive(isOnStage);  // switch entire on Stage UI
         stageText.text = gameManager.Stage.ToString();  // update stage text
+    }
+    // switch on stage clear UI
+    public void SwitchStageClear()
+    {
+        isOnClear = !isOnClear;
+        stageClearUI.SetActive(isOnClear);
+    }
+    // switch on stage fail UI
+    public void SwitchStageFail()
+    {
+        isOnFail = !isOnFail;
+        stageFailUI.SetActive(isOnFail);
     }
 }

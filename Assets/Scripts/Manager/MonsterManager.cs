@@ -55,6 +55,8 @@ public class MonsterManager : MonoBehaviour
         monsterSpawnComplete = false;
         
         for (int i = 0; i < num; i++) SpawnRandomMonster();
+
+        monsterSpawnComplete = true;
     }
 
     // select random monster to spawn
@@ -72,8 +74,9 @@ public class MonsterManager : MonoBehaviour
 
         GameObject spawnedMonster = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
         MonsterController monsterController = spawnedMonster.GetComponent<MonsterController>();
+        monsterController.Init(this, gameManager.player.transform);  // init monster controller
 
-        // init monster controller  // make monster object work
+        activeMonsters.Add(monsterController);  // make monster object work
     }
 
     private void OnDrawGizmosSelected()
@@ -87,9 +90,12 @@ public class MonsterManager : MonoBehaviour
         Gizmos.DrawCube(center, size);
     }
 
-    public void RemoveMonster()  
+    public void RemoveMonsterOnDeath(MonsterController monster)  
     {
+        activeMonsters.Remove(monster);  // remove from the list
         // remove monsters which are already dead
         // remove monsters only if player cleared the stage
+        if (monsterSpawnComplete && activeMonsters.Count == 0)  // == stage clear
+            gameManager.StageClear();
     }
 }
