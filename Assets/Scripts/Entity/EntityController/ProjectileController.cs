@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
 
-    private float currentDuation;
+    private RangeWeaponHandler rangeWeaponHandler;
+
+    private float currentDuration;
     private Vector2 direction;
     private bool isReady;
     private Transform pivot;
@@ -18,42 +21,49 @@ public class ProjectileController : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();  
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         pivot = transform.GetChild(0);
     }
 
     private void Update()
     {
-        //if (!isReady) return;
+        if (!isReady)
+        {
+            return;
+        }
 
-        //currentDuation += Time.deltaTime;
+        currentDuration += Time.deltaTime;
 
-        //if (currentDuation > RangeWeaponHandler.Duration) DestroyProjectile(transform.position, false);
+        if (currentDuration > rangeWeaponHandler.Duration)
+        {
+            DestroyProjectile(transform.position, false);
+        }
 
-        //_rigidbody.velocity = direction * RangeWeaponHandler.Speed;
+        _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
-        //{
-        //    DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestory);
-        //}
-        //else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
-        //{
-        //    DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
-        //}
+        if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+        }
+        else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+        }
     }
+
 
     public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)
     {
-        //rangeWeaponHandler = weaponHandler;
+        rangeWeaponHandler = weaponHandler;
 
-        //this.direction = direction;
-        //currentDuration = 0;
-        //transform.localScale = Vector3.one * weaponHandler.BulletSize;
-        //spriteRenderer.color = weaponHandler.ProjectileColor;
+        this.direction = direction;
+        currentDuration = 0;
+        transform.localScale = Vector3.one * weaponHandler.BulletSize;
+        spriteRenderer.color = weaponHandler.ProjectileColor;
 
         transform.right = this.direction;
 
