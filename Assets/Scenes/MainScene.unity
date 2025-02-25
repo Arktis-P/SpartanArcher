@@ -3000,6 +3000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 1409082809}
   startTitle: {fileID: 1160299686}
+  onStageUI: {fileID: 104365880}
+  stageText: {fileID: 1708847973}
 --- !u!1 &1051297907
 GameObject:
   m_ObjectHideFlags: 0

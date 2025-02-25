@@ -24,7 +24,7 @@ public class GameManager : SingleTon<GameManager>
         _playerResourceController = player.GetComponent<ResourceController>();
 
         uiManager = FindObjectOfType<UIManager>();
-        uiManager.Init();
+        uiManager.Init(this);
 
         monsterManager = FindObjectOfType<MonsterManager>();
 
@@ -37,8 +37,10 @@ public class GameManager : SingleTon<GameManager>
 
     public void StartGame()
     {
-        uiManager.SwitchStartTitle();  // switch off start title
         stage = 1;  // set (or reset) stage to 1
+
+        uiManager.SwitchStartTitle();  // switch off start title
+        uiManager.SwitchOnStageUI();  // switch on on-stage ui
         monsterManager.Init(this);  // call monster manager
     }
 }

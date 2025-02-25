@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : SingleTon<UIManager>
 {
@@ -8,11 +9,19 @@ public class UIManager : SingleTon<UIManager>
     // public HealthbarController bossHealthBar;
 
     private bool isOnStartTitle = false;
+    private bool isOnStage = false;
+    private int stage;
+
     public GameObject startTitle;
+    public GameObject onStageUI;
+    public Text stageText;
+
+    private GameManager gameManager;
 
     // Start is called before the first frame update
-    public void Init()
+    public void Init(GameManager gameManager)
     {
+        this.gameManager = gameManager;
         playerHealthBar.Init();
 
         SwitchStartTitle();
@@ -23,5 +32,12 @@ public class UIManager : SingleTon<UIManager>
     {
         isOnStartTitle = !isOnStartTitle;
         startTitle.SetActive(isOnStartTitle);
+    }
+    // switch on/off on stage UIs
+    public void SwitchOnStageUI()
+    {
+        isOnStage = !isOnStage;
+        onStageUI.SetActive(isOnStage);  // switch entire on Stage UI
+        stageText.text = gameManager.Stage.ToString();  // update stage text
     }
 }
