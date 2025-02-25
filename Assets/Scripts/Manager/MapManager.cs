@@ -38,7 +38,6 @@ public class MapManager : MonoBehaviour
         }
 
         ResetPlayerPosition();
-        //if (GameManager.Instance.Stage % 10 == 0) SpawnBoss();
 
         int randomMapCount = RandomMapCount();
         lastMap = Instantiate(mapPrefabs[randomMapCount]);
