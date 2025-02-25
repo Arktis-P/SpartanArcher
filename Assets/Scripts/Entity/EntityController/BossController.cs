@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BossController : MonoBehaviour
+public class BossController : BaseController
 {
+
     protected StatHandler statHandler;
     protected ResourceController resourceController;
     [SerializeField] protected SpriteRenderer chracterRenderer;
@@ -60,7 +61,9 @@ public class BossController : MonoBehaviour
         bool isLeft = Mathf.Abs(rotz) > 90f;
 
         chracterRenderer.flipX = isLeft;
+
     }
+
     protected virtual void Movement(Vector2 direction)
     {
        //보스별 이동 재정의

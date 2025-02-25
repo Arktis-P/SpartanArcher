@@ -37,15 +37,14 @@ public class MapManager : MonoBehaviour
             Destroy(lastMap);
         }
 
-        SpawnPlayer();
-        //if (GameManager.Instance.Stage % 10 == 0) SpawnBoss();
+        ResetPlayerPosition();
 
         int randomMapCount = RandomMapCount();
         lastMap = Instantiate(mapPrefabs[randomMapCount]);
     }
 
     // spawn entities (player, monsters & boss)
-    public void SpawnPlayer()
+    public void ResetPlayerPosition()
     {
         player.transform.position = playerSpawnPoint;
         //Instantiate(player);

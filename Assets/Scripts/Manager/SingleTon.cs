@@ -40,6 +40,11 @@ public class SingleTon<T> : MonoBehaviour where T : MonoBehaviour
         else
         {
             Destroy(gameObject);  // �̹� �ν��Ͻ��� ������ �ߺ� ��ü ����
+            //DontDestroyOnLoad(gameObject);  // �� ��ȯ �� ��ü�� ����
         }
+        //else
+        //{
+        //    Destroy(gameObject);  // �̹� �ν��Ͻ��� ������ �ߺ� ��ü ����
+        //}
     }
 }
