@@ -59,6 +59,9 @@ public class ResourceController : MonoBehaviour
 
         if (CurrentHealth <= 0f)
         {
+            // send health info to game manager
+            GameManager.Instance.UpdateScore((int)MaxHealth);
+
             Death();
         }
 

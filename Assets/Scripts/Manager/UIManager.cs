@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class UIManager : SingleTon<UIManager>
     public Text stageText;
     public GameObject stageClearUI;
     public GameObject stageFailUI;
+    public Text scoreText;
 
     private GameManager gameManager;
 
@@ -26,8 +28,8 @@ public class UIManager : SingleTon<UIManager>
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        
-        CheckExceptions();  // check exceptions
+
+        CheckErrors();  // check exceptions
 
         playerHealthBar.Init();
 
@@ -35,13 +37,14 @@ public class UIManager : SingleTon<UIManager>
     }
 
     // check exceptions
-    private void CheckExceptions()
+    private void CheckErrors()
     {
-        if (startTitle == null) { Debug.LogError("Object Start Title is NOT connected!"); return; }
-        if (onStageUI == null) { Debug.LogError("Object On Stage UI is NOT connected!"); return; }
-        if (stageText == null) { Debug.LogError("Stage Text is NOT connected!"); return; }
-        if (stageClearUI == null) { Debug.LogError("Object Stage Clear UI is NOT connected!"); return; }
-        if (stageFailUI == null) { Debug.LogError("Object Stage Fail UI is NOT connected!"); return; }
+        if (startTitle == null) { Debug.LogError("Object Start Title is NOT connected!"); }
+        if (onStageUI == null) { Debug.LogError("Object On Stage UI is NOT connected!"); }
+        if (stageText == null) { Debug.LogError("Stage Text is NOT connected!"); }
+        if (stageClearUI == null) { Debug.LogError("Object Stage Clear UI is NOT connected!"); }
+        if (stageFailUI == null) { Debug.LogError("Object Stage Fail UI is NOT connected!"); }
+        if (scoreText == null) { Debug.LogError("Score Text is NOT connected!"); }
     }
 
     // switch on/off start title
@@ -68,5 +71,10 @@ public class UIManager : SingleTon<UIManager>
     {
         isOnFail = !isOnFail;
         stageFailUI.SetActive(isOnFail);
+    }
+
+    public void UpdateScore()
+    {
+        scoreText.text = gameManager.Score.ToString();
     }
 }
