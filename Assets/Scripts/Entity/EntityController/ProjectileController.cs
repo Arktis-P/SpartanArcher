@@ -45,14 +45,24 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+        if (rangeWeaponHandler.Bounce)
         {
-            DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+            Vector2 normal = ((Vector2)transform.position - collision.ClosestPoint(transform.position)).normalized;
+            direction = Vector2.Reflect(direction, normal);
+            _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
         }
-        else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+        else
         {
-            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+            if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+            {
+                DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+            }
+            else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+            {
+                DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+            }
         }
+        
     }
 
 
