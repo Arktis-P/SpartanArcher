@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6422325266754129915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6490003993712879642}
   - component: {fileID: 6333179478463225669}
   - component: {fileID: 854519210780605032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 7826434772959290018}
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orc Shaman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
