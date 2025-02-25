@@ -11,6 +11,9 @@ public class GameManager : SingleTon<GameManager>
     {
         base.Awake();
 
+        player = FindObjectOfType<PlayerController>();
+        player.Init(this);
+        _playerResourceController = player.GetComponent<ResourceController>();
         //_playerResourceController.RemoveHealthChangeEvent(uiManager.ChangePlayerHP);
         //_playerResourceController.AddHealthChangeEvent(uiManager.ChangePlayerHP);
     }

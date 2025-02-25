@@ -144,7 +144,7 @@ TextureImporter:
         width: 19
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,6 +152,69 @@ TextureImporter:
       bones: []
       spriteID: e6b0e593d2a39c2478b26e28947c5253
       internalID: 26969681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7fd11c73a12ad49acb39a6d55d1255
+      internalID: 976493272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e839bc4f00435254f8062efeacd8fbf7
+      internalID: -1566512073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6f2746d1eb87741bbb229b150d6717
+      internalID: 817383370
       vertices: []
       indices: 
       edges: []
@@ -168,6 +231,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Idle-Sheet_0: 26969681
+      Idle-Sheet_1: 976493272
+      Idle-Sheet_2: -1566512073
+      Idle-Sheet_3: 817383370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
