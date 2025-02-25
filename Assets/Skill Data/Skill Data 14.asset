@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996a7860dc889c54d9855f1d6dd02d13, type: 3}
   m_Name: Skill Data 14
   m_EditorClassIdentifier: 
-  skillname: "\uB108\uBC31 \uAC70\uB9AC \uC99D\uAC00"
+  skillname: "\uD22C\uC0AC\uCCB4 \uD295\uAE30\uAE30"
   category: 1
   health: 0
   moveSpeed: 0
@@ -27,4 +27,6 @@ MonoBehaviour:
   size: 0
   penetration: 0
   reflection: 0
-  knockbackDistance: 0.3
+  knockbackDistance: 0
+  bounce: 1
+  bounceNum: 1

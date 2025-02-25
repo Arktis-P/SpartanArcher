@@ -19,6 +19,10 @@ public class ProjectileController : MonoBehaviour
 
     public bool fxOnDestroy = true;
 
+    private bool isBounce = false;
+    private int bounceNum = 0;
+
+
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -45,11 +49,12 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (rangeWeaponHandler.Bounce)
+        if (bounceNum > 0 && levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
             Vector2 normal = ((Vector2)transform.position - collision.ClosestPoint(transform.position)).normalized;
             direction = Vector2.Reflect(direction, normal);
             _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+            bounceNum--;
         }
         else
         {
@@ -76,6 +81,8 @@ public class ProjectileController : MonoBehaviour
         spriteRenderer.color = weaponHandler.ProjectileColor;
 
         transform.right = this.direction;
+
+        bounceNum = rangeWeaponHandler.BounceNum;
 
         if (this.direction.x < 0)
             pivot.localRotation = Quaternion.Euler(180, 0, 0);
