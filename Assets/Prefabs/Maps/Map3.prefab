@@ -3859,7 +3859,7 @@ GameObject:
   - component: {fileID: 5974170130824285303}
   - component: {fileID: 3667973110320753555}
   - component: {fileID: 4036494550779626859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4512,7 +4512,7 @@ GameObject:
   - component: {fileID: 7639328564674635138}
   - component: {fileID: 5133584723392384224}
   - component: {fileID: 3325497618771307268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

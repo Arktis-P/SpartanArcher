@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 9094909258906086063}
   - component: {fileID: 4727472427808594711}
   - component: {fileID: 8815565492625908908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 3948603637561541055}
   - component: {fileID: 9084014843873057813}
   - component: {fileID: 6621966130622392294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
