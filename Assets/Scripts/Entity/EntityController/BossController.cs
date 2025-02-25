@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class BossController : BaseController
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform target;
+    private MonsterManager monsterManager;
+
+    public void Init(MonsterManager monsterManager, Transform target)
     {
-        
+        this.monsterManager = monsterManager;
+        this.target = target;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Death()
     {
-        
+        base.Death();
+        monsterManager.RemoveBossOnDeath(this);
     }
 }

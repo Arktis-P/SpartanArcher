@@ -3212,6 +3212,10 @@ MonoBehaviour:
   - {fileID: 7128543812527038501, guid: 3685cd3a9fbd964499fed5fa02a41e80, type: 3}
   - {fileID: 7128543812527038501, guid: bffe7a4d1ab0cc547a383a770eccbd94, type: 3}
   - {fileID: 7128543812527038501, guid: 04f9b94e3b9ede34595a35f875ec3531, type: 3}
+  bossPrefabs:
+  - {fileID: 7128543812527038501, guid: 3b1949f34ea9aea46995cd5f99e7731a, type: 3}
+  - {fileID: 7128543812527038501, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
+  - {fileID: 7128543812527038501, guid: 161fae69f08a9674d811465e465292ff, type: 3}
   spawnArea:
     serializedVersion: 2
     x: -3
@@ -3219,6 +3223,7 @@ MonoBehaviour:
     width: 27
     height: 8
   activeMonsters: []
+  activeBoss: []
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!1 &1110302298
 GameObject:

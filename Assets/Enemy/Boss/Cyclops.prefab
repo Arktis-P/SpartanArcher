@@ -106,6 +106,61 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4678870355082845508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7299416548469503408}
+  - component: {fileID: 3630968613042481458}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7299416548469503408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678870355082845508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5714419149737204349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3630968613042481458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678870355082845508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4195d51b10a684e9828a438190d8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  weaponSize: 1
+  power: 1
+  speed: 1
+  attackRange: 10
+  target:
+    serializedVersion: 2
+    m_Bits: 0
+  isOnKnockback: 0
+  knockbackPower: 0.1
+  knockbackTime: 0.5
 --- !u!1 &7128543812527038501
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +197,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6490003993712879642}
+  - {fileID: 3539394657968280769}
+  - {fileID: 7299416548469503408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3621468171116670712
@@ -240,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69adca4506486ba47b7cf31953456c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!114 &8286661783320972236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f00ca61720099f48824b3c042a42329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 10
+  moveSpeed: 3
+  attackFreq: 2
+  shootingRange: 5
 --- !u!114 &7082252302239497022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +327,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2458f6a87be51478e97b6a7452b2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chracterRenderer: {fileID: 6333179478463225669}
+  weaponPivot: {fileID: 0}
+  weaponPrefab: {fileID: 3630968613042481458}
+--- !u!1 &9218105431139600858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3539394657968280769}
+  m_Layer: 0
+  m_Name: WeaponPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3539394657968280769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218105431139600858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5714419149737204349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
