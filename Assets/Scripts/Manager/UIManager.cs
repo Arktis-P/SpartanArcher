@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class UIManager : SingleTon<UIManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public HealthbarController playerHealthBar;
+    // public HealthbarController bossHealthBar;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    public void Init()
     {
-        
+        playerHealthBar.Init();
     }
 }

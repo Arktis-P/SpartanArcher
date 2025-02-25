@@ -10,6 +10,12 @@ public class StatHandler : MonoBehaviour
         get => health;
         set => health = Mathf.Clamp(value, 0, health);
     }
+    [Range(1, 100)][SerializeField] private int maxHealth = 10;
+    public int MaxHealth
+    {
+        get => maxHealth;
+        set => maxHealth = Mathf.Clamp(value, 0, maxHealth);
+    }
 
     [Range(1f, 20f)][SerializeField] private float moveSpeed = 3;
 
