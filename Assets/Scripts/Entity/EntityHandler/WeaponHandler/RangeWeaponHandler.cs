@@ -13,19 +13,19 @@ public class RangeWeaponHandler : WeaponHandler
     public int BulletIndex { get { return bulletIndex; } }
 
     [SerializeField] private float bulletSize = 1;
-    public float BulletSize { get { return bulletSize; } }
+    public float BulletSize { get { return bulletSize; } set { bulletSize = value; } }
 
     [SerializeField] private float duration;
-    public float Duration { get { return duration; } }
+    public float Duration { get { return duration; } set { duration = value; } }
 
     [SerializeField] private float spread;
-    public float Spread { get { return spread; } }
+    public float Spread { get { return spread; } set { spread = value; } }
 
     [SerializeField] private int numberofProjectilesPerShot;
-    public int NumberofProjectilesPerShot { get { return numberofProjectilesPerShot; } }
+    public int NumberofProjectilesPerShot { get { return numberofProjectilesPerShot; } set { numberofProjectilesPerShot = value; } }
 
     [SerializeField] private float multipleProjectilesAngel;
-    public float MultipleProjectilesAngel { get { return multipleProjectilesAngel; } }
+    public float MultipleProjectilesAngel { get { return multipleProjectilesAngel; } set { multipleProjectilesAngel = value; } }
 
     [SerializeField] private Color projectileColor;
     public Color ProjectileColor { get { return projectileColor; } }
