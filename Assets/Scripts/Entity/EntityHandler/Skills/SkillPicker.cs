@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SkillPicker : MonoBehaviour
 {
     private SkillManager skillManager;
-
     private PlayerStat playerStat;
+    private GameObject player;
+    private RangeWeaponHandler rangeWeaponHandler;
+
     //테스트용 UI
     public Text text1;
     public Text text2;
@@ -17,12 +21,13 @@ public class SkillPicker : MonoBehaviour
 
     private void Awake()
     {
-        playerStat = FindObjectOfType<PlayerStat>();
+        player = GameObject.Find("Player");
         skillManager = SkillManager.Instance;
     }
     private void Start()
     {
-
+        playerStat = player.GetComponent<PlayerStat>();
+        rangeWeaponHandler = player.GetComponentInChildren<RangeWeaponHandler>();
         // 버튼 배열의 길이가 3이라고 가정 (인덱스 0, 1, 2)
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -76,7 +81,19 @@ public class SkillPicker : MonoBehaviour
                 playerStat.ProjectileNumber += selectedSkill.ProjectileNumber;
                 break;
             case SkillCategory.Projectile:
+                //< 투사체 스탯 >
+                //데미지 damage
+                //속도 projectileSpeed
+                //크기 size
+                //관통 횟수 penetration
+                //반사 횟수 reflection
+                //넉백 거리 knockbackDistance
                 //waponHandler에 적용 시키기
+                rangeWeaponHandler.Power += selectedSkill.Damage; //데미지 증가
+                rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // 투사체 속도 증가
+                rangeWeaponHandler.BulletSize += selectedSkill.Size; // 투사체 크기 증가
+                rangeWeaponHandler.NumberofProjectilesPerShot += selectedSkill.ProjectileNumber; //투사체 개수 증가
+                //rangeWeaponHandler.Delay -= 발사 속도 감소
                 break;
             case SkillCategory.Active:
                 break;

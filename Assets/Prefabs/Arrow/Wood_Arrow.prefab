@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7229725455751195818}
   - component: {fileID: 3775445532687710613}
   - component: {fileID: 4111814101220438487}
+  - component: {fileID: 7568067780237365081}
   m_Layer: 0
   m_Name: Wood_Arrow
   m_TagString: Untagged
@@ -106,6 +107,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7568067780237365081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44812413483771418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcb19654e959a4449b439bdfffd1b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  fxOnDestroy: 1
 --- !u!1 &6288833555433083630
 GameObject:
   m_ObjectHideFlags: 0

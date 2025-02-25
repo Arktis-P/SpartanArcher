@@ -2,71 +2,81 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileController : MonoBehaviour
 {
-    //[SerializeField] private LayerMask levelCollisionLayer;
+    [SerializeField] private LayerMask levelCollisionLayer;
 
-    //private float currentDuation;
-    //private Vector2 direction;
-    //private bool isReady;
-    //private Transform pivot;
+    private RangeWeaponHandler rangeWeaponHandler;
 
-    //private Rigidbody2D _rigidbody;
-    //private SpriteRenderer spriteRenderer;
+    private float currentDuration;
+    private Vector2 direction;
+    private bool isReady;
+    private Transform pivot;
 
-    //public bool fxOnDestroy = true;
+    private Rigidbody2D _rigidbody;
+    private SpriteRenderer spriteRenderer;
 
-    //private void Awake()
-    //{
-    //    spriteRenderer = GetComponentInChildren<SpriteRenderer>();  
-    //    _rigidbody = GetComponent<Rigidbody2D>();
-    //    pivot = transform.GetChild(0);
-    //}
+    public bool fxOnDestroy = true;
 
-    //private void Update()
-    //{
-    //    if (!isReady) return;
+    private void Awake()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        pivot = transform.GetChild(0);
+    }
 
-    //    currentDuation += Time.deltaTime;
+    private void Update()
+    {
+        if (!isReady)
+        {
+            return;
+        }
 
-    //    if (currentDuation > RangeWeaponHandler.Duration) DestroyProjectile(transform.position, false);
+        currentDuration += Time.deltaTime;
 
-    //    _rigidbody.velocity = direction * RangeWeaponHandler.Speed;
-    //}
+        if (currentDuration > rangeWeaponHandler.Duration)
+        {
+            DestroyProjectile(transform.position, false);
+        }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
-    //    {
-    //        DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestory);
-    //    }
-    //    else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
-    //    {
-    //        DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
-    //    }
-    //}
+        _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+    }
 
-    //public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)
-    //{
-    //    rangeWeaponHandler = weaponHandler;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+        }
+        else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+        }
+    }
 
-    //    this.direction = direction;
-    //    currentDuration = 0;
-    //    transform.localScale = Vector3.one * weaponHandler.BulletSize;
-    //    spriteRenderer.color = weaponHandler.ProjectileColor;
 
-    //    transform.right = this.direction;
+    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)
+    {
+        rangeWeaponHandler = weaponHandler;
 
-    //    if (this.direction.x < 0)
-    //        pivot.localRotation = Quaternion.Euler(180, 0, 0);
-    //    else
-    //        pivot.localRotation = Quaternion.Euler(0, 0, 0);
+        this.direction = direction;
+        currentDuration = 0;
+        transform.localScale = Vector3.one * weaponHandler.BulletSize;
+        spriteRenderer.color = weaponHandler.ProjectileColor;
 
-    //    isReady = true;
-    //}
+        transform.right = this.direction;
 
-    //private void DestroyProjectile(Vector3 position, bool createFx)
-    //{
-    //    Destroy(this.gameObject);
-    //}
+        if (this.direction.x < 0)
+            pivot.localRotation = Quaternion.Euler(180, 0, 0);
+        else
+            pivot.localRotation = Quaternion.Euler(0, 0, 0);
+
+        isReady = true;
+    }
+
+    private void DestroyProjectile(Vector3 position, bool createFx)
+    {
+        Destroy(this.gameObject);
+    }
 }

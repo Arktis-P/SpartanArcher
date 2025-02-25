@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1845205538094063740}
   - component: {fileID: 8423570315451219829}
   - component: {fileID: 3045270041026461699}
+  - component: {fileID: -3584486467024126177}
   m_Layer: 0
   m_Name: Bone_Arrow
   m_TagString: Untagged
@@ -138,6 +139,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &-3584486467024126177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215608709316484566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcb19654e959a4449b439bdfffd1b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  fxOnDestroy: 1
 --- !u!1 &8495195836458209737
 GameObject:
   m_ObjectHideFlags: 0
