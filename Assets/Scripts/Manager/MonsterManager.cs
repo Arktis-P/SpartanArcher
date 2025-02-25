@@ -10,16 +10,31 @@ public class MonsterManager : MonoBehaviour
     [SerializeField] private List<GameObject> monsterPrefabs;
 
     [SerializeField] Rect spawnArea;
-    private List<MonsterController> activeMonsters = new List<MonsterController>();
+    public List<MonsterController> activeMonsters = new List<MonsterController>();
 
     [SerializeField] private Color gizmoColor = new Color(1, 0, 0, 0.3f);
 
+    private static MonsterManager Instance;
+
+    private int stage;
     GameManager gameManager;
 
     public void Init(GameManager gameManager)
     {
-        this.gameManager = gameManager;
-        StartStage(1);  // test start
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+            Instance = this;
+        }
+
+            this.gameManager = gameManager;
+
+        stage = gameManager.Stage;  // get stage from game manager
+        StartStage(stage);  // start monster manager
     }
 
     // when start the stage, decide nums of monsters spawn

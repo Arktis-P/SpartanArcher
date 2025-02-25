@@ -84,5 +84,7 @@ public class SkillPicker : MonoBehaviour
                 break;
 
         }
+
+        GameManager.Instance.ContinueGame();
     }
 }

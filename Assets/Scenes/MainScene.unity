@@ -4135,7 +4135,10 @@ MonoBehaviour:
   text1: {fileID: 838733654}
   text2: {fileID: 172814995}
   text3: {fileID: 1612888234}
-  buttons: []
+  buttons:
+  - {fileID: 2018021714}
+  - {fileID: 1548465720}
+  - {fileID: 2145313340}
 --- !u!1 &1356416544
 GameObject:
   m_ObjectHideFlags: 0

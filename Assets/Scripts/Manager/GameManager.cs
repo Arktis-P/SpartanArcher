@@ -10,6 +10,7 @@ public class GameManager : SingleTon<GameManager>
 
     private MonsterManager monsterManager;
     private MapManager mapManager;
+    private SkillManager skillManager;
 
     private int stage;
     public int Stage { get => stage; }
@@ -31,6 +32,9 @@ public class GameManager : SingleTon<GameManager>
         mapManager = FindObjectOfType<MapManager>();
         mapManager.LoadRandomMap();
 
+        skillManager = FindObjectOfType<SkillManager>();
+        // skillManager.Init();
+
         //_playerResourceController.RemoveHealthChangeEvent(uiManager.ChangePlayerHP);
         //_playerResourceController.AddHealthChangeEvent(uiManager.ChangePlayerHP);
     }
@@ -50,7 +54,8 @@ public class GameManager : SingleTon<GameManager>
 
         uiManager.SwitchStageClear();  // switch off stage clear UI
         uiManager.SwitchOnStageUI();  // switch on on-stage UI again
-        
+
+        monsterManager.Init(this);
     }
 
     // when cleared stage == all monsters dead
@@ -58,6 +63,8 @@ public class GameManager : SingleTon<GameManager>
     {
         uiManager.SwitchOnStageUI();  // switch off on-stage UI
         uiManager.SwitchStageClear();  // switch on stage-clear UI
+
+        skillManager.SetSkillPicker();  // provide player options
     }   
     // when failed stage == player dead
     public void StageFail()
