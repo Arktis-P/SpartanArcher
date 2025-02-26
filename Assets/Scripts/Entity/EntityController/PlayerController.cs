@@ -41,6 +41,11 @@ public class PlayerController : BaseController
         Debug.Log("Is Dash");
     }
 
+    void OnFever()
+    {
+        activeSkill.StartFeverTime();
+    }
+
     
     protected override void HandleAction()  // 캐릭터 바라보는 방향 설정
     {

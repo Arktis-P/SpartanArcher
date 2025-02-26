@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca25facc79963048a3792c3c71ccda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 1
   weaponSize: 1
   power: 1
-  speed: 1
+  speed: 5
   attackRange: 10
   target:
     serializedVersion: 2
@@ -65,6 +65,8 @@ MonoBehaviour:
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 3
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  penetration: 0
+  reflection: 0
 --- !u!1 &2080236369375516467
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,32 +32,32 @@ public class PlayerStat : StatHandler
         set => projectileNumber = Mathf.Clamp(value, 0, 100);
     }
 
-    [SerializeField] private bool desh = false;
+    [SerializeField] private bool dash = false;
     public bool Desh
     {
-        get => desh;
-        set => desh = value;
+        get => dash;
+        set => dash = value;
     }
 
-    [Range(1, 5)][SerializeField] private float deshDistance = 1.5f;
+    [Range(1, 5)][SerializeField] private float dashDistance = 1.5f;
     public float DeshDistance
     {
-        get => deshDistance;
-        set => deshDistance = Mathf.Clamp(value, 0f, 5f);
+        get => dashDistance;
+        set => dashDistance = Mathf.Clamp(value, 0f, 5f);
     }
 
-    [SerializeField] private bool isFiverTime = false;
-    public bool IsFiverTime
+    [SerializeField] private bool isFeverTime = false;
+    public bool IsFeverTime
     {
-        get => isFiverTime;
-        set => isFiverTime = value;
+        get => isFeverTime;
+        set => isFeverTime = value;
     }
 
-    [Range(1, 100)][SerializeField] private float fiverTime = 5;
-    public float FiverTime
+    [Range(1, 100)][SerializeField] private float feverTime = 5;
+    public float FeverTime
     {
-        get => fiverTime;
-        set => fiverTime = Mathf.Clamp(value, 0f, 100f);
+        get => feverTime;
+        set => feverTime = Mathf.Clamp(value, 0f, 100f);
     }
 }
 
