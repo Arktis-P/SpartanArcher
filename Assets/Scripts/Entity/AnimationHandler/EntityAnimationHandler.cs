@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntityAnimationHandler : MonoBehaviour
 {
     private static readonly int IsMoving = Animator.StringToHash("IsMove");
-    private static readonly int IsDamage = Animator.StringToHash("IsDie");
+    private static readonly int IsDamage = Animator.StringToHash("IsDamage");
 
     protected Animator animator;
 
@@ -27,5 +27,9 @@ public class EntityAnimationHandler : MonoBehaviour
     public void InvincibilityEnd()
     {
         animator.SetBool(IsDamage, false);
+    }
+    public void Die()
+    {
+        animator.SetTrigger("IsDie");
     }
 }

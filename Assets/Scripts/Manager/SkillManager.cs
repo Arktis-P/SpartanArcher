@@ -5,7 +5,9 @@ using UnityEngine;
 public class SkillManager : SingleTon<SkillManager>
 {
     [SerializeField] private SkillInfo[] skillInfo;
-
+    public SkillInfo[] SkillInfoList { get { return skillInfo; } }
+    [SerializeField] private SkillInfo chagedDash;
+    [SerializeField] private SkillInfo chagedFiver;
 
     [SerializeField] private List<SkillInfo> SkillList;
     public List<SkillInfo> randomSkillList = new List<SkillInfo>();
@@ -16,7 +18,7 @@ public class SkillManager : SingleTon<SkillManager>
 
         if (skillInfo == null || skillInfo.Length == 0)
         {
-            Debug.LogWarning("½ºÅ³ ¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù!");
+            Debug.LogWarning("ìŠ¤í‚¬ ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìžˆìŠµë‹ˆë‹¤!");
             return;
         }
         SkillList = new List<SkillInfo>(skillInfo);
@@ -27,5 +29,20 @@ public class SkillManager : SingleTon<SkillManager>
             randomSkillList.Add(SkillList[random]);
             SkillList.RemoveAt(random);
         }
+    }
+
+    public void SetSkillPicker()
+    {
+        SkillPicker skillpicker = this.GetComponentInChildren<SkillPicker>();
+        skillpicker.SkillPickerList();
+    }
+    public void ChangedDash()
+    {
+        skillInfo[14] = chagedDash;
+    }
+
+    public void ChangedFever()
+    {
+        skillInfo[15] = chagedFiver;
     }
 }

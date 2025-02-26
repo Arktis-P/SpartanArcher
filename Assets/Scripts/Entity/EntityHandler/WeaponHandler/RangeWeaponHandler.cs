@@ -30,6 +30,13 @@ public class RangeWeaponHandler : WeaponHandler
     [SerializeField] private Color projectileColor;
     public Color ProjectileColor { get { return projectileColor; } }
 
+    [SerializeField] private int penetration;
+    public int Penetration { get { return penetration; } set { penetration = value; } }
+
+    [SerializeField] private int reflection;
+    public int Reflection { get { return reflection; } set { reflection = value; } }
+
+
     private ProjectileManager projectileManager;
     protected override void Start()
     {
@@ -52,7 +59,7 @@ public class RangeWeaponHandler : WeaponHandler
             float angle = minAngle + projectilesAngleSpace * i;
             float randomSpread = Random.Range(-spread, spread);
             angle += randomSpread;
-            CreateProjectile(Controller.LookDirection, angle);
+            CreateProjectile(Controller.attackDirection, angle);
         }
     }
 

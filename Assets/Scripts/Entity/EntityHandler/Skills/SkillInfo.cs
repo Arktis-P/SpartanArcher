@@ -45,6 +45,8 @@ public class SkillInfo : ScriptableObject
     [SerializeField] private float shootingRange;
     public float ShootingRange { get { return shootingRange; } }
 
+
+
     [Header("Projectile State")]
 
     [SerializeField] private float damage;
@@ -66,11 +68,20 @@ public class SkillInfo : ScriptableObject
     public float KnockbackDistance { get { return knockbackDistance; } }
 
 
-
     //<액티브>
     //피버타임 (일정 시간동안 화살 발사 속도 x배 증가)
     //대시
+    [Header("Active")]
+    [SerializeField] private bool dash;
+    public bool Dash { get { return dash; } }
+    [SerializeField] private float dashDistance;
+    public float DashDistance { get { return dashDistance; } }
 
+    [SerializeField] private bool isFeverTime;
+    public bool IsFeverTime { get { return isFeverTime; } }
+
+    [SerializeField] private float feverTime;
+    public float FeverTime { get { return feverTime; } }
 
     //<패시브 스킬>
     //마늘 - 캐릭터 일정 범위 내 근접 시 데미지

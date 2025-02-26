@@ -8,18 +8,36 @@ public class MonsterManager : MonoBehaviour
     private bool monsterSpawnComplete;
     
     [SerializeField] private List<GameObject> monsterPrefabs;
+    [SerializeField] private List<GameObject> bossPrefabs;
 
     [SerializeField] Rect spawnArea;
-    private List<MonsterController> activeMonsters = new List<MonsterController>();
+    public List<MonsterController> activeMonsters = new List<MonsterController>();
+    public List<BossController> activeBoss = new List<BossController>();
+
+    private Vector3 bossPos = new Vector3(25, 0, 0);
 
     [SerializeField] private Color gizmoColor = new Color(1, 0, 0, 0.3f);
 
+    private static MonsterManager Instance;
+
+    private int stage;
     GameManager gameManager;
 
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        StartStage(1);  // test start
+
+        CheckErrors();
+
+        stage = gameManager.Stage;  // get stage from game manager
+        StartStage(stage);  // start monster manager
+    }
+
+    // chcek for exceptions
+    private void CheckErrors()
+    {
+        if (monsterPrefabs.Count == 0) { Debug.LogError("Cannot find Monster Prefabs!"); }
+        if (bossPrefabs.Count == 0) { Debug.LogError("Cannot find Monster Prefabs!"); }
     }
 
     // when start the stage, decide nums of monsters spawn
@@ -27,8 +45,8 @@ public class MonsterManager : MonoBehaviour
     {
         if (stage <= 0) { return; }
 
-        // check boss stage here?
         StartSpawn(setMonsterNum(stage));  // spawn monsters
+        if (stage % 10 == 0) SpawnRandomBoss();  // boss spawn
     }
     private int setMonsterNum(int stage)  // set random spawn number according to the stage
     {
@@ -42,7 +60,7 @@ public class MonsterManager : MonoBehaviour
                 monsterNum = Random.Range(5, 10); break;
             case 7: case 8: case 9:
                 monsterNum = Random.Range(9, 15); break;
-            case 10:  // boss stage
+            case 0:  // boss stage
                 monsterNum = Random.Range(9, 12); break;
             default: monsterNum = 0; break;
         }
@@ -55,13 +73,13 @@ public class MonsterManager : MonoBehaviour
         monsterSpawnComplete = false;
         
         for (int i = 0; i < num; i++) SpawnRandomMonster();
+
+        monsterSpawnComplete = true;
     }
 
     // select random monster to spawn
     private void SpawnRandomMonster()
     {
-        if (monsterPrefabs.Count == 0) { Debug.LogError("Cannot find Monster Prefabs!"); return; }
-
         // get random monster from prefab list
         GameObject randomPrefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Count)];
         // get random position from entire spawn area
@@ -72,8 +90,23 @@ public class MonsterManager : MonoBehaviour
 
         GameObject spawnedMonster = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
         MonsterController monsterController = spawnedMonster.GetComponent<MonsterController>();
+        monsterController.Init(this, gameManager.player.transform);  // init monster controller
 
-        // init monster controller  // make monster object work
+        activeMonsters.Add(monsterController);  // make monster object work
+    }
+    // select random boss to spawn
+    private void SpawnRandomBoss()
+    {
+        // gen random boss from prefab list
+        GameObject randomPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
+
+        // instantiate boss instance
+        GameObject spawnedBoss = Instantiate(randomPrefab, bossPos, Quaternion.identity);
+        BossController bossController = spawnedBoss.GetComponent<BossController>();
+        bossController.Init(this, gameManager.player.transform);
+
+        activeBoss.Add(bossController);
+        UIManager.Instance.SwitchBossStatus(spawnedBoss);  // start health bar of boss
     }
 
     private void OnDrawGizmosSelected()
@@ -87,9 +120,36 @@ public class MonsterManager : MonoBehaviour
         Gizmos.DrawCube(center, size);
     }
 
-    public void RemoveMonster()  
+    public void RemoveMonsterOnDeath(MonsterController monster)  
     {
+        activeMonsters.Remove(monster);  // remove from the list
         // remove monsters which are already dead
         // remove monsters only if player cleared the stage
+        if (monsterSpawnComplete && activeMonsters.Count == 0 && activeBoss.Count == 0) gameManager.StageClear();  // == stage clear
+    }
+    public void RemoveBossOnDeath(BossController boss)
+    {
+        activeBoss.Remove(boss);
+        if (monsterSpawnComplete && activeMonsters.Count == 0 && activeBoss.Count == 0) gameManager.StageClear();
+    }
+    // test for stage clearing
+    public void TestDeath()
+    {
+        if (activeMonsters.Count == 0)
+        {
+            if (activeBoss.Count == 0) return;
+            else
+            {
+                activeBoss[0].Death();  // if boss controller is on make it death
+                return;
+            }
+        }
+        int rand = Random.Range(0, activeMonsters.Count);
+        MonsterController monster = activeMonsters[rand];
+        monster.Death();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) TestDeath();
     }
 }

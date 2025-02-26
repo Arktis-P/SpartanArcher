@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
@@ -12,8 +14,13 @@ public class MapManager : MonoBehaviour
     Vector3 playerSpawnPoint = new Vector3(-7, 0, 0);
     Vector3 bossSpawnPoint = new Vector3(25, 0, 0);
 
+    private GameObject lastMap;
+
     public void Init()
     {
+        if (mapPrefabs == null)  // process exception
+        { Debug.LogError("Map Prefabs are not founded!"); return; }
+
         LoadRandomMap();
     }
 
@@ -25,22 +32,21 @@ public class MapManager : MonoBehaviour
     }
     public void LoadRandomMap()  // load random map on start
     {
-        if (mapPrefabs == null)  // process exception
-        { Debug.LogError("Map Prefabs are not founded!"); return; }
+        if (lastMap != null)  // destroy last map prefab
+        {
+            Destroy(lastMap);
+        }
+
+        ResetPlayerPosition();
 
         int randomMapCount = RandomMapCount();
-        Instantiate(mapPrefabs[randomMapCount]);
+        lastMap = Instantiate(mapPrefabs[randomMapCount]);
     }
 
     // spawn entities (player, monsters & boss)
-    public void SpawnPlayer()
+    public void ResetPlayerPosition()
     {
         player.transform.position = playerSpawnPoint;
-        Instantiate(player);
-    }
-    public void SpawnBoss()
-    {
-        boss.transform.position = bossSpawnPoint;
-        Instantiate(boss);
+        //Instantiate(player);
     }
 }

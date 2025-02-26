@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterController : BaseController
 {
-    [SerializeField] private float followRange = 15f;
     private Transform target;
     private MonsterManager monsterManager;
 
@@ -25,8 +24,7 @@ public class MonsterController : BaseController
         return (target.position - transform.position).normalized;
     }
 
-    //병합 시 Override 추가 
-    protected void HandleAction()
+    protected override void HandleAction()
     {
         base.HandleAction();
 
@@ -40,39 +38,53 @@ public class MonsterController : BaseController
         isAttacking = false;
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
+        
 
-        //Target의 거리가 추적거리 안쪽인지
-        if(distance <= followRange)
-        {
-            lookDirection = direction;
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
+        //RaycastHit2D foot = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
+        //Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.red);
+        Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
 
-            if (/*distance <= weaponHandler.AttackRange*/true)
+
+        if (head.collider == null) {
+            //Target의 거리가 추적거리 안쪽인지
+            if (distance <= monsterStat.DetectionRange)
             {
-                //공격
-                //이동은 X
-                //int layerMaskTarget = weaponHandler.target;
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
-                //    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+                lookDirection = direction;
 
-                ////레벨과 충돌했을때는 공격하지않음
-                //if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
-                //{
-                //    isAttacking = true;
-                //}
+                if (distance <= weaponHandler.AttackRange)
+                {
+                    int layerMaskTarget = weaponHandler.target;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
+                        (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
 
+                    if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                    {
+                        isAttacking = true;
+                    }
+
+                    movementDirection = Vector2.zero;
+                    return;
+                }
+
+                //공격범위가 아니면 이동
                 movementDirection = direction;
             }
+        }
 
-            //공격범위가 아니면 이동
-            movementDirection = direction;
+        else
+        {
+            movementDirection = Vector2.zero;
         }
     }
 
     //병합시 override추가
-    public void Death()
+    public override void Death()
     {
         base.Death();
-        //enemyManager.RemoveEnemyOnDeath(this);
+        animationHandler.Die();
+        monsterManager.RemoveMonsterOnDeath(this);
+        
     }
 
 }

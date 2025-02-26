@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill Data 6
   m_EditorClassIdentifier: 
   skillname: "\uD654\uC0B4 \uAC1C\uC218 \uC99D\uAC00"
-  category: 0
+  category: 1
   health: 0
   moveSpeed: 0
   attackFreq: 0

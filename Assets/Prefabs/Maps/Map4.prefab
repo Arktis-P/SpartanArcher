@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8118426849893888871}
   - component: {fileID: 8085688918323502726}
   - component: {fileID: 2262197891603339391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4372,7 +4372,7 @@ GameObject:
   - component: {fileID: 8863136714153178341}
   m_Layer: 0
   m_Name: Map4
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4405,7 +4405,7 @@ GameObject:
   - component: {fileID: 4509520245773545887}
   - component: {fileID: 6433369007284180645}
   - component: {fileID: 4786129882836742494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

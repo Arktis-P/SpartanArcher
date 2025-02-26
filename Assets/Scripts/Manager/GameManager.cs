@@ -10,6 +10,14 @@ public class GameManager : SingleTon<GameManager>
 
     private MonsterManager monsterManager;
     private MapManager mapManager;
+    private SkillManager skillManager;
+
+    private int stage;
+    public int Stage { get => stage; }
+    private int score;
+    public int Score { get => score; }
+
+    public bool isGod = false;
 
     private void Awake()
     {
@@ -21,15 +29,62 @@ public class GameManager : SingleTon<GameManager>
         _playerResourceController = player.GetComponent<ResourceController>();
 
         uiManager = FindObjectOfType<UIManager>();
-        uiManager.Init();
+        uiManager.Init(this);
 
         monsterManager = FindObjectOfType<MonsterManager>();
-        monsterManager.Init(this);
 
         mapManager = FindObjectOfType<MapManager>();
         mapManager.LoadRandomMap();
 
+        skillManager = FindObjectOfType<SkillManager>();
+        // skillManager.Init();
+
         //_playerResourceController.RemoveHealthChangeEvent(uiManager.ChangePlayerHP);
         //_playerResourceController.AddHealthChangeEvent(uiManager.ChangePlayerHP);
+    }
+
+    public void StartGame()
+    {
+        stage = 1;  // set (or reset) stage to 1
+        score = 0;  // set (or res\et) scroe to 0
+
+        uiManager.SwitchStartTitle();  // switch off start title
+        uiManager.SwitchOnStageUI();  // switch on on-stage ui
+        UpdateScore(score);
+        monsterManager.Init(this);  // call monster manager
+    }
+    // after clear, after skill selected, continue game
+    public void ContinueGame()
+    {
+        if (isGod) { stage = 10; }
+        else { stage++; }  // add stage
+
+        uiManager.SwitchStageClear();  // switch off stage clear UI
+        uiManager.SwitchOnStageUI();  // switch on on-stage UI again
+
+        mapManager.LoadRandomMap();  // load new map
+        monsterManager.Init(this);  // load new mosnters
+    }
+
+    // when cleared stage == all monsters dead
+    public void StageClear()
+    {
+        uiManager.SwitchOnStageUI();  // switch off on-stage UI
+        uiManager.SwitchStageClear();  // switch on stage-clear UI
+
+        skillManager.SetSkillPicker();  // provide player options
+    }   
+    // when failed stage == player dead
+    public void StageFail()
+    {
+        uiManager.SwitchOnStageUI();  // switch off on-stage UI
+        uiManager.SwitchStageFail();  // switch on stage-fail UI
+    }
+
+    // when score changed update score
+    public void UpdateScore(int score)
+    {
+        this.score += score;
+        uiManager.UpdateScore();
     }
 }
