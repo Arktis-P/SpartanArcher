@@ -30,6 +30,13 @@ public class RangeWeaponHandler : WeaponHandler
     [SerializeField] private Color projectileColor;
     public Color ProjectileColor { get { return projectileColor; } }
 
+    [SerializeField] private int penetration;
+    public int Penetration { get { return penetration; } set { penetration = value; } }
+
+    [SerializeField] private int reflection;
+    public int Reflection { get { return reflection; } set { reflection = value; } }
+
+
     private ProjectileManager projectileManager;
     protected override void Start()
     {

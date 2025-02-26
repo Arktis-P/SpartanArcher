@@ -73,7 +73,6 @@ public class SkillPicker : MonoBehaviour
             case SkillCategory.Player:
                 playerStat.Health += selectedSkill.Health;
                 playerStat.MoveSpeed += selectedSkill.MoveSpeed;
-                playerStat.AttackFreq += selectedSkill.AttackFreq;
                 playerStat.ShootingRange += selectedSkill.ShootingRange;
                 playerStat.SkillFreq += selectedSkill.SkillFreq;
                 playerStat.DrainRatio += selectedSkill.DrainRaio;
@@ -89,11 +88,13 @@ public class SkillPicker : MonoBehaviour
                 //반사 횟수 reflection
                 //넉백 거리 knockbackDistance
                 //waponHandler에 적용 시키기
+                rangeWeaponHandler.Delay -= selectedSkill.AttackFreq; // 발사 속도 감소
                 rangeWeaponHandler.Power += selectedSkill.Damage; //데미지 증가
                 rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // 투사체 속도 증가
                 rangeWeaponHandler.BulletSize += selectedSkill.Size; // 투사체 크기 증가
                 rangeWeaponHandler.NumberofProjectilesPerShot += selectedSkill.ProjectileNumber; //투사체 개수 증가
-                //rangeWeaponHandler.Delay -= 발사 속도 감소
+                rangeWeaponHandler.Penetration += selectedSkill.Penetration; // 관통 횟수 증가
+                rangeWeaponHandler.Reflection += selectedSkill.Reflection; //투사체 반사
                 break;
             case SkillCategory.Active:
                 break;

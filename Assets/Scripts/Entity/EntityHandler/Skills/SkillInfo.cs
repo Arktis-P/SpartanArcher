@@ -45,6 +45,8 @@ public class SkillInfo : ScriptableObject
     [SerializeField] private float shootingRange;
     public float ShootingRange { get { return shootingRange; } }
 
+
+
     [Header("Projectile State")]
 
     [SerializeField] private float damage;
@@ -64,7 +66,6 @@ public class SkillInfo : ScriptableObject
 
     [SerializeField] private float knockbackDistance;
     public float KnockbackDistance { get { return knockbackDistance; } }
-
 
 
     //<¾×Æ¼ºê>

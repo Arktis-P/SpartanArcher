@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -19,7 +20,10 @@ public class ProjectileController : MonoBehaviour
 
     public bool fxOnDestroy = true;
 
-    ProjectileManager projectileManager;
+    private bool isBounce = false;
+    private int _reflection = 0; // 반사 횟수
+    private int _penetration = 0; // 관통 횟수
+
 
     private void Awake()
     {
@@ -37,30 +41,51 @@ public class ProjectileController : MonoBehaviour
 
         currentDuration += Time.deltaTime;
 
-        if (currentDuration > rangeWeaponHandler.Duration)
-        {
-            DestroyProjectile(transform.position, false);
-        }
+        //일정 거리넘어가면 삭제되는 코드 임시 주석 처리
+        //if (currentDuration > rangeWeaponHandler.Duration)
+        //{
+        //    DestroyProjectile(transform.position, false);
+        //}
 
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
-        {
-            DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+        if (_reflection > 0 && levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+        { // 벽 튕기는 조건문
+            Vector2 normal = ((Vector2)transform.position - collision.ClosestPoint(transform.position)).normalized;
+            direction = Vector2.Reflect(direction, normal);
+            _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+            _reflection--;
+            // 방향 백터를 기반으로 회전 
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//(radian -> degree로 변환)
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-        else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+        else
         {
-            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+            if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
+            {
+                DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+            }
+            else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+            {
+                if (_penetration > 0)
+                {
+                    _penetration--;
+                }
+                else
+                {
+                    DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+                }
+            }
         }
+        
     }
 
 
-    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler,ProjectileManager projectileManager)
+    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)
     {
-        this.projectileManager = projectileManager;
         rangeWeaponHandler = weaponHandler;
 
         this.direction = direction;
@@ -69,6 +94,10 @@ public class ProjectileController : MonoBehaviour
         spriteRenderer.color = weaponHandler.ProjectileColor;
 
         transform.right = this.direction;
+
+        _penetration = rangeWeaponHandler.Penetration;
+        _reflection = rangeWeaponHandler.Reflection;
+
 
         if (this.direction.x < 0)
             pivot.localRotation = Quaternion.Euler(180, 0, 0);
