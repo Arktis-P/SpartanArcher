@@ -5,7 +5,9 @@ using UnityEngine;
 public class SkillManager : SingleTon<SkillManager>
 {
     [SerializeField] private SkillInfo[] skillInfo;
-    [SerializeField] private SkillInfo chagedskill;
+    public SkillInfo[] SkillInfoList { get { return skillInfo; } }
+    [SerializeField] private SkillInfo chagedDash;
+    [SerializeField] private SkillInfo chagedFiver;
 
     [SerializeField] private List<SkillInfo> SkillList;
     public List<SkillInfo> randomSkillList = new List<SkillInfo>();
@@ -34,8 +36,13 @@ public class SkillManager : SingleTon<SkillManager>
         SkillPicker skillpicker = this.GetComponentInChildren<SkillPicker>();
         skillpicker.SkillPickerList();
     }
-    public void ChangedSkill()
+    public void ChangedDash()
     {
-        skillInfo[14] = chagedskill;
+        skillInfo[14] = chagedDash;
+    }
+
+    public void ChangedFiver()
+    {
+        skillInfo[15] = chagedFiver;
     }
 }
