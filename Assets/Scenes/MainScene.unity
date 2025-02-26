@@ -198,7 +198,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35861201}
   m_CullTransparentMesh: 1
---- !u!1001 &63404315
+--- !u!1001 &98899558
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -208,11 +208,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5714419149737204349, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6522703
+      value: 1.7231207
       objectReference: {fileID: 0}
     - target: {fileID: 5714419149737204349, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01193513
+      value: 0.04581672
       objectReference: {fileID: 0}
     - target: {fileID: 5714419149737204349, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2159,7 +2159,7 @@ Transform:
   m_GameObject: {fileID: 700649238}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.016933635}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2205,7 +2205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -753503204, guid: 794ac1e7f47f4624096629db1a134f8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2377,6 +2377,8 @@ MonoBehaviour:
   projectilePrefabs:
   - {fileID: 44812413483771418, guid: 5a205414cbc82844194264571855e970, type: 3}
   - {fileID: 8215608709316484566, guid: 5fc88b045a957444a8bfb2842f292676, type: 3}
+  - {fileID: 8215608709316484566, guid: a0f2802c0469952449ed13f26db09016, type: 3}
+  - {fileID: 7078886572357501525, guid: 2f5403e5eb2ba1b488cba129d98049b6, type: 3}
 --- !u!1 &792614598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3473,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 700649239}
@@ -3522,7 +3524,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.3}
+  m_Size: {x: 0.59375, y: 0.875}
   m_EdgeRadius: 0
 --- !u!50 &1155264141
 Rigidbody2D:
@@ -3567,6 +3569,7 @@ MonoBehaviour:
   weaponPivot: {fileID: 953961284}
   weaponPrefab: {fileID: 6403442361403232660, guid: 1c5051bfce8fdee42b891e3d91cf0806, type: 3}
   attackDirection: {x: 0, y: 0}
+  showDebug: 0
 --- !u!114 &1155264143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7684,4 +7687,4 @@ SceneRoots:
   - {fileID: 213662006}
   - {fileID: 546879676}
   - {fileID: 168149215}
-  - {fileID: 63404315}
+  - {fileID: 98899558}

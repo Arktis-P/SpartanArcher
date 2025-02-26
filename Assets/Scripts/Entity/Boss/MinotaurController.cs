@@ -46,15 +46,15 @@ namespace Assets.Scripts.Entity.Boss
                 {
                     case 0:
                         SlashAttack();
-                        animationHandler.Pattern01();
+                        bossAnimationHandler.Pattern01();
                         break;
                     case 1:
                         RushAttack();
-                        animationHandler.Pattern02();
+                        bossAnimationHandler.Pattern02();
                         break;
                     case 2:
                         WheelwindAttack();
-                        animationHandler.Pattern03();
+                        bossAnimationHandler.Pattern03();
                         break;
                     case 3:
                         break;

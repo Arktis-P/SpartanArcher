@@ -40,17 +40,6 @@ namespace Assets.Scripts.Entity.Boss
             }
             animationHandler.Move(direction);
         }
-        protected override void Rotate(Vector2 direction)
-        {
-            //플레이어를 바라보는게 아닌 진행방향에따라
-
-        }
-
-        protected override void NormalAttack()
-        {
-            
-
-        }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -96,15 +85,15 @@ namespace Assets.Scripts.Entity.Boss
                 {
                     case 0:
                         StompAttack();
-                        animationHandler.Pattern01();
+                        bossAnimationHandler.Pattern01();
                         break;
                     case 1:
                         LaserAttack();
-                        animationHandler.Pattern02();
+                        bossAnimationHandler.Pattern02();
                         break;
                     case 2:
                         ThrowAttack();
-                        animationHandler.Pattern03();
+                        bossAnimationHandler.Pattern03();
                         break;
                     case 3:
                         break;

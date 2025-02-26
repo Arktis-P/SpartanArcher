@@ -17,10 +17,10 @@ public class PlayerController : BaseController
     public override void Death()
     {
         base.Death();
-        //gameManager.GameOver();   °ÔÀÓ ¿À¹ö ÇÔ¼ö
+        //gameManager.GameOver();   ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     }
 
-    void OnMove(InputValue inputValue)  // Ä³¸¯ÅÍ ¿òÁ÷ÀÓ
+    void OnMove(InputValue inputValue)  // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         movementDirection = inputValue.Get<Vector2>().normalized;
 
@@ -32,32 +32,32 @@ public class PlayerController : BaseController
     }
 
     
-    protected override void HandleAction()  // Ä³¸¯ÅÍ ¹Ù¶óº¸´Â ¹æÇâ ¼³Á¤
+    protected override void HandleAction()  // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         base.HandleAction();
         
-        Vector2 direction = movementDirection;   // ±âº»ÀûÀ¸·Î ÀÌµ¿ ¹æÇâÀ» ¹Ù¶óº½
+        Vector2 direction = movementDirection;   // ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶ï¿½
                                                  
-        if (movementDirection.x != 0)           // ÀÌµ¿ ¹æÇâÀÌ ÁÂ¿ìÀÏ ¶§¸¸ ¹Ù¶óº¸´Â ¹æÇâÀ» ¾÷µ¥ÀÌÆ®
+        if (movementDirection.x != 0)           // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         {
             direction = movementDirection;
         }
         else
         {
-            direction = lookDirection;       // y °ªÀÌ -1 ¶Ç´Â 1ÀÏ ¶§´Â ÇöÀç ¹Ù¶óº¸´Â ¹æÇâÀ» ±×´ë·Î À¯Áö
+            direction = lookDirection;       // y ï¿½ï¿½ï¿½ï¿½ -1 ï¿½Ç´ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        Vector2 enemyDirection = GetNearestEnemyDirection();  // °¡Àå °¡±î¿î Àû ¹æÇâ °¡Á®¿À±â
+        Vector2 enemyDirection = GetNearestEnemyDirection();  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         if (enemyDirection != Vector2.zero && isStop)
         {
-            direction = enemyDirection; // °¨ÁöµÈ ¸ó½ºÅÍ°¡ ÀÖÀ¸¸é ±× ¹æÇâÀ¸·Î ÀüÈ¯
+            direction = enemyDirection; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
             attackDirection = enemyDirection;
             if (isStop) isAttacking = true;
         }
         else isAttacking = false;
 
-        // ÃÖÁ¾ÀûÀ¸·Î ¹Ù¶óº¸´Â ¹æÇâ ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (direction != Vector2.zero)
         {
             lookDirection = direction;
@@ -65,13 +65,13 @@ public class PlayerController : BaseController
     }
     
     
-    private Vector2 GetNearestEnemyDirection()   // °¡Àå °¡±î¿î ¸ó½ºÅÍÀÇ ¹æÇâÀ» ¹ÝÈ¯ÇÏ´Â ÇÔ¼ö
+    private Vector2 GetNearestEnemyDirection()   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, statHandler.ShootingRange, LayerMask.GetMask("Enemy"));
 
         if (enemies.Length == 0)
         {
-            return Vector2.zero;  // ¸ó½ºÅÍ°¡ ¾øÀ¸¸é ±âº»°ª ¹ÝÈ¯
+            return Vector2.zero;  // ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ ï¿½ï¿½È¯
         }
 
         Collider2D nearestEnemy = null;

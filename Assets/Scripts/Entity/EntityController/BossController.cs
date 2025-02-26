@@ -7,36 +7,18 @@ enum Pattern{
     Pattern01, Pattern02, Pattern03, Pattern04,End
 };
 
-public class BossController : MonoBehaviour
+public class BossController : BaseController
 {
-
-    protected StatHandler statHandler;
     protected ResourceController resourceController;
-    [SerializeField] protected SpriteRenderer chracterRenderer;
-    [SerializeField] private Transform weaponPivot;
-    [SerializeField] public WeaponHandler weaponPrefab;
-    protected Rigidbody2D _rigidbody;
     private MonsterManager monsterManager;
-    protected BossAnimationHandler animationHandler;
-    protected WeaponHandler weaponHandler;
+    protected BossAnimationHandler bossAnimationHandler;
 
     protected Transform target;
     //테스트용 타겟, 테스트 끝나고 target 사용
     [SerializeField] protected Transform testTarget;
-    protected Vector2 movementDirection = Vector2.zero;
-    public Vector2 MovementDirection { get { return movementDirection; } }
-
-    protected Vector2 lookDirection = Vector2.zero;
-    public Vector2 LookDirection { get { return lookDirection; } }
-
-    [SerializeField] private float followRange = 15f;
-
-    protected bool isAttacking;
-    private float timeSinceLastAttack = float.MaxValue;
+    [SerializeField] protected float followRange = 15f;
 
     protected int patternNum;
-
-    GameManager gameManager;   
 
     public void Init(MonsterManager monsterManager, Transform target)
     {
@@ -44,86 +26,22 @@ public class BossController : MonoBehaviour
         this.target = target;
     }
 
-    public void Start()
+    public virtual void Start()
     {
         InvokeRepeating("PatternSelect",4f,4f);
     }
-    protected virtual void Awake()
+    protected override void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        animationHandler = GetComponent<BossAnimationHandler>();
-        statHandler = GetComponent<StatHandler>();
+        base.Awake();
+        bossAnimationHandler = GetComponent<BossAnimationHandler>();
         resourceController = GetComponent<ResourceController>();
-
-        if (weaponPrefab != null)
-        {
-            weaponHandler = Instantiate(weaponPrefab, weaponPivot);
-        }
-        else
-        {
-            weaponHandler = GetComponentInChildren<WeaponHandler>();
-        }
-
     }
-    protected virtual void Update()
+    protected override void Movement(Vector2 direction)
     {
-        NormalAttack();
-        Rotate(lookDirection);
-        HandleAttackDelay();
-    }
-    protected virtual void FixedUpdate()
-    {
-        if(movementDirection != Vector2.zero)
-            Movement(movementDirection);
+        base.Movement(direction);
     }
 
-    protected virtual void Rotate(Vector2 direction)
-    {
-        float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bool isLeft = Mathf.Abs(rotz) > 90f;
-
-        chracterRenderer.flipX = isLeft;
-
-        if (weaponPivot != null)
-        {
-            weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotz);
-        }
-        weaponHandler?.Rotate(isLeft);
-    }
-
-    protected virtual void Movement(Vector2 direction)
-    {
-       //보스별 이동 재정의
-    }
-
-    private void HandleAttackDelay()
-    {
-        if (weaponHandler == null)
-        {
-            return;
-        }
-        if (timeSinceLastAttack <= statHandler.AttackFreq)
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
-        if (isAttacking && timeSinceLastAttack > statHandler.AttackFreq)
-        {
-            timeSinceLastAttack = 0;
-            //공격
-        }
-    }
-    public virtual void Death()
-    {
-        _rigidbody.velocity = Vector3.zero;
-
-        foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
-        {
-            component.enabled = false;
-        }
-        animationHandler.Die();
-        Destroy(gameObject, 3f);
-    }
-    protected virtual void NormalAttack()
+    protected override void HandleAction()
     {
         if (weaponHandler == null || /*target == null*/testTarget == null)
         {

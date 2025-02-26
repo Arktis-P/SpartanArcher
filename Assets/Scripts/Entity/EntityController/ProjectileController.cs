@@ -21,8 +21,8 @@ public class ProjectileController : MonoBehaviour
     public bool fxOnDestroy = true;
 
     private bool isBounce = false;
-    private int _reflection = 0; // ¹Ý»ç È½¼ö
-    private int _penetration = 0; // °üÅë È½¼ö
+    private int _reflection = 0; // ï¿½Ý»ï¿½ È½ï¿½ï¿½
+    private int _penetration = 0; // ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½
 
 
     private void Awake()
@@ -41,7 +41,7 @@ public class ProjectileController : MonoBehaviour
 
         currentDuration += Time.deltaTime;
 
-        //ÀÏÁ¤ °Å¸®³Ñ¾î°¡¸é »èÁ¦µÇ´Â ÄÚµå ÀÓ½Ã ÁÖ¼® Ã³¸®
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Úµï¿½ ï¿½Ó½ï¿½ ï¿½Ö¼ï¿½ Ã³ï¿½ï¿½
         //if (currentDuration > rangeWeaponHandler.Duration)
         //{
         //    DestroyProjectile(transform.position, false);
@@ -53,13 +53,13 @@ public class ProjectileController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_reflection > 0 && levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
-        { // º® Æ¨±â´Â Á¶°Ç¹®
+        { // ï¿½ï¿½ Æ¨ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¹ï¿½
             Vector2 normal = ((Vector2)transform.position - collision.ClosestPoint(transform.position)).normalized;
             direction = Vector2.Reflect(direction, normal);
             _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
             _reflection--;
-            // ¹æÇâ ¹éÅÍ¸¦ ±â¹ÝÀ¸·Î È¸Àü 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//(radian -> degree·Î º¯È¯)
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ 
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//(radian -> degreeï¿½ï¿½ ï¿½ï¿½È¯)
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
         else

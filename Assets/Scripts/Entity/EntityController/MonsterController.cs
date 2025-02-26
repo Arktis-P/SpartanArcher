@@ -8,6 +8,8 @@ public class MonsterController : BaseController
     private Transform target;
     private MonsterManager monsterManager;
 
+
+
     public void Init(MonsterManager monsterManager, Transform target)
     {
         this.monsterManager = monsterManager;
@@ -33,6 +35,7 @@ public class MonsterController : BaseController
         {
             //적이 없다면 제로백터
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
+
             return;
         }
         
@@ -57,6 +60,7 @@ public class MonsterController : BaseController
                 }
 
                 movementDirection = Vector2.zero;
+
                 return;
             }
 
