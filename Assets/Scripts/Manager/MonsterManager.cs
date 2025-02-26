@@ -27,12 +27,14 @@ public class MonsterManager : MonoBehaviour
     {
         this.gameManager = gameManager;
 
+        CheckErrors();
+
         stage = gameManager.Stage;  // get stage from game manager
         StartStage(stage);  // start monster manager
     }
 
     // chcek for exceptions
-    private void CheckExceptions()
+    private void CheckErrors()
     {
         if (monsterPrefabs.Count == 0) { Debug.LogError("Cannot find Monster Prefabs!"); }
         if (bossPrefabs.Count == 0) { Debug.LogError("Cannot find Monster Prefabs!"); }
