@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &104365881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3294,7 +3294,10 @@ MonoBehaviour:
   - {fileID: 7128543812527038501, guid: 3685cd3a9fbd964499fed5fa02a41e80, type: 3}
   - {fileID: 7128543812527038501, guid: bffe7a4d1ab0cc547a383a770eccbd94, type: 3}
   - {fileID: 7128543812527038501, guid: 04f9b94e3b9ede34595a35f875ec3531, type: 3}
-  bossPrefabs: []
+  bossPrefabs:
+  - {fileID: 7128543812527038501, guid: 3b1949f34ea9aea46995cd5f99e7731a, type: 3}
+  - {fileID: 7128543812527038501, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
+  - {fileID: 7128543812527038501, guid: 161fae69f08a9674d811465e465292ff, type: 3}
   spawnArea:
     serializedVersion: 2
     x: -3
@@ -6108,6 +6111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665103edfd2d76d478d7fb189a76b9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGod: 0
 --- !u!1 &1823736602
 GameObject:
   m_ObjectHideFlags: 0
