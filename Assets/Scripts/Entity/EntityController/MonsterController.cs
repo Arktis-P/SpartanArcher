@@ -34,39 +34,38 @@ public class MonsterController : BaseController
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
         }
-        
+
+        isStop = false;
         isAttacking = false;
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
         
 
-        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
-        //RaycastHit2D foot = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
-        //Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.red);
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, 2f, (1 << LayerMask.NameToLayer("Obstacle")));
         Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
 
-
-        if (head.collider == null) {
+        if (head.collider == null)
+        {
             //Target의 거리가 추적거리 안쪽인지
             if (distance <= monsterStat.DetectionRange)
             {
                 lookDirection = direction;
 
-                if (distance <= weaponHandler.AttackRange)
+                if (distance <= monsterStat.ShootingRange)
                 {
-                    int layerMaskTarget = weaponHandler.target;
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
-                        (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, monsterStat.ShootingRange,
+                        (1 << LayerMask.NameToLayer("Player")));
 
-                    if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                    if (hit.collider != null)
                     {
+                        isStop = true;
                         isAttacking = true;
+                        attackDirection = lookDirection;
                     }
 
                     movementDirection = Vector2.zero;
                     return;
                 }
-
                 //공격범위가 아니면 이동
                 movementDirection = direction;
             }
