@@ -62,13 +62,26 @@ public class RangeWeaponHandler : WeaponHandler
             CreateProjectile(Controller.attackDirection, angle);
         }
     }
-
     private void CreateProjectile(Vector2 _lookDirection, float angle)
     {
         projectileManager.ShootBullet(
             this,
             projectileSpawnPosition.position,
             RotateVector2(_lookDirection, angle));
+    }
+
+    public override void ThrowAttack()
+    {
+        base.ThrowAttack();
+
+        CreateFragmnetProjectile(Controller.attackDirection);
+    }
+    private void CreateFragmnetProjectile(Vector2 _lookDirection)
+    {
+        projectileManager.fragmentBullet(
+            this,
+            projectileSpawnPosition.position,
+            _lookDirection,true);
     }
 
     private static Vector2 RotateVector2(Vector2 v, float degree)

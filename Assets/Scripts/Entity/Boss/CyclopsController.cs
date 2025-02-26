@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,46 +25,20 @@ namespace Assets.Scripts.Entity.Boss
 
         bool isLaserAttack = false;
 
-        private void Start()
+        public void Start()
         {
+            base.Start();
             movementDirection = new Vector2(transform.position.x+4,transform.position.y+4);
-        }
-
-        protected override void Update()
-        {
-            if (isLaserAttack)
-                LaserAttack();
-
-            //테스트 용
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                animationHandler.Pattern01();
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                animationHandler.Pattern02();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animationHandler.Pattern03();
-            }
+            StartCoroutine(PatternAction());
         }
 
         protected override void Movement(Vector2 direction)
         {
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime;
-            animationHandler.Move(direction);  
-        }
-        //protected override void Rotate(Vector2 direction)
-        //{
-        //    //플레이어를 바라보는게 아닌 진행방향에따라
-           
-        //}
-
-        protected override void NormalAttack()
-        {
-            
-
+            if(!isLaserAttack)
+            {
+                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime;
+            }
+            animationHandler.Move(direction);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -101,6 +76,34 @@ namespace Assets.Scripts.Entity.Boss
         private void StompAttack()
         {
 
+        }
+        IEnumerator PatternAction()
+        {
+            while (true)
+            {
+                switch (patternNum)
+                {
+                    case 0:
+                        StompAttack();
+                        bossAnimationHandler.Pattern01();
+                        break;
+                    case 1:
+                        LaserAttack();
+                        bossAnimationHandler.Pattern02();
+                        break;
+                    case 2:
+                        ThrowAttack();
+                        bossAnimationHandler.Pattern03();
+                        break;
+                    case 3:
+                        break;
+
+                }
+
+                yield return new WaitForSecondsRealtime(6);
+                isLaserAttack = false;
+
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ public class MonsterController : BaseController
     private Transform target;
     private MonsterManager monsterManager;
 
+
+
     public void Init(MonsterManager monsterManager, Transform target)
     {
         this.monsterManager = monsterManager;
@@ -27,42 +29,34 @@ public class MonsterController : BaseController
     protected override void HandleAction()
     {
         base.HandleAction();
-
-        if(target == null || weaponHandler == null)
+        if (target == null || weaponHandler == null)
         {
             //적이 없다면 제로백터
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
         }
-
-        isStop = false;
-        isAttacking = false;
-        float distance = DistanceToTarget();
-        Vector2 direction = DirectionToTarget();
-        
-
-        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, 2f, (1 << LayerMask.NameToLayer("Obstacle")));
-        Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
-
+            isStop = false;
+            isAttacking = false;
+            float distance = DistanceToTarget();
+            Vector2 direction = DirectionToTarget();
+            RaycastHit2D head = Physics2D.Raycast(transform.position, direction, 2f, (1 << LayerMask.NameToLayer("Obstacle")));
+            Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
         if (head.collider == null)
         {
             //Target의 거리가 추적거리 안쪽인지
             if (distance <= monsterStat.DetectionRange)
             {
                 lookDirection = direction;
-
                 if (distance <= monsterStat.ShootingRange)
                 {
                     RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, monsterStat.ShootingRange,
                         (1 << LayerMask.NameToLayer("Player")));
-
                     if (hit.collider != null)
                     {
                         isStop = true;
                         isAttacking = true;
                         attackDirection = lookDirection;
                     }
-
                     movementDirection = Vector2.zero;
                     return;
                 }
@@ -70,7 +64,6 @@ public class MonsterController : BaseController
                 movementDirection = direction;
             }
         }
-
         else
         {
             movementDirection = Vector2.zero;

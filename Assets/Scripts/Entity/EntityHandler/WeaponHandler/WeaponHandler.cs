@@ -58,6 +58,10 @@ public class WeaponHandler : MonoBehaviour
     {
         AttackAnimation();
     }
+    public virtual void ThrowAttack()
+    {
+
+    }
 
     public void AttackAnimation()
     {

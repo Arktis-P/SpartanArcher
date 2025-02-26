@@ -9,10 +9,20 @@ public class ProjectileManager : SingleTon<ProjectileManager>
 
     public void ShootBullet(RangeWeaponHandler rangeWeaponHandler, Vector2 startPostion, Vector2 direction)
     {
-        GameObject origin = projectilePrefabs[1]; //rangeWeaponHandler.BulletIndex
+        GameObject origin = projectilePrefabs[rangeWeaponHandler.BulletIndex]; //rangeWeaponHandler.BulletIndex
         GameObject obj = Instantiate(origin, startPostion, Quaternion.identity);
 
         ProjectileController projectileController = obj.GetComponent<ProjectileController>();
         projectileController.Init(direction, rangeWeaponHandler);
+    }
+    public void fragmentBullet(RangeWeaponHandler rangeWeaponHandler, Vector2 startPostion, Vector2 direction,bool isfragment)
+    {
+        GameObject origin = projectilePrefabs[rangeWeaponHandler.BulletIndex];
+        GameObject obj = Instantiate(origin, startPostion, Quaternion.identity);
+
+        ProjectileController projectileController = obj.GetComponent<ProjectileController>();
+        projectileController.FragmentProjectile = true;
+        projectileController.Init(direction, rangeWeaponHandler);
+     
     }
 }
