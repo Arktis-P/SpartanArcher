@@ -18,7 +18,7 @@ public class SkillManager : SingleTon<SkillManager>
 
         if (skillInfo == null || skillInfo.Length == 0)
         {
-            Debug.LogWarning("½ºÅ³ ¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù!");
+            Debug.LogWarning("ìŠ¤í‚¬ ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìžˆìŠµë‹ˆë‹¤!");
             return;
         }
         SkillList = new List<SkillInfo>(skillInfo);
@@ -41,7 +41,7 @@ public class SkillManager : SingleTon<SkillManager>
         skillInfo[14] = chagedDash;
     }
 
-    public void ChangedFiver()
+    public void ChangedFever()
     {
         skillInfo[15] = chagedFiver;
     }

@@ -12,12 +12,12 @@ public class SkillPicker : MonoBehaviour
     private GameObject player;
     private RangeWeaponHandler rangeWeaponHandler;
 
-    //Å×½ºÆ®¿ë UI
+    //í…ŒìŠ¤íŠ¸ìš© UI
     public Text text1;
     public Text text2;
     public Text text3;
     public Button[] buttons;
-    //Å×½ºÆ®¿ë UI
+    //í…ŒìŠ¤íŠ¸ìš© UI
 
     private void Awake()
     {
@@ -28,10 +28,10 @@ public class SkillPicker : MonoBehaviour
     {
         playerStat = player.GetComponent<PlayerStat>();
         rangeWeaponHandler = player.GetComponentInChildren<RangeWeaponHandler>();
-        // ¹öÆ° ¹è¿­ÀÇ ±æÀÌ°¡ 3ÀÌ¶ó°í °¡Á¤ (ÀÎµ¦½º 0, 1, 2)
+        // ë²„íŠ¼ ë°°ì—´ì˜ ê¸¸ì´ê°€ 3ì´ë¼ê³  ê°€ì • (ì¸ë±ìŠ¤ 0, 1, 2)
         for (int i = 0; i < buttons.Length; i++)
         {
-            int value = i; // ÇöÀç ÀÎµ¦½º °ªÀ» º¹»ç
+            int value = i; // í˜„ì¬ ì¸ë±ìŠ¤ ê°’ì„ ë³µì‚¬
             buttons[i].onClick.AddListener(() => SelectSkill(value));
         }
 
@@ -51,21 +51,21 @@ public class SkillPicker : MonoBehaviour
     {
         Debug.Log("Input A Key");
         skillManager.GetRandomSkill(3);
-        //Å×½ºÆ®¿ë UI
+        //í…ŒìŠ¤íŠ¸ìš© UI
         text1.text = skillManager.randomSkillList[0].Name;
         text2.text = skillManager.randomSkillList[1].Name;
         text3.text = skillManager.randomSkillList[2].Name;
-        //Å×½ºÆ®¿ë UI
-        for (int i = 0; i < skillManager.randomSkillList.Count; i++) // µğ¹ö±×¿ë
+        //í…ŒìŠ¤íŠ¸ìš© UI
+        for (int i = 0; i < skillManager.randomSkillList.Count; i++) // ë””ë²„ê·¸ìš©
         {
-            Debug.Log($"½ºÅ³ »Ì±â : {skillManager.randomSkillList[i].Name}, {skillManager.randomSkillList[i].Category}");
+            Debug.Log($"ìŠ¤í‚¬ ë½‘ê¸° : {skillManager.randomSkillList[i].Name}, {skillManager.randomSkillList[i].Category}");
         }
     }
 
     public void SelectSkill(int select)
     {
-        Debug.Log($"»ÌÀº ½ºÅ³ : {skillManager.randomSkillList[select].Name}, {skillManager.randomSkillList[select].Category}");
-        //»ÌÀº ½ºÅ³µé ÇÃ·¹ÀÌ¾î ½ºÅİ¿¡ Àû¿ë ½ÃÅ°±â
+        Debug.Log($"ë½‘ì€ ìŠ¤í‚¬ : {skillManager.randomSkillList[select].Name}, {skillManager.randomSkillList[select].Category}");
+        //ë½‘ì€ ìŠ¤í‚¬ë“¤ í”Œë ˆì´ì–´ ìŠ¤í…Ÿì— ì ìš© ì‹œí‚¤ê¸°
         SkillInfo selectedSkill = skillManager.randomSkillList[select];
         
         switch (selectedSkill.Category)
@@ -80,32 +80,34 @@ public class SkillPicker : MonoBehaviour
                 playerStat.ProjectileNumber += selectedSkill.ProjectileNumber;
                 break;
             case SkillCategory.Projectile:
-                //< Åõ»çÃ¼ ½ºÅÈ >
-                //µ¥¹ÌÁö damage
-                //¼Óµµ projectileSpeed
-                //Å©±â size
-                //°üÅë È½¼ö penetration
-                //¹İ»ç È½¼ö reflection
-                //³Ë¹é °Å¸® knockbackDistance
-                //waponHandler¿¡ Àû¿ë ½ÃÅ°±â
-                rangeWeaponHandler.Delay -= selectedSkill.AttackFreq; // ¹ß»ç ¼Óµµ °¨¼Ò
-                rangeWeaponHandler.Power += selectedSkill.Damage; //µ¥¹ÌÁö Áõ°¡
-                rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // Åõ»çÃ¼ ¼Óµµ Áõ°¡
-                rangeWeaponHandler.BulletSize += selectedSkill.Size; // Åõ»çÃ¼ Å©±â Áõ°¡
-                rangeWeaponHandler.NumberofProjectilesPerShot += selectedSkill.ProjectileNumber; //Åõ»çÃ¼ °³¼ö Áõ°¡
-                rangeWeaponHandler.Penetration += selectedSkill.Penetration; // °üÅë È½¼ö Áõ°¡
-                rangeWeaponHandler.Reflection += selectedSkill.Reflection; //Åõ»çÃ¼ ¹İ»ç
+                //< íˆ¬ì‚¬ì²´ ìŠ¤íƒ¯ >
+                //ë°ë¯¸ì§€ damage
+                //ì†ë„ projectileSpeed
+                //í¬ê¸° size
+                //ê´€í†µ íšŸìˆ˜ penetration
+                //ë°˜ì‚¬ íšŸìˆ˜ reflection
+                //ë„‰ë°± ê±°ë¦¬ knockbackDistance
+                //waponHandlerì— ì ìš© ì‹œí‚¤ê¸°
+                rangeWeaponHandler.Delay -= selectedSkill.AttackFreq; // ë°œì‚¬ ì†ë„ ê°ì†Œ
+                rangeWeaponHandler.Power += selectedSkill.Damage; //ë°ë¯¸ì§€ ì¦ê°€
+                rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // íˆ¬ì‚¬ì²´ ì†ë„ ì¦ê°€
+                rangeWeaponHandler.BulletSize += selectedSkill.Size; // íˆ¬ì‚¬ì²´ í¬ê¸° ì¦ê°€
+                rangeWeaponHandler.NumberofProjectilesPerShot += selectedSkill.ProjectileNumber; //íˆ¬ì‚¬ì²´ ê°œìˆ˜ ì¦ê°€
+                rangeWeaponHandler.Penetration += selectedSkill.Penetration; // ê´€í†µ íšŸìˆ˜ ì¦ê°€
+                rangeWeaponHandler.Reflection += selectedSkill.Reflection; //íˆ¬ì‚¬ì²´ ë°˜ì‚¬
                 break;
             case SkillCategory.Active:
                 if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
                 {
-                    playerStat.Desh = selectedSkill.Dash;
-                    playerStat.DeshDistance += selectedSkill.DashDistance;
+                    if (!playerStat.Dash && selectedSkill.Dash) UIManager.Instance.SwitchZButton();
+                    playerStat.Dash = selectedSkill.Dash;
+                    playerStat.DashDistance += selectedSkill.DashDistance;
                 }
                 else if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
                 {
-                    playerStat.IsFiverTime = selectedSkill.IsFeverTime;
-                    playerStat.FiverTime += selectedSkill.FeverTime;
+                    if (!playerStat.IsFeverTime && selectedSkill.IsFeverTime) UIManager.Instance.SwitchXButton();
+                    playerStat.IsFeverTime = selectedSkill.IsFeverTime;
+                    playerStat.FeverTime += selectedSkill.FeverTime;
                 }
                 
                 break;
@@ -119,7 +121,7 @@ public class SkillPicker : MonoBehaviour
         }
         if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
         {
-            skillManager.ChangedFiver();
+            skillManager.ChangedFever();
         }
 
         GameManager.Instance.ContinueGame();

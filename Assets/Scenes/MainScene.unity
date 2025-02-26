@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &104365881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3409,8 +3409,8 @@ MonoBehaviour:
   stageClearUI: {fileID: 1356416544}
   stageFailUI: {fileID: 1642741714}
   scoreText: {fileID: 191547230}
-  zButton: {fileID: 0}
-  xButton: {fileID: 0}
+  zButton: {fileID: 1345039326}
+  xButton: {fileID: 1211516391}
 --- !u!1 &1051297907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +4078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1211516392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4659,7 +4659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1345039327
 RectTransform:
   m_ObjectHideFlags: 0

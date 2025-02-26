@@ -10,11 +10,11 @@ public class ActiveSkill : MonoBehaviour
     [Header("Dash")]
     private Rigidbody2D rb;
     private bool isDashing;
-    //´ë½¬ °Å¸®´Â playerStat¿¡ ÀÖÀ½
-    public float dashDuration = 0.2f;  // µ¹Áø Áö¼Ó ½Ã°£
-    public float dashCooldownTime = 3f; // ´ë½Ã ±âº» ÄğÅ¸ÀÓ
-    public float dashCooldownTimer = 0f; // ÄğÅ¸ÀÓ Å¸ÀÌ¸Ó
-    public bool isDashReady = true; // ÄğÅ¸ÀÓÀÌ ³¡³µ´ÂÁö Ã¼Å©
+    //ëŒ€ì‰¬ ê±°ë¦¬ëŠ” playerStatì— ìˆìŒ
+    public float dashDuration = 0.2f;  // ëŒì§„ ì§€ì† ì‹œê°„
+    public float dashCooldownTime = 3f; // ëŒ€ì‹œ ê¸°ë³¸ ì¿¨íƒ€ì„
+    public float dashCooldownTimer = 0f; // ì¿¨íƒ€ì„ íƒ€ì´ë¨¸
+    public bool isDashReady = true; // ì¿¨íƒ€ì„ì´ ëë‚¬ëŠ”ì§€ ì²´í¬
     
 
     private void Awake()
@@ -29,24 +29,24 @@ public class ActiveSkill : MonoBehaviour
 
     public void StartDash()
     {
-        if (!isDashing && playerStat.Desh && isDashReady) StartCoroutine(DashCoroutine());
+        if (!isDashing && playerStat.Dash && isDashReady) StartCoroutine(DashCoroutine());
     }
 
-    private IEnumerator DashCoroutine() // ´ë½¬ ÄÚ·çÆ¾
+    private IEnumerator DashCoroutine() // ëŒ€ì‰¬ ì½”ë£¨í‹´
     {
         isDashing = true;
         
 
-        // ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î µ¹Áø
+        // ë°”ë¼ë³´ëŠ” ë°©í–¥ìœ¼ë¡œ ëŒì§„
         Vector2 startPosition = rb.position;
-        Vector2 dashDirection = GetComponent<PlayerController>().LookDirection.normalized; //´ë½¬ ¹æÇâ
-        Vector2 targetPosition = startPosition + dashDirection * playerStat.DeshDistance; // ´ë½¬ µµÂø ÁöÁ¡
+        Vector2 dashDirection = GetComponent<PlayerController>().LookDirection.normalized; //ëŒ€ì‰¬ ë°©í–¥
+        Vector2 targetPosition = startPosition + dashDirection * playerStat.DashDistance; // ëŒ€ì‰¬ ë„ì°© ì§€ì 
 
-        // ´ë½Ã Áß º®¿¡ Ãæµ¹ÇÏ´ÂÁö È®ÀÎÇÏ±â À§ÇÑ ·¹ÀÌÄ³½ºÆ®
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, dashDirection, playerStat.DeshDistance, LayerMask.GetMask("Wall"));
+        // ëŒ€ì‹œ ì¤‘ ë²½ì— ì¶©ëŒí•˜ëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ë ˆì´ìºìŠ¤íŠ¸
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, dashDirection, playerStat.DashDistance, LayerMask.GetMask("Wall"));
         if (hit.collider != null)
         {
-            // Ãæµ¹ÀÌ ¹ß»ıÇÑ °æ¿ì, º®°ú Ãæµ¹ ÁöÁ¡±îÁö ´ë½Ã¸¦ ¸ØÃß°í, ±× ÁöÁ¡¿¡¼­ 0.2¸¸Å­ ÂªÀº °Å¸®·Î ´ë½Ã
+            // ì¶©ëŒì´ ë°œìƒí•œ ê²½ìš°, ë²½ê³¼ ì¶©ëŒ ì§€ì ê¹Œì§€ ëŒ€ì‹œë¥¼ ë©ˆì¶”ê³ , ê·¸ ì§€ì ì—ì„œ 0.2ë§Œí¼ ì§§ì€ ê±°ë¦¬ë¡œ ëŒ€ì‹œ
             targetPosition = hit.point - dashDirection * 0.2f;
         }
 
@@ -59,7 +59,7 @@ public class ActiveSkill : MonoBehaviour
             yield return null;
         }
 
-        rb.position = targetPosition;  // ´ë½Ã Á¾·á ÈÄ À§Ä¡ º¸Á¤
+        rb.position = targetPosition;  // ëŒ€ì‹œ ì¢…ë£Œ í›„ ìœ„ì¹˜ ë³´ì •
         isDashing = false;
         isDashReady = false;
     }
