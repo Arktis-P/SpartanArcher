@@ -1405,6 +1405,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 148470f5b2897274b866acc71a7c881b, type: 2}
   - {fileID: 11400000, guid: e087b847486c2d547993360da415b8a1, type: 2}
   - {fileID: 11400000, guid: 5c4788d4b2aa9da47b2b83f993e5da96, type: 2}
+  chagedskill: {fileID: 11400000, guid: 55c138d8994e4fe4080b2bb06ee2cfd6, type: 2}
   SkillList: []
   randomSkillList: []
 --- !u!1 &518394680
@@ -3531,6 +3532,7 @@ MonoBehaviour:
   knockbackResistance: 2
   projectileNumber: 2
   desh: 0
+  deshDistance: 1.5
 --- !u!114 &1155264144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3600,6 +3602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashDistance: 2
   dashDuration: 0.2
+  dashCooldownTime: 3
+  dashCooldownTimer: 0
+  isDashReady: 0
 --- !u!1 &1157198910
 GameObject:
   m_ObjectHideFlags: 0

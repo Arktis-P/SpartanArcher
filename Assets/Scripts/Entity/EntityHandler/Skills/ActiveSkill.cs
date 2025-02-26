@@ -29,6 +29,7 @@ public class ActiveSkill : MonoBehaviour
 
     public void StartDash()
     {
+        dashDistance = playerStat.DeshDistance;
         if (!isDashing && playerStat.Desh && isDashReady) StartCoroutine(DashCoroutine());
     }
 

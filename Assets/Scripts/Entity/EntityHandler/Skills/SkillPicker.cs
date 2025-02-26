@@ -67,6 +67,10 @@ public class SkillPicker : MonoBehaviour
         Debug.Log($"뽑은 스킬 : {skillManager.randomSkillList[select].Name}, {skillManager.randomSkillList[select].Category}");
         //뽑은 스킬들 플레이어 스텟에 적용 시키기
         SkillInfo selectedSkill = skillManager.randomSkillList[select];
+        if (skillManager.randomSkillList[select].Name == "대쉬 기능 추가")
+        {
+            skillManager.ChangedSkill();
+        }
 
         switch (selectedSkill.Category)
         {
@@ -98,6 +102,7 @@ public class SkillPicker : MonoBehaviour
                 break;
             case SkillCategory.Active:
                 playerStat.Desh = selectedSkill.Dash;
+                playerStat.DeshDistance += selectedSkill.DashDistance;
                 break;
             case SkillCategory.Passive:
                 break;

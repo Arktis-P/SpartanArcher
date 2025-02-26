@@ -74,6 +74,8 @@ public class SkillInfo : ScriptableObject
     [Header("Active")]
     [SerializeField] private bool dash;
     public bool Dash { get { return dash; } }
+    [SerializeField] private float dashDistance;
+    public float DashDistance { get { return dashDistance; } }
 
     //<패시브 스킬>
     //마늘 - 캐릭터 일정 범위 내 근접 시 데미지
