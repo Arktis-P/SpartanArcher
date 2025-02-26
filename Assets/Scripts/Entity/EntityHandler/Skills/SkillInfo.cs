@@ -71,7 +71,11 @@ public class SkillInfo : ScriptableObject
     //<액티브>
     //피버타임 (일정 시간동안 화살 발사 속도 x배 증가)
     //대시
-
+    [Header("Active")]
+    [SerializeField] private bool dash;
+    public bool Dash { get { return dash; } }
+    [SerializeField] private float dashDistance;
+    public float DashDistance { get { return dashDistance; } }
 
     //<패시브 스킬>
     //마늘 - 캐릭터 일정 범위 내 근접 시 데미지

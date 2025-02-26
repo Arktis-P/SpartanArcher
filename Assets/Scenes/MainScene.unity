@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &104365881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1404,6 +1404,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5385c2708ea40740a7b01acfc099d0c, type: 2}
   - {fileID: 11400000, guid: 148470f5b2897274b866acc71a7c881b, type: 2}
   - {fileID: 11400000, guid: e087b847486c2d547993360da415b8a1, type: 2}
+  - {fileID: 11400000, guid: 5c4788d4b2aa9da47b2b83f993e5da96, type: 2}
+  chagedskill: {fileID: 11400000, guid: 55c138d8994e4fe4080b2bb06ee2cfd6, type: 2}
   SkillList: []
   randomSkillList: []
 --- !u!1 &518394680
@@ -3323,7 +3325,10 @@ MonoBehaviour:
   - {fileID: 7128543812527038501, guid: 3685cd3a9fbd964499fed5fa02a41e80, type: 3}
   - {fileID: 7128543812527038501, guid: bffe7a4d1ab0cc547a383a770eccbd94, type: 3}
   - {fileID: 7128543812527038501, guid: 04f9b94e3b9ede34595a35f875ec3531, type: 3}
-  bossPrefabs: []
+  bossPrefabs:
+  - {fileID: 7128543812527038501, guid: 3b1949f34ea9aea46995cd5f99e7731a, type: 3}
+  - {fileID: 7128543812527038501, guid: 8719f19b7b9527344886243b3c999fc4, type: 3}
+  - {fileID: 7128543812527038501, guid: 161fae69f08a9674d811465e465292ff, type: 3}
   spawnArea:
     serializedVersion: 2
     x: -3
@@ -3424,6 +3429,7 @@ GameObject:
   - component: {fileID: 1155264144}
   - component: {fileID: 1155264146}
   - component: {fileID: 1155264145}
+  - component: {fileID: 1155264147}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -3537,6 +3543,7 @@ MonoBehaviour:
   weaponPivot: {fileID: 953961284}
   weaponPrefab: {fileID: 6403442361403232660, guid: 1c5051bfce8fdee42b891e3d91cf0806, type: 3}
   attackDirection: {x: 0, y: 0}
+  activeSkill: {fileID: 0}
 --- !u!114 &1155264143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3558,6 +3565,8 @@ MonoBehaviour:
   drainRatio: 2
   knockbackResistance: 2
   projectileNumber: 2
+  desh: 0
+  deshDistance: 1.5
 --- !u!114 &1155264144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3613,6 +3622,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+--- !u!114 &1155264147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155264138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1ddbf964395c1439620cd3f469d15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDistance: 0
+  dashDuration: 0.2
+  dashCooldownTime: 3
+  dashCooldownTimer: 0
+  isDashReady: 0
 --- !u!1 &1157198910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6116,6 +6142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665103edfd2d76d478d7fb189a76b9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGod: 0
 --- !u!1 &1823736602
 GameObject:
   m_ObjectHideFlags: 0

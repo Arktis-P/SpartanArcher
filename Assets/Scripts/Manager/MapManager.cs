@@ -49,9 +49,4 @@ public class MapManager : MonoBehaviour
         player.transform.position = playerSpawnPoint;
         //Instantiate(player);
     }
-    public void SpawnBoss()
-    {
-        boss.transform.position = bossSpawnPoint;
-        //Instantiate(boss);
-    }
 }

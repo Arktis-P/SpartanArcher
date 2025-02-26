@@ -31,6 +31,20 @@ public class PlayerStat : StatHandler
         get => projectileNumber;
         set => projectileNumber = Mathf.Clamp(value, 0, 100);
     }
+
+    [SerializeField] private bool desh = false;
+    public bool Desh
+    {
+        get => desh;
+        set => desh = value;
+    }
+
+    [SerializeField] private float deshDistance = 1.5f;
+    public float DeshDistance
+    {
+        get => deshDistance;
+        set => deshDistance = value;
+    }
 }
 
 

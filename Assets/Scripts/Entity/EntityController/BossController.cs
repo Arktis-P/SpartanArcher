@@ -14,14 +14,14 @@ public class BossController : BaseController
     protected BossAnimationHandler animationHandler;
     protected WeaponHandler weaponHandler;
 
-    private Transform target;
+    protected Transform target;
     protected Vector2 movementDirection = Vector2.zero;
     public Vector2 MovementDirection { get { return movementDirection; } }
 
     protected Vector2 lookDirection = Vector2.zero;
     public Vector2 LookDirection { get { return lookDirection; } }
 
-    [SerializeField] private float followRange = 15f;
+    [SerializeField] protected float followRange = 15f;
 
     protected bool isAttacking;
     private float timeSinceLastAttack = float.MaxValue;
@@ -89,6 +89,9 @@ public class BossController : BaseController
         {
             component.enabled = false;
         }
+
+        monsterManager.RemoveBossOnDeath(this);
+
         animationHandler.Die();
         Destroy(gameObject, 3f);
     }
