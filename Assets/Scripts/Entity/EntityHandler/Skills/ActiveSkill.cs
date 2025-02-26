@@ -42,6 +42,14 @@ public class ActiveSkill : MonoBehaviour
         Vector2 dashDirection = GetComponent<PlayerController>().LookDirection.normalized; //대쉬 방향
         Vector2 targetPosition = startPosition + dashDirection * playerStat.DeshDistance; // 대쉬 도착 지점
 
+        // 대시 중 벽에 충돌하는지 확인하기 위한 레이캐스트
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, dashDirection, playerStat.DeshDistance, LayerMask.GetMask("Wall"));
+        if (hit.collider != null)
+        {
+            // 충돌이 발생한 경우, 벽과 충돌 지점까지 대시를 멈추고, 그 지점에서 0.2만큼 짧은 거리로 대시
+            targetPosition = hit.point - dashDirection * 0.2f;
+        }
+
         float elapsedTime = 0f;
 
         while (elapsedTime < dashDuration)

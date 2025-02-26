@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterStat : StatHandler
 {
-    [Range(0f, 100f)][SerializeField] private float detectionRange = 2f;
+    [Range(0f, 100f)][SerializeField] private float detectionRange = 5f;
     public float DetectionRange
     {
         get => detectionRange;
