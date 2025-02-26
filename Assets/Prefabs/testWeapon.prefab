@@ -65,6 +65,8 @@ MonoBehaviour:
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 3
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  penetration: 0
+  reflection: 0
 --- !u!1 &2080236369375516467
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.465, y: -0.045, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3935715413005503268}
