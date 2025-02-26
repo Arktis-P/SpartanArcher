@@ -39,7 +39,7 @@ public class PlayerStat : StatHandler
         set => desh = value;
     }
 
-    [SerializeField] private float deshDistance = 0;
+    [SerializeField] private float deshDistance = 1.5f;
     public float DeshDistance
     {
         get => deshDistance;

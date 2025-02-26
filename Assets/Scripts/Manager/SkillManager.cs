@@ -36,6 +36,6 @@ public class SkillManager : SingleTon<SkillManager>
     }
     public void ChangedSkill()
     {
-        skillInfo[13] = chagedskill;
+        skillInfo[14] = chagedskill;
     }
 }

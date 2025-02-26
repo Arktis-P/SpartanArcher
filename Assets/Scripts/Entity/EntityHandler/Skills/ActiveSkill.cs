@@ -10,7 +10,7 @@ public class ActiveSkill : MonoBehaviour
     [Header("Dash")]
     private Rigidbody2D rb;
     private bool isDashing;
-    public float dashDistance = 2f;  // 돌진 거리
+    //대쉬 거리는 playerStat에 있음
     public float dashDuration = 0.2f;  // 돌진 지속 시간
     public float dashCooldownTime = 3f; // 대시 기본 쿨타임
     public float dashCooldownTimer = 0f; // 쿨타임 타이머
@@ -29,7 +29,6 @@ public class ActiveSkill : MonoBehaviour
 
     public void StartDash()
     {
-        dashDistance = playerStat.DeshDistance;
         if (!isDashing && playerStat.Desh && isDashReady) StartCoroutine(DashCoroutine());
     }
 
@@ -41,7 +40,7 @@ public class ActiveSkill : MonoBehaviour
         // 바라보는 방향으로 돌진
         Vector2 startPosition = rb.position;
         Vector2 dashDirection = GetComponent<PlayerController>().LookDirection.normalized; //대쉬 방향
-        Vector2 targetPosition = startPosition + dashDirection * dashDistance; // 대쉬 도착 지점
+        Vector2 targetPosition = startPosition + dashDirection * playerStat.DeshDistance; // 대쉬 도착 지점
 
         float elapsedTime = 0f;
 

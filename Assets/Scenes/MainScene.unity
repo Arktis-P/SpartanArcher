@@ -3600,7 +3600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1ddbf964395c1439620cd3f469d15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 2
+  dashDistance: 0
   dashDuration: 0.2
   dashCooldownTime: 3
   dashCooldownTimer: 0
