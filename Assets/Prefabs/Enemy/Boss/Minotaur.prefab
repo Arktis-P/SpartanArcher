@@ -256,7 +256,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 3
-  attackFreq: 2
+  attackFreq: 1
   shootingRange: 5
 --- !u!114 &4390075688726335750
 MonoBehaviour:

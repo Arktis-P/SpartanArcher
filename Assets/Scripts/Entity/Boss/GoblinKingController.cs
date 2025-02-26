@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,13 @@ namespace Assets.Scripts.Entity.Boss
         [SerializeField] private List<GameObject> pawnPrefabs;
         private Vector2 spawnArea;
 
+        public void Start()
+        {
+            base.Start();
+            StartCoroutine(PatternAction());
+            movementDirection = Vector2.zero;
+        }
+
         public void SpawnPawn() //Pattern01
         {
             if(pawnPrefabs.Count == 0)
@@ -23,47 +31,30 @@ namespace Assets.Scripts.Entity.Boss
             }
             float y = transform.position.y - 2;
             spawnArea = new Vector2(transform.position.x, transform.position.y-2);
-           
+
+            MonsterManager monsterManager = FindObjectOfType<MonsterManager>();
+
             //pawnPrefabs배열 수만큼 Pawn생성
             for (int i = 0; i < pawnPrefabs.Count; i++)
             {
                 GameObject spawnedEnemy = Instantiate(pawnPrefabs[i], new Vector3(spawnArea.x, spawnArea.y), Quaternion.identity);
                 MonsterController monsterController = spawnedEnemy.GetComponent<MonsterController>();
-                //monsterController.Init(this,target);
-                //activeEnemies.Add(monsterController);
+                
+                monsterController.Init(monsterManager, testTarget);
+                monsterManager.activeMonsters.Add(monsterController);
             }
         }
-        protected override void Update()
-        {
-            //테스트 용
-            if(Input.GetKeyDown(KeyCode.V))
-            {
-                SpawnPawn();
-            }
-
-            //테스트 용
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                animationHandler.Pattern01();
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                animationHandler.Pattern02();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animationHandler.Pattern03();
-            }
-        }
+ 
         protected override void NormalAttack()
         {
-
+            base.NormalAttack();
 
         }
 
         private void ThrowAttack() //Pattern02
         {
             //Projectile 생기면 구현 예정
+            Debug.Log("ThrowAttack");
         }
 
         private void Eat() // Pattern03
@@ -74,6 +65,33 @@ namespace Assets.Scripts.Entity.Boss
         private void JumpAndSlamAttack()
         {
             // 시간남으면
+        }
+
+        IEnumerator PatternAction()
+        {
+            while(true)
+            {
+                switch (patternNum)
+                {
+                    case 0:
+                        SpawnPawn();
+                        animationHandler.Pattern01();
+                        break;
+                    case 1:
+                        ThrowAttack();
+                        animationHandler.Pattern02();
+                        break;
+                    case 2:
+                        Eat();
+                        animationHandler.Pattern03();
+                        break;
+                    case 3:
+                        break;
+
+                }
+                yield return new WaitForSecondsRealtime(6);
+
+            }
         }
     }
 }

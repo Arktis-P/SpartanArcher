@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BossController : BaseController
+enum Pattern{
+    Pattern01, Pattern02, Pattern03, Pattern04,End
+};
+
+public class BossController : MonoBehaviour
 {
 
     protected StatHandler statHandler;
     protected ResourceController resourceController;
     [SerializeField] protected SpriteRenderer chracterRenderer;
+    [SerializeField] private Transform weaponPivot;
+    [SerializeField] public WeaponHandler weaponPrefab;
     protected Rigidbody2D _rigidbody;
     private MonsterManager monsterManager;
     protected BossAnimationHandler animationHandler;
     protected WeaponHandler weaponHandler;
 
-    private Transform target;
+    protected Transform target;
+    //테스트용 타겟, 테스트 끝나고 target 사용
+    [SerializeField] protected Transform testTarget;
     protected Vector2 movementDirection = Vector2.zero;
     public Vector2 MovementDirection { get { return movementDirection; } }
 
@@ -26,14 +34,19 @@ public class BossController : BaseController
     protected bool isAttacking;
     private float timeSinceLastAttack = float.MaxValue;
 
+    protected int patternNum;
+
     GameManager gameManager;   
 
-    //MonsterManager에서 호출해줘야함.
     public void Init(MonsterManager monsterManager, Transform target)
     {
         this.monsterManager = monsterManager;
-        //monsterManager
         this.target = target;
+    }
+
+    public void Start()
+    {
+        InvokeRepeating("PatternSelect",4f,4f);
     }
     protected virtual void Awake()
     {
@@ -41,6 +54,15 @@ public class BossController : BaseController
         animationHandler = GetComponent<BossAnimationHandler>();
         statHandler = GetComponent<StatHandler>();
         resourceController = GetComponent<ResourceController>();
+
+        if (weaponPrefab != null)
+        {
+            weaponHandler = Instantiate(weaponPrefab, weaponPivot);
+        }
+        else
+        {
+            weaponHandler = GetComponentInChildren<WeaponHandler>();
+        }
 
     }
     protected virtual void Update()
@@ -62,6 +84,11 @@ public class BossController : BaseController
 
         chracterRenderer.flipX = isLeft;
 
+        if (weaponPivot != null)
+        {
+            weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotz);
+        }
+        weaponHandler?.Rotate(isLeft);
     }
 
     protected virtual void Movement(Vector2 direction)
@@ -71,6 +98,10 @@ public class BossController : BaseController
 
     private void HandleAttackDelay()
     {
+        if (weaponHandler == null)
+        {
+            return;
+        }
         if (timeSinceLastAttack <= statHandler.AttackFreq)
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -94,7 +125,7 @@ public class BossController : BaseController
     }
     protected virtual void NormalAttack()
     {
-        if (weaponHandler == null || target == null)
+        if (weaponHandler == null || /*target == null*/testTarget == null)
         {
             //타깃 없을때 제로백터가 아니라면 제로백터로 
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
@@ -134,18 +165,24 @@ public class BossController : BaseController
     protected float DistanceToTarget()
     {
         //position간 거리 리턴
-        return Vector3.Distance(transform.position, target.position);
+        //return Vector3.Distance(transform.position, target.position);
+        return Vector3.Distance(transform.position, testTarget.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
         //포지션을 빼서 normalized로 방향 리턴
-        return (target.position - transform.position).normalized;
+        //return (target.position - transform.position).normalized;
+        return (testTarget.position - transform.position).normalized;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //플레이어라면 데미지를 줘야함.
+    }
+    protected void PatternSelect()
+    {
+        patternNum = Random.Range((int)Pattern.Pattern01,(int)Pattern.End);
     }
 
 

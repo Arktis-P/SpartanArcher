@@ -13,6 +13,6 @@ public class ProjectileManager : SingleTon<ProjectileManager>
         GameObject obj = Instantiate(origin, startPostion, Quaternion.identity);
 
         ProjectileController projectileController = obj.GetComponent<ProjectileController>();
-        projectileController.Init(direction, rangeWeaponHandler);
+        projectileController.Init(direction, rangeWeaponHandler,this);
     }
 }

@@ -58,7 +58,7 @@ public class MonsterManager : MonoBehaviour
                 monsterNum = Random.Range(5, 10); break;
             case 7: case 8: case 9:
                 monsterNum = Random.Range(9, 15); break;
-            case 0:  // boss stage
+            case 0:  // boss stage 
                 monsterNum = Random.Range(9, 12); break;
             default: monsterNum = 0; break;
         }

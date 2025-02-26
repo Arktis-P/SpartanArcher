@@ -106,6 +106,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5687572234926822740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6060997300229414991}
+  m_Layer: 7
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6060997300229414991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687572234926822740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5714419149737204349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7128543812527038501
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6490003993712879642}
+  - {fileID: 6060997300229414991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3621468171116670712
@@ -229,9 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  maxHealth: 10
+  maxHealth: 50
   moveSpeed: 1
-  attackFreq: 2
+  attackFreq: 0.99
   shootingRange: 5
 --- !u!114 &5324493131628853826
 MonoBehaviour:
@@ -271,6 +303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterRenderer: {fileID: 6333179478463225669}
+  weaponPivot: {fileID: 6060997300229414991}
+  weaponPrefab: {fileID: 6403442361403232660, guid: d95279b3fbb491748ac49ad3ba7d93de, type: 3}
   followRange: 15
   pawnPrefabs:
   - {fileID: 7128543812527038501, guid: 81d2d5450b77c40458b1ea96aa9a91dc, type: 3}

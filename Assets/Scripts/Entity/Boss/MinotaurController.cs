@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +18,10 @@ namespace Assets.Scripts.Entity.Boss
 
             animationHandler.Move(direction);
         }
-        protected override void Update()
+        private void Start()
         {
-            //테스트 용
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                animationHandler.Pattern01();
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                animationHandler.Pattern02();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animationHandler.Pattern03();
-            }
+            base.Start();
+            StartCoroutine(PatternAction());
         }
         private void SlashAttack()
         {
@@ -46,6 +36,34 @@ namespace Assets.Scripts.Entity.Boss
         private void WheelwindAttack()
         {
 
+        }
+        IEnumerator PatternAction()
+        {
+            while (true)
+            {
+                Debug.Log(patternNum);
+                switch (patternNum)
+                {
+                    case 0:
+                        SlashAttack();
+                        animationHandler.Pattern01();
+                        break;
+                    case 1:
+                        RushAttack();
+                        animationHandler.Pattern02();
+                        break;
+                    case 2:
+                        WheelwindAttack();
+                        animationHandler.Pattern03();
+                        break;
+                    case 3:
+                        break;
+
+                }
+
+                yield return new WaitForSecondsRealtime(6);
+
+            }
         }
     }
 }
