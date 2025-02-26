@@ -15,14 +15,14 @@ public class ActiveSkill : MonoBehaviour
     private float dashDuration = 0.2f;  // 돌진 지속 시간
     private float dashCooldownTime = 3f; // 대시 기본 쿨타임
     private float dashCooldownTimer = 0f; // 쿨타임 타이머
-    private bool isDashReady = true; // 쿨타임이 끝났는지 체크
+    public bool isDashReady = true; // 쿨타임이 끝났는지 체크
 
     [Header("FeverTime")]
     [SerializeField] private bool isFeverTime;
     [SerializeField] private float feverTime;
     [SerializeField] private float feverTimeCooldownTime = 20f; //피버타임 기본 쿨타임
     [SerializeField] private float feverTimeCooldownTimer = 0f; //피버타임 타이머
-    [SerializeField] private bool isFeverReady = true; // 피버타임 쿨타임이 끝났는지 체크
+    public bool isFeverReady = true; // 피버타임 쿨타임이 끝났는지 체크
 
     float originalBulletSize;
     float originalBulletSpeed;
@@ -50,7 +50,7 @@ public class ActiveSkill : MonoBehaviour
 
     public void StartDash()
     {
-        if (!isDashing && playerStat.Desh && isDashReady) StartCoroutine(DashCoroutine());
+        if (!isDashing && playerStat.Dash && isDashReady) StartCoroutine(DashCoroutine());
     }
 
     public void StartFeverTime()
@@ -66,10 +66,10 @@ public class ActiveSkill : MonoBehaviour
         // 바라보는 방향으로 돌진
         Vector2 startPosition = rb.position;
         Vector2 dashDirection = GetComponent<PlayerController>().LookDirection.normalized; //대쉬 방향
-        Vector2 targetPosition = startPosition + dashDirection * playerStat.DeshDistance; // 대쉬 도착 지점
+        Vector2 targetPosition = startPosition + dashDirection * playerStat.DashDistance; // 대쉬 도착 지점
 
         // 대시 중 벽에 충돌하는지 확인하기 위한 레이캐스트
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, dashDirection, playerStat.DeshDistance, LayerMask.GetMask("Wall"));
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, dashDirection, playerStat.DashDistance, LayerMask.GetMask("Wall"));
         if (hit.collider != null)
         {
             // 충돌이 발생한 경우, 벽과 충돌 지점까지 대시를 멈추고, 그 지점에서 0.2만큼 짧은 거리로 대시

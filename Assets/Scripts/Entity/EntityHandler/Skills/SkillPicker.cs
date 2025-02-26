@@ -99,8 +99,8 @@ public class SkillPicker : MonoBehaviour
             case SkillCategory.Active:
                 if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
                 {
-                    playerStat.Desh = selectedSkill.Dash;
-                    playerStat.DeshDistance += selectedSkill.DashDistance;
+                    playerStat.Dash = selectedSkill.Dash;
+                    playerStat.DashDistance += selectedSkill.DashDistance;
                 }
                 else if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
                 {
@@ -119,7 +119,7 @@ public class SkillPicker : MonoBehaviour
         }
         if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
         {
-            skillManager.ChangedFiver();
+            skillManager.ChangedFever();
         }
 
         GameManager.Instance.ContinueGame();

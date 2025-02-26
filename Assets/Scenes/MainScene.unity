@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &104365881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3813,10 +3813,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1ddbf964395c1439620cd3f469d15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDuration: 0.2
-  dashCooldownTime: 3
-  dashCooldownTimer: 0
-  isDashReady: 0
+  isDashReady: 1
+  isFeverTime: 0
+  feverTime: 0
+  feverTimeCooldownTime: 20
+  feverTimeCooldownTimer: 0
+  isFeverReady: 1
 --- !u!1 &1157198910
 GameObject:
   m_ObjectHideFlags: 0
