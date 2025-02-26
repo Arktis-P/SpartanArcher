@@ -305,5 +305,5 @@ MonoBehaviour:
   maxHealth: 10
   moveSpeed: 3
   attackFreq: 1
-  shootingRange: 5
+  shootingRange: 1.8
   detectionRange: 5
