@@ -263,6 +263,7 @@ MonoBehaviour:
   chracterRenderer: {fileID: 6333179478463225669}
   weaponPivot: {fileID: 6422325266754129915}
   weaponPrefab: {fileID: 4186240390876711266, guid: b8496567c22892a448e01f25be0d024f, type: 3}
+  attackDirection: {x: 0, y: 0}
   followRange: 15
 --- !u!114 &7826434772959290018
 MonoBehaviour:
@@ -304,5 +305,5 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 3
-  attackFreq: 2
+  attackFreq: 1
   shootingRange: 5

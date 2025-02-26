@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6490003993712879642}
   - component: {fileID: 6333179478463225669}
   - component: {fileID: 854519210780605032}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
   - component: {fileID: 4390075688726335750}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,5 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2948fe854e3932e4eb436669a032e9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chracterRenderer: {fileID: 6333179478463225669}
+  weaponPivot: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  attackDirection: {x: 0, y: 0}
   chracterRenderer: {fileID: 6333179478463225669}
   followRange: 15
