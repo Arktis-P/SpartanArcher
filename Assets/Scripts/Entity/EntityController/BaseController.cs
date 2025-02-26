@@ -32,11 +32,14 @@ public class BaseController : MonoBehaviour
     public bool showDebug = false;
     protected bool isPattern = false;
 
+    protected MonsterStat monsterStat;
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         animationHandler = GetComponent<EntityAnimationHandler>();
         statHandler = GetComponent<StatHandler>();
+        monsterStat =GetComponent<MonsterStat>();
 
         if (weaponPrefab != null)
         {
