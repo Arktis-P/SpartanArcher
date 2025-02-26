@@ -14,7 +14,7 @@ public class MonsterManager : MonoBehaviour
     public List<MonsterController> activeMonsters = new List<MonsterController>();
     public List<BossController> activeBoss = new List<BossController>();
 
-    private Vector3 bossPos = new Vector3(-13, 0, 0);
+    private Vector3 bossPos = new Vector3(25, 0, 0);
 
     [SerializeField] private Color gizmoColor = new Color(1, 0, 0, 0.3f);
 
@@ -45,8 +45,8 @@ public class MonsterManager : MonoBehaviour
     {
         if (stage <= 0) { return; }
 
-        // check boss stage here?
         StartSpawn(setMonsterNum(stage));  // spawn monsters
+        if (stage % 10 == 0) SpawnRandomBoss();  // boss spawn
     }
     private int setMonsterNum(int stage)  // set random spawn number according to the stage
     {
@@ -73,8 +73,6 @@ public class MonsterManager : MonoBehaviour
         monsterSpawnComplete = false;
         
         for (int i = 0; i < num; i++) SpawnRandomMonster();
-        
-        if (num % 10 == 0) SpawnRandomBoss();  // boss spawn
 
         monsterSpawnComplete = true;
     }
@@ -141,7 +139,7 @@ public class MonsterManager : MonoBehaviour
             if (activeBoss.Count == 0) return;
             else
             {
-                //activeBoss[0].Death();  // if boss controller is on make it death
+                activeBoss[0].Death();  // if boss controller is on make it death
             }
         }
         int rand = Random.Range(0, activeMonsters.Count);

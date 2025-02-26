@@ -17,6 +17,8 @@ public class GameManager : SingleTon<GameManager>
     private int score;
     public int Score { get => score; }
 
+    public bool isGod = false;
+
     private void Awake()
     {
         base.Awake();
@@ -54,7 +56,8 @@ public class GameManager : SingleTon<GameManager>
     // after clear, after skill selected, continue game
     public void ContinueGame()
     {
-        stage++;  // add stage
+        if (isGod) { stage = 10; }
+        else { stage++; }  // add stage
 
         uiManager.SwitchStageClear();  // switch off stage clear UI
         uiManager.SwitchOnStageUI();  // switch on on-stage UI again
