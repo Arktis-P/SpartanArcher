@@ -47,6 +47,7 @@ public class BossController : BaseController
 
     protected override void HandleAction()
     {
+
         if (weaponHandler == null || /*target == null*/testTarget == null)
         {
             //타깃 없을때 제로백터가 아니라면 제로백터로 

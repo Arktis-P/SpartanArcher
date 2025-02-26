@@ -41,6 +41,11 @@ public class PlayerController : BaseController
         Debug.Log("Is Dash");
     }
 
+    void OnFever()
+    {
+        activeSkill.StartFeverTime();
+    }
+
     
     protected override void HandleAction()  // ĳ���� �ٶ󺸴� ���� ����
     {

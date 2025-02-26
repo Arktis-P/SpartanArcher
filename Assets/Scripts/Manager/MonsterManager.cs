@@ -106,6 +106,7 @@ public class MonsterManager : MonoBehaviour
         bossController.Init(this, gameManager.player.transform);
 
         activeBoss.Add(bossController);
+        UIManager.Instance.SwitchBossStatus(spawnedBoss);  // start health bar of boss
     }
 
     private void OnDrawGizmosSelected()

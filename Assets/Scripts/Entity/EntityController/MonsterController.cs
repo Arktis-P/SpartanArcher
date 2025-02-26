@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterController : BaseController
 {
-    [SerializeField] private float followRange = 15f;
     private Transform target;
     private MonsterManager monsterManager;
 
@@ -43,29 +42,49 @@ public class MonsterController : BaseController
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
 
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
+        //RaycastHit2D foot = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
+        //Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.red);
+        Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
+
         //Target의 거리가 추적거리 안쪽인지
-        if(distance <= followRange)
+        if (distance <= followRange)
         {
             lookDirection = direction;
             attackDirection = lookDirection;
             if (distance <= weaponHandler.AttackRange)
+
+        if (head.collider == null) {
+
+                    attackDirection = lookDirection;
+                    //Target의 거리가 추적거리 안쪽인지
+                    if (distance <= monsterStat.DetectionRange)
             {
-                int layerMaskTarget = weaponHandler.target;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
-                    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+                lookDirection = direction;
 
-                if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                if (distance <= weaponHandler.AttackRange)
                 {
-                    isAttacking = true;
+                    int layerMaskTarget = weaponHandler.target;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
+                        (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+
+                    if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                    {
+                        isAttacking = true;
+                    }
+
+                    movementDirection = Vector2.zero;
+                    return;
                 }
+                //공격범위가 아니면 이동
+                movementDirection = direction;
 
-                movementDirection = Vector2.zero;
-
-                return;
             }
+        }
 
-            //공격범위가 아니면 이동
-            movementDirection = direction;
+        else
+        {
+            movementDirection = Vector2.zero;
         }
     }
 
