@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
+    public bool FragmentProjectile { get; set; }
 
     private RangeWeaponHandler rangeWeaponHandler;
 
@@ -66,6 +68,13 @@ public class ProjectileController : MonoBehaviour
         {
             if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
             {
+                if (FragmentProjectile)
+                {
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right *2, Vector2.up );
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.down);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.left );
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.right );
+                }
                 DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
             }
             else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
@@ -82,7 +91,6 @@ public class ProjectileController : MonoBehaviour
         }
         
     }
-
 
     public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)
     {

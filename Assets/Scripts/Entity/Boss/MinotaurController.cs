@@ -18,11 +18,6 @@ namespace Assets.Scripts.Entity.Boss
         private Vector2 rushDirection;
         public LineRenderer rushLine;
 
-
-        private void Start()
-        {
-            movementDirection = DirectionToTarget();
-        }
         protected override void FixedUpdate()
         {
             movementDirection = DirectionToTarget();
@@ -35,7 +30,7 @@ namespace Assets.Scripts.Entity.Boss
 
             animationHandler.Move(direction);
         }
-        private void Start()
+        public override void Start()
         {
             base.Start();
             StartCoroutine(PatternAction());
@@ -46,7 +41,7 @@ namespace Assets.Scripts.Entity.Boss
             Vector2 targetDirection = DirectionToTarget();
             if (targetDistance <= weaponHandler.AttackRange)  // check if player is in shooting range
             {
-                animationHandler.Pattern01();  // animation
+                bossAnimationHandler.Pattern01();  // animation
 
                 // process collision
                 RaycastHit2D hit = Physics2D.Raycast(
@@ -64,7 +59,7 @@ namespace Assets.Scripts.Entity.Boss
             float targetDistance = DistanceToTarget();
             Vector2 targetDirection = DirectionToTarget();
 
-            animationHandler.Pattern02();  // stamping animation
+            bossAnimationHandler.Pattern02();  // stamping animation
             
             if (targetDistance <= followRange)  // find player(target)'s location
             {
@@ -78,7 +73,7 @@ namespace Assets.Scripts.Entity.Boss
         }
         private void RushToTarget()
         {
-            animationHandler.Pattern02();  // play animation
+            bossAnimationHandler.Pattern02();  // play animation
             StartCoroutine(RushCoroutine());  // rush
         }
         private IEnumerator RushCoroutine()
@@ -116,7 +111,7 @@ namespace Assets.Scripts.Entity.Boss
 
             if (targetDistance <= followRange)
             {
-                animationHandler.Pattern03();
+                bossAnimationHandler.Pattern03();
 
                 StartCoroutine(WheelwindCoroutine(targetDirection));
             }

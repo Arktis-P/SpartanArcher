@@ -17,17 +17,11 @@ public class BossController : BaseController
     //테스트용 타겟, 테스트 끝나고 target 사용
     [SerializeField] protected Transform testTarget;
     [SerializeField] protected float followRange = 15f;
-    protected Vector2 movementDirection = Vector2.zero;
-    public Vector2 MovementDirection { get { return movementDirection; } }
-
     protected int patternNum;
 
-    [SerializeField] protected float followRange = 15f;
+    GameManager gameManager;
 
-    protected bool isAttacking;
-    private float timeSinceLastAttack = float.MaxValue;
 
-    GameManager gameManager;   
 
     //MonsterManager에서 호출해줘야함.
     public void Init(MonsterManager monsterManager, Transform target)
@@ -38,7 +32,7 @@ public class BossController : BaseController
 
     public virtual void Start()
     {
-        InvokeRepeating("PatternSelect",4f,4f);
+        InvokeRepeating("PatternSelect", 4f, 4f);
     }
     protected override void Awake()
     {
@@ -57,20 +51,20 @@ public class BossController : BaseController
         {
             //타깃 없을때 제로백터가 아니라면 제로백터로 
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
+
             return;
         }
 
         //타깃과의 방향 거리 구해서 저장
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
-
+        attackDirection = lookDirection;
         isAttacking = false;
         //따라갈 거리 안에 들어왔는지
         if (distance <= followRange)
         {
             //바라보도록 방향을 타겟의 방향을 저장해준다.
             lookDirection = direction;
-
             //공격범위 안에 들어왔는지
             if (distance <= weaponHandler.AttackRange)
             {
@@ -110,8 +104,17 @@ public class BossController : BaseController
     }
     protected void PatternSelect()
     {
-        patternNum = Random.Range((int)Pattern.Pattern01,(int)Pattern.End);
+        patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.End);
     }
 
-
+    public override void PatternEnd()
+    {
+        isPattern = false;
+    }
+    public override void PatternStart()
+    {
+        isPattern = true;
+    }
 }
+
+

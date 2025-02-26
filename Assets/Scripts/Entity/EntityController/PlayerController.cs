@@ -35,7 +35,7 @@ public class PlayerController : BaseController
         else isStop = true;
     }
 
-    void OnDash() // ´ë½¬ ±â´É Ãß°¡
+    void OnDash() // ï¿½ë½¬ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
     {
         activeSkill.StartDash();
         Debug.Log("Is Dash");

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +23,13 @@ namespace Assets.Scripts.Entity.Boss
 
         public void SpawnPawn() //Pattern01
         {
-            if(pawnPrefabs.Count == 0)
+            if (pawnPrefabs.Count == 0)
             {
                 Debug.Log("pawnPrefabs가 설정되지 않았습니다.");
                 return;
             }
             float y = transform.position.y - 2;
-            spawnArea = new Vector2(transform.position.x, transform.position.y-2);
+            spawnArea = new Vector2(transform.position.x, transform.position.y - 2);
 
             MonsterManager monsterManager = FindObjectOfType<MonsterManager>();
 
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Entity.Boss
             {
                 GameObject spawnedEnemy = Instantiate(pawnPrefabs[i], new Vector3(spawnArea.x, spawnArea.y), Quaternion.identity);
                 MonsterController monsterController = spawnedEnemy.GetComponent<MonsterController>();
-                
+
                 monsterController.Init(monsterManager, testTarget);
                 monsterManager.activeMonsters.Add(monsterController);
             }
@@ -63,7 +63,7 @@ namespace Assets.Scripts.Entity.Boss
             {
                 //바라보도록 방향을 타겟의 방향을 저장해준다.
                 lookDirection = direction;
-
+                attackDirection = lookDirection;
                 //공격범위 안에 들어왔는지
                 if (distance <= weaponHandler.AttackRange)
                 {
@@ -85,7 +85,8 @@ namespace Assets.Scripts.Entity.Boss
         private void ThrowAttack() //Pattern02
         {
             //Projectile 생기면 구현 예정
-
+            weaponHandler.ThrowAttack();
+            Debug.Log("Throw");
 
         }
 
@@ -101,27 +102,33 @@ namespace Assets.Scripts.Entity.Boss
 
         IEnumerator PatternAction()
         {
-            while(true)
+            while (true)
             {
+                yield return new WaitForSecondsRealtime(4);
                 switch (patternNum)
                 {
                     case 0:
-                        SpawnPawn();
+                        //SpawnPawn();
+                        ThrowAttack();
+                        PatternStart();
                         bossAnimationHandler.Pattern01();
                         break;
                     case 1:
                         ThrowAttack();
+                        PatternStart();
                         bossAnimationHandler.Pattern02();
                         break;
                     case 2:
                         Eat();
+                        ThrowAttack();
+                        PatternStart();
                         bossAnimationHandler.Pattern03();
                         break;
                     case 3:
                         break;
 
                 }
-                yield return new WaitForSecondsRealtime(6);
+                yield return new WaitForSecondsRealtime(2);
 
             }
         }

@@ -47,7 +47,7 @@ public class MonsterController : BaseController
         if(distance <= followRange)
         {
             lookDirection = direction;
-
+            attackDirection = lookDirection;
             if (distance <= weaponHandler.AttackRange)
             {
                 int layerMaskTarget = weaponHandler.target;
