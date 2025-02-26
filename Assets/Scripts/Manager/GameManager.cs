@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingleTon<GameManager>
 {
@@ -56,6 +57,12 @@ public class GameManager : SingleTon<GameManager>
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
         UpdateScore(score);
         monsterManager.Init(this);  // call monster manager
+    }
+    // after fail, restart the game
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+        StartGame();
     }
     // after clear, after skill selected, continue game
     public void ContinueGame()
