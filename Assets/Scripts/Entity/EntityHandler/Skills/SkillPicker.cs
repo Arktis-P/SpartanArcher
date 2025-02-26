@@ -67,11 +67,7 @@ public class SkillPicker : MonoBehaviour
         Debug.Log($"뽑은 스킬 : {skillManager.randomSkillList[select].Name}, {skillManager.randomSkillList[select].Category}");
         //뽑은 스킬들 플레이어 스텟에 적용 시키기
         SkillInfo selectedSkill = skillManager.randomSkillList[select];
-        if (skillManager.randomSkillList[select].Name == "대쉬 기능 추가")
-        {
-            skillManager.ChangedSkill();
-        }
-
+        
         switch (selectedSkill.Category)
         {
             case SkillCategory.Player:
@@ -101,12 +97,29 @@ public class SkillPicker : MonoBehaviour
                 rangeWeaponHandler.Reflection += selectedSkill.Reflection; //투사체 반사
                 break;
             case SkillCategory.Active:
-                playerStat.Desh = selectedSkill.Dash;
-                playerStat.DeshDistance += selectedSkill.DashDistance;
+                if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
+                {
+                    playerStat.Desh = selectedSkill.Dash;
+                    playerStat.DeshDistance += selectedSkill.DashDistance;
+                }
+                else if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
+                {
+                    playerStat.IsFiverTime = selectedSkill.IsFeverTime;
+                    playerStat.FiverTime += selectedSkill.FeverTime;
+                }
+                
                 break;
             case SkillCategory.Passive:
                 break;
 
+        }
+        if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
+        {
+            skillManager.ChangedDash();
+        }
+        if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
+        {
+            skillManager.ChangedFiver();
         }
 
         GameManager.Instance.ContinueGame();

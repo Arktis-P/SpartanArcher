@@ -77,6 +77,12 @@ public class SkillInfo : ScriptableObject
     [SerializeField] private float dashDistance;
     public float DashDistance { get { return dashDistance; } }
 
+    [SerializeField] private bool isFeverTime;
+    public bool IsFeverTime { get { return isFeverTime; } }
+
+    [SerializeField] private float feverTime;
+    public float FeverTime { get { return feverTime; } }
+
     //<패시브 스킬>
     //마늘 - 캐릭터 일정 범위 내 근접 시 데미지
     //책 - 캐릭터 돌면서 충돌 시 데미지

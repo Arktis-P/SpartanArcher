@@ -39,11 +39,25 @@ public class PlayerStat : StatHandler
         set => desh = value;
     }
 
-    [SerializeField] private float deshDistance = 1.5f;
+    [Range(1, 5)][SerializeField] private float deshDistance = 1.5f;
     public float DeshDistance
     {
         get => deshDistance;
-        set => deshDistance = value;
+        set => deshDistance = Mathf.Clamp(value, 0f, 5f);
+    }
+
+    [SerializeField] private bool isFiverTime = false;
+    public bool IsFiverTime
+    {
+        get => isFiverTime;
+        set => isFiverTime = value;
+    }
+
+    [Range(1, 100)][SerializeField] private float fiverTime = 5;
+    public float FiverTime
+    {
+        get => fiverTime;
+        set => fiverTime = Mathf.Clamp(value, 0f, 100f);
     }
 }
 
