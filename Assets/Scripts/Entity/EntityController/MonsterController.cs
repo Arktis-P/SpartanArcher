@@ -40,13 +40,11 @@ public class MonsterController : BaseController
         Vector2 direction = DirectionToTarget();
         
 
-        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
-        //RaycastHit2D foot = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Obstacle")));
-        //Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.red);
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, 2f, (1 << LayerMask.NameToLayer("Obstacle")));
         Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
 
-
-        if (head.collider == null) {
+        if (head.collider == null)
+        {
             //Target의 거리가 추적거리 안쪽인지
             if (distance <= monsterStat.DetectionRange)
             {
@@ -60,6 +58,7 @@ public class MonsterController : BaseController
 
                     if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                     {
+                        isStop = true;
                         isAttacking = true;
                     }
 
@@ -67,6 +66,7 @@ public class MonsterController : BaseController
                     return;
                 }
 
+                isStop = false;
                 //공격범위가 아니면 이동
                 movementDirection = direction;
             }
