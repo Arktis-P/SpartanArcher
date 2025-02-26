@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996a7860dc889c54d9855f1d6dd02d13, type: 3}
   m_Name: Skill Data 14
   m_EditorClassIdentifier: 
-  skillname: Dash
+  skillname: "\uB300\uC26C \uAE30\uB2A5 \uCD94\uAC00"
   category: 2
   health: 0
   moveSpeed: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   penetration: 0
   reflection: 0
   knockbackDistance: 0
-  dash: 0
+  dash: 1

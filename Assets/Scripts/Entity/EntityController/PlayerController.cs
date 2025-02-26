@@ -8,7 +8,11 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerController : BaseController
 {
     private GameManager gameManager;
-
+    [SerializeField] private ActiveSkill activeSkill;
+    private void Start()
+    {
+        activeSkill = GetComponent<ActiveSkill>();
+    }
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
@@ -29,6 +33,12 @@ public class PlayerController : BaseController
             isStop = false;
         }
         else isStop = true;
+    }
+
+    void OnDash()
+    {
+        activeSkill.StartDash();
+        Debug.Log("Is Dash");
     }
 
     

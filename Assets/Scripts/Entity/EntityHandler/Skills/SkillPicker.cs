@@ -97,6 +97,7 @@ public class SkillPicker : MonoBehaviour
                 rangeWeaponHandler.Reflection += selectedSkill.Reflection; //투사체 반사
                 break;
             case SkillCategory.Active:
+                playerStat.Desh = selectedSkill.Dash;
                 break;
             case SkillCategory.Passive:
                 break;
