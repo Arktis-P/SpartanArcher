@@ -48,6 +48,9 @@ public class ProjectileController : MonoBehaviour
         //}
 
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+
+        // if stage is over, destroy all projectile
+        if (!GameManager.Instance.OnStage) DestroyProjectile(transform.position, false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
