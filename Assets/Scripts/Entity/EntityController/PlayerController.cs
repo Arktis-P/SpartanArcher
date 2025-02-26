@@ -23,19 +23,18 @@ public class PlayerController : BaseController
     void OnMove(InputValue inputValue)  // 캐릭터 움직임
     {
         movementDirection = inputValue.Get<Vector2>().normalized;
+
+        if (movementDirection != Vector2.zero)
+        {
+            isStop = false;
+        }
+        else isStop = true;
     }
 
+    
     protected override void HandleAction()  // 캐릭터 바라보는 방향 설정
     {
         base.HandleAction();
-
-        /*
-        if (weaponHandler == null)
-        {
-            Debug.Log("WeaponHandler is null, returning from HandleAction.");
-            return;
-        }
-        */
         
         Vector2 direction = movementDirection;   // 기본적으로 이동 방향을 바라봄
                                                  
@@ -50,20 +49,21 @@ public class PlayerController : BaseController
 
         Vector2 enemyDirection = GetNearestEnemyDirection();  // 가장 가까운 적 방향 가져오기
 
-        if (enemyDirection != Vector2.zero)
+        if (enemyDirection != Vector2.zero && isStop)
         {
             direction = enemyDirection; // 감지된 몬스터가 있으면 그 방향으로 전환
+            attackDirection = enemyDirection;
+            if (isStop) isAttacking = true;
         }
+        else isAttacking = false;
 
         // 최종적으로 바라보는 방향 설정
         if (direction != Vector2.zero)
         {
             lookDirection = direction;
         }
-
-        isAttacking = true;
     }
-
+    
     
     private Vector2 GetNearestEnemyDirection()   // 가장 가까운 몬스터의 방향을 반환하는 함수
     {

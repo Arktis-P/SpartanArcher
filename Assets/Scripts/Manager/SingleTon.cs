@@ -16,30 +16,35 @@ public class SingleTon<T> : MonoBehaviour where T : MonoBehaviour
             }
             else
             {
-                // Ã¹ ¹øÂ° °´Ã¼ »ý¼º ½Ã, ¾À¿¡ Ãß°¡
+                // Ã¹ ï¿½ï¿½Â° ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
                 instance = FindObjectOfType<T>();
                 if (instance == null)
                 {
                     GameObject obj = new GameObject(typeof(T).Name);
                     instance = obj.AddComponent<T>();
-                    DontDestroyOnLoad(obj);  // ¾ÀÀÌ º¯°æµÇ¾îµµ °´Ã¼°¡ ÆÄ±«µÇÁö ¾Êµµ·Ï ¼³Á¤
+                    DontDestroyOnLoad(obj);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾îµµ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 }
                 return instance;
             }
         }
     }
 
-    // Awake()¸¦ ¿À¹ö¶óÀÌµåÇÏ¿© ÃÊ±âÈ­ ÀÛ¾÷À» Ã³¸®
+    // Awake()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½Ï¿ï¿½ ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     protected virtual void Awake()
     {
         if (instance == null)
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject);  // ¾À ÀüÈ¯ ½Ã °´Ã¼¸¦ À¯Áö
+            DontDestroyOnLoad(gameObject);  // ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            Destroy(gameObject);  // ÀÌ¹Ì ÀÎ½ºÅÏ½º°¡ ÀÖÀ¸¸é Áßº¹ °´Ã¼ »èÁ¦
+            Destroy(gameObject);  // ï¿½Ì¹ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+            //DontDestroyOnLoad(gameObject);  // ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
+        //else
+        //{
+        //    Destroy(gameObject);  // ï¿½Ì¹ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+        //}
     }
 }

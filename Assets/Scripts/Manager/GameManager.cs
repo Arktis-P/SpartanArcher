@@ -14,6 +14,8 @@ public class GameManager : SingleTon<GameManager>
 
     private int stage;
     public int Stage { get => stage; }
+    private int score;
+    public int Score { get => score; }
 
     private void Awake()
     {
@@ -42,9 +44,11 @@ public class GameManager : SingleTon<GameManager>
     public void StartGame()
     {
         stage = 1;  // set (or reset) stage to 1
+        score = 0;  // set (or res\et) scroe to 0
 
         uiManager.SwitchStartTitle();  // switch off start title
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
+        UpdateScore(score);
         monsterManager.Init(this);  // call monster manager
     }
     // after clear, after skill selected, continue game
@@ -72,5 +76,12 @@ public class GameManager : SingleTon<GameManager>
     {
         uiManager.SwitchOnStageUI();  // switch off on-stage UI
         uiManager.SwitchStageFail();  // switch on stage-fail UI
+    }
+
+    // when score changed update score
+    public void UpdateScore(int score)
+    {
+        this.score += score;
+        uiManager.UpdateScore();
     }
 }
