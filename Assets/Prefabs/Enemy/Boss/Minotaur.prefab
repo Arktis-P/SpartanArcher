@@ -253,9 +253,9 @@ GameObject:
   - component: {fileID: 5714419149737204349}
   - component: {fileID: 3621468171116670712}
   - component: {fileID: 7109518190739615354}
-  - component: {fileID: 6812464214718113983}
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 8286661783320972236}
+  - component: {fileID: 6812464214718113983}
   - component: {fileID: 4390075688726335750}
   m_Layer: 0
   m_Name: Minotaur
@@ -353,18 +353,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6812464214718113983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128543812527038501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cea35d3a80ae6744b810ed234cb2c1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5324493131628853826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +383,18 @@ MonoBehaviour:
   moveSpeed: 3
   attackFreq: 1
   shootingRange: 5
+--- !u!114 &6812464214718113983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128543812527038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cea35d3a80ae6744b810ed234cb2c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4390075688726335750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,3 +413,11 @@ MonoBehaviour:
   attackDirection: {x: 0, y: 0}
   chracterRenderer: {fileID: 6333179478463225669}
   followRange: 15
+  patternAreas:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
+  rushLine: {fileID: 3214005435566405463}

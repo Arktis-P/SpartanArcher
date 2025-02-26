@@ -140,6 +140,7 @@ public class MonsterManager : MonoBehaviour
             else
             {
                 activeBoss[0].Death();  // if boss controller is on make it death
+                return;
             }
         }
         int rand = Random.Range(0, activeMonsters.Count);

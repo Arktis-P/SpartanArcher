@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.Entity.Boss
 {
@@ -17,6 +18,16 @@ namespace Assets.Scripts.Entity.Boss
         private Vector2 rushDirection;
         public LineRenderer rushLine;
 
+
+        private void Start()
+        {
+            movementDirection = DirectionToTarget();
+        }
+        protected override void FixedUpdate()
+        {
+            movementDirection = DirectionToTarget();
+            base.FixedUpdate();
+        }
         protected override void Movement(Vector2 direction)
         {
             direction = direction * statHandler.MoveSpeed;

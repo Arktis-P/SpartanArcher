@@ -89,6 +89,9 @@ public class BossController : BaseController
         {
             component.enabled = false;
         }
+
+        monsterManager.RemoveBossOnDeath(this);
+
         animationHandler.Die();
         Destroy(gameObject, 3f);
     }
