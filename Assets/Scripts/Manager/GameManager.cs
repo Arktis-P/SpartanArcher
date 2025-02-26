@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class GameManager : SingleTon<GameManager>
@@ -16,6 +17,8 @@ public class GameManager : SingleTon<GameManager>
     public int Stage { get => stage; }
     private int score;
     public int Score { get => score; }
+    private bool onStage;
+    public bool OnStage { get => onStage; }
 
     public bool isGod = false;
 
@@ -46,7 +49,8 @@ public class GameManager : SingleTon<GameManager>
     public void StartGame()
     {
         stage = 1;  // set (or reset) stage to 1
-        score = 0;  // set (or res\et) scroe to 0
+        score = 0;  // set (or reset) score to 0
+        onStage = true;  // set (or reset) boolean to false 
 
         uiManager.SwitchStartTitle();  // switch off start title
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
@@ -58,6 +62,7 @@ public class GameManager : SingleTon<GameManager>
     {
         if (isGod) { stage = 10; }
         else { stage++; }  // add stage
+        onStage = true;
 
         uiManager.SwitchStageClear();  // switch off stage clear UI
         uiManager.SwitchOnStageUI();  // switch on on-stage UI again
@@ -69,14 +74,18 @@ public class GameManager : SingleTon<GameManager>
     // when cleared stage == all monsters dead
     public void StageClear()
     {
+        onStage = false;
+
         uiManager.SwitchOnStageUI();  // switch off on-stage UI
         uiManager.SwitchStageClear();  // switch on stage-clear UI
 
         skillManager.SetSkillPicker();  // provide player options
-    }   
+    }
     // when failed stage == player dead
     public void StageFail()
     {
+        onStage = false;
+
         uiManager.SwitchOnStageUI();  // switch off on-stage UI
         uiManager.SwitchStageFail();  // switch on stage-fail UI
     }
