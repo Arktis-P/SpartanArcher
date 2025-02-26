@@ -17,9 +17,19 @@ public class BossController : BaseController
     //테스트용 타겟, 테스트 끝나고 target 사용
     [SerializeField] protected Transform testTarget;
     [SerializeField] protected float followRange = 15f;
+    protected Vector2 movementDirection = Vector2.zero;
+    public Vector2 MovementDirection { get { return movementDirection; } }
 
     protected int patternNum;
 
+    [SerializeField] protected float followRange = 15f;
+
+    protected bool isAttacking;
+    private float timeSinceLastAttack = float.MaxValue;
+
+    GameManager gameManager;   
+
+    //MonsterManager에서 호출해줘야함.
     public void Init(MonsterManager monsterManager, Transform target)
     {
         this.monsterManager = monsterManager;
