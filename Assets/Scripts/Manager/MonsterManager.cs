@@ -92,8 +92,26 @@ public class MonsterManager : MonoBehaviour
         MonsterController monsterController = spawnedMonster.GetComponent<MonsterController>();
         monsterController.Init(this, gameManager.player.transform);  // init monster controller
 
+        // check if monster is in spwan area (not inside the walls)
+        while (!IsInsideSpawnArea(spawnedMonster.transform.position, spawnArea))
+        {
+            // if not in spawn area, transport to other place
+            // get random position from entire spawn area
+            spawnedMonster.transform.position = new Vector2(
+                Random.Range(spawnArea.xMin, spawnArea.xMax),
+                Random.Range(spawnArea.yMin, spawnArea.yMax)
+                );
+        }
         activeMonsters.Add(monsterController);  // make monster object work
     }
+    // check if monster's position is in Rect area
+    public bool IsInsideSpawnArea(Vector3 position, Rect rect)
+    {
+        return
+            position.x >= rect.xMin && position.x <= rect.xMax
+            && position.y >= rect.yMin && position.y <= rect.yMax;
+    }
+
     // select random boss to spawn
     private void SpawnRandomBoss()
     {
