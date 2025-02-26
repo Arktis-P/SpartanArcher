@@ -64,6 +64,8 @@ public class UIManager : SingleTon<UIManager>
         isOnStage = !isOnStage;
         onStageUI.SetActive(isOnStage);  // switch entire on Stage UI
         stageText.text = gameManager.Stage.ToString();  // update stage text
+
+        UpdateHealthBar();
     }
     // switch on stage clear UI
     public void SwitchStageClear()
@@ -110,5 +112,11 @@ public class UIManager : SingleTon<UIManager>
             bossHealthBar.Init(boss);
         }
         else bossStatus.SetActive(false);
+    }
+
+    // update player health method
+    public void UpdateHealthBar()
+    {
+        playerHealthBar.GetComponent<HealthbarController>().ChangeHealthBar();
     }
 }

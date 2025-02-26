@@ -51,6 +51,8 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
+        UIManager.Instance.UpdateHealthBar();  // update healthbar
+
         OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
 
         if (change < 0)
