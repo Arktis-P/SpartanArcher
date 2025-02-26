@@ -74,7 +74,7 @@ public class SkillPicker : MonoBehaviour
                 playerStat.Health += selectedSkill.Health;
                 playerStat.MoveSpeed += selectedSkill.MoveSpeed;
                 playerStat.ShootingRange += selectedSkill.ShootingRange;
-                playerStat.SkillFreq += selectedSkill.SkillFreq;
+                playerStat.SkillFreq -= selectedSkill.SkillFreq;
                 playerStat.DrainRatio += selectedSkill.DrainRaio;
                 playerStat.KnockbackResistance += selectedSkill.KnockbackResistance;
                 playerStat.ProjectileNumber += selectedSkill.ProjectileNumber;
@@ -88,7 +88,7 @@ public class SkillPicker : MonoBehaviour
                 //반사 횟수 reflection
                 //넉백 거리 knockbackDistance
                 //waponHandler에 적용 시키기
-                rangeWeaponHandler.Delay -= selectedSkill.AttackFreq; // 발사 속도 감소
+                playerStat.AttackFreq -= selectedSkill.AttackFreq; // 발사 속도 감소
                 rangeWeaponHandler.Power += selectedSkill.Damage; //데미지 증가
                 rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // 투사체 속도 증가
                 rangeWeaponHandler.BulletSize += selectedSkill.Size; // 투사체 크기 증가
@@ -99,13 +99,11 @@ public class SkillPicker : MonoBehaviour
             case SkillCategory.Active:
                 if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
                 {
-                    if (!playerStat.Dash && selectedSkill.Dash) UIManager.Instance.SwitchZButton();
-                    playerStat.Dash = selectedSkill.Dash;
-                    playerStat.DashDistance += selectedSkill.DashDistance;
+                    playerStat.Desh = selectedSkill.Dash;
+                    playerStat.DeshDistance += selectedSkill.DashDistance;
                 }
                 else if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
                 {
-                    if (!playerStat.IsFeverTime && selectedSkill.IsFeverTime) UIManager.Instance.SwitchXButton();
                     playerStat.IsFeverTime = selectedSkill.IsFeverTime;
                     playerStat.FeverTime += selectedSkill.FeverTime;
                 }
@@ -121,7 +119,7 @@ public class SkillPicker : MonoBehaviour
         }
         if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
         {
-            skillManager.ChangedFever();
+            skillManager.ChangedFiver();
         }
 
         GameManager.Instance.ContinueGame();
