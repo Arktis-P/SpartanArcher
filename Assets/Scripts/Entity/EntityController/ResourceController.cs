@@ -30,6 +30,14 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = statHandler.Health;
     }
 
+    private void Update()
+    {
+        if (timeSinceLastChange < healthChangeDelay)
+        {
+            timeSinceLastChange += Time.deltaTime;
+            if (timeSinceLastChange >= healthChangeDelay) animationHandler.InvincibilityEnd();
+        }
+    }
 
     public bool ChangeHealth(float change)  // WeaponHandler 또는 ProjectileController에서 적용
     {
