@@ -23,6 +23,7 @@ public class UIManager : SingleTon<UIManager>
     public Text scoreText;
     public GameObject zButton;
     public GameObject xButton;
+    public GameObject bossStatus;
 
     private GameManager gameManager;
 
@@ -92,5 +93,22 @@ public class UIManager : SingleTon<UIManager>
     {
         if (!xButton.activeSelf) xButton.SetActive(true);
         else xButton.SetActive(false);
+    }
+
+    // switch boss health bar when boss is on stage  // but do not consider here whether it is boss stage or not
+    public void SwitchBossStatus()
+    {
+        if (!bossStatus.activeSelf) bossStatus.SetActive(true);
+        else bossStatus.SetActive(false);
+    }
+    public void SwitchBossStatus(GameObject boss)
+    {
+        if (!bossStatus.activeSelf)
+        {
+            bossStatus.SetActive(true);
+            BossHealthbarController bossHealthBar = bossStatus.GetComponent<BossHealthbarController>();
+            bossHealthBar.Init(boss);
+        }
+        else bossStatus.SetActive(false);
     }
 }

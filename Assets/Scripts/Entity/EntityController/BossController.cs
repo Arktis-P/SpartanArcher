@@ -94,6 +94,8 @@ public class BossController : BaseController
 
         animationHandler.Die();
         Destroy(gameObject, 3f);
+
+        UIManager.Instance.SwitchBossStatus();  // switch off boss status UI
     }
     protected virtual void NormalAttack()
     {
