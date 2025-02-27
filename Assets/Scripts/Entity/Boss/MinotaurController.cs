@@ -21,28 +21,28 @@ namespace Assets.Scripts.Entity.Boss
         protected override void FixedUpdate()
         {
             movementDirection = DirectionToTarget();
-            base.FixedUpdate();
+            if(!isPattern)
+                base.FixedUpdate();
         }
-        //protected override void Movement(Vector2 direction)
-        //{
-        //    direction = direction * statHandler.MoveSpeed;
-        //    _rigidbody.velocity = direction;
+        protected override void Update()
+        {
+            if(!isPattern || !isStopAll)
+                base.Update();
+        }
 
-        //    animationHandler.Move(direction);
-        //}
         public override void Start()
         {
             base.Start();
             StartCoroutine(PatternAction());
         }
-        private void SlashAttack()
+        //애니메이션 이벤트 호출
+        public void SlashAttack()
         {
+            StopAll();
             float targetDistance = DistanceToTarget();
             Vector2 targetDirection = DirectionToTarget();
             if (targetDistance <= weaponHandler.AttackRange)  // check if player is in shooting range
             {
-                //bossAnimationHandler.Pattern01();  // animation
-
                 // process collision
                 RaycastHit2D hit = Physics2D.Raycast(
                     transform.position, targetDirection, weaponHandler.AttackRange, weaponHandler.target
@@ -54,26 +54,34 @@ namespace Assets.Scripts.Entity.Boss
             }
         }
 
-        private void RushAttack()
+        public void StopAll()
+        {
+            isStopAll = true;
+            _rigidbody.velocity = Vector2.zero;
+            lookDirection = Vector2.zero;
+        }
+        public void StopOnlyMovement()
+        {
+            _rigidbody.velocity = Vector2.zero;
+        }
+        public void RushAttack()
         {
             float targetDistance = DistanceToTarget();
             Vector2 targetDirection = DirectionToTarget();
 
-            bossAnimationHandler.Pattern02();  // stamping animation
-            
             if (targetDistance <= followRange)  // find player(target)'s location
             {
-                rushDirection = targetDirection; rushPoint = testTarget.position;  // set rush position and direction
+                rushDirection = targetDirection; rushPoint = target.position;  // set rush position and direction
                 // show rush area (some larger)
                 rushLine.SetPosition(0, transform.position);
                 rushLine.SetPosition(1, rushPoint);
                 
-                Invoke("RushToTarget", 1f);  // wait for 1 sec and rush 
+                //Invoke("RushToTarget", 1f);  // wait for 1 sec and rush 
             }
         }
-        private void RushToTarget()
+
+        public void RushToTarget()
         {
-            bossAnimationHandler.Pattern02();  // play animation
             StartCoroutine(RushCoroutine());  // rush
         }
         private IEnumerator RushCoroutine()
@@ -100,8 +108,8 @@ namespace Assets.Scripts.Entity.Boss
                 timer += Time.deltaTime;
                 yield return null;
             }
-
             _rigidbody.velocity = Vector2.zero;  // rush end
+            PatternEnd();
         }
 
         private void WheelwindAttack()
@@ -111,8 +119,6 @@ namespace Assets.Scripts.Entity.Boss
 
             if (targetDistance <= followRange)
             {
-                //bossAnimationHandler.Pattern03();
-
                 StartCoroutine(WheelwindCoroutine(targetDirection));
             }
         }
@@ -141,16 +147,17 @@ namespace Assets.Scripts.Entity.Boss
         {
             while (true)
             {
-                yield return new WaitForSecondsRealtime(4);
+                yield return new WaitForSecondsRealtime(5);
                 Debug.Log(patternNum);
                 switch (patternNum)
                 {
                     case 0:
-                        SlashAttack();
+                        PatternStart();
                         bossAnimationHandler.Pattern01();
                         break;
                     case 1:
-                        RushAttack();
+                        PatternStart();
+                        StopOnlyMovement();
                         bossAnimationHandler.Pattern02();
                         break;
                     case 2:

@@ -45,8 +45,7 @@ public class BossController : BaseController
 
     protected override void HandleAction()
     {
-
-        if (weaponHandler == null || /*target == null*/testTarget == null)
+        if (weaponHandler == null || /*target == null*/target == null)
         {
             //타깃 없을때 제로백터가 아니라면 제로백터로 
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
@@ -87,24 +86,37 @@ public class BossController : BaseController
     {
         //position간 거리 리턴
         //return Vector3.Distance(transform.position, target.position);
-        return Vector3.Distance(transform.position, testTarget.position);
+        return Vector3.Distance(transform.position, target.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
         //포지션을 빼서 normalized로 방향 리턴
         //return (target.position - transform.position).normalized;
-        return (testTarget.position - transform.position).normalized;
+        return (target.position - transform.position).normalized;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //플레이어라면 데미지를 줘야함.
+        ResourceController resourceController =collision.collider.GetComponent<ResourceController>();
+        if (resourceController != null)
+        {
+            resourceController.ChangeHealth(-weaponHandler.Power);
+            if (weaponHandler.IsOnKnockback)
+            {
+                BaseController controller = collision.collider.GetComponent<BaseController>();
+                if (controller != null)
+                {
+                    controller.ApplyKnockback(transform, weaponHandler.KnockbackPower, weaponHandler.KnockbackTime);
+                }
+            }
+        }
     }
     protected void PatternSelect()
     {
-        //patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.End);
-        patternNum = 1;
+        patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.Pattern04);
+        //patternNum = 2;
     }
 }
 

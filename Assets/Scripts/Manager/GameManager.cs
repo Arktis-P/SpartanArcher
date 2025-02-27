@@ -56,6 +56,7 @@ public class GameManager : SingleTon<GameManager>
         uiManager.SwitchStartTitle();  // switch off start title
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
         UpdateScore(score);
+        mapManager.LoadRandomMap();  // load new map
         monsterManager.Init(this);  // call monster manager
     }
     // after fail, restart the game
