@@ -45,7 +45,7 @@ public class ResourceController : MonoBehaviour
 
     public bool ChangeHealth(float change)  // WeaponHandler 또는 ProjectileController에서 적용
     {
-        if (isPlayer && change == 0 || timeSinceLastChange < healthChangeDelay)
+        if (change == 0 || (timeSinceLastChange < healthChangeDelay && isPlayer))
         {
             return false;
         }

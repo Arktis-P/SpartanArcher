@@ -3898,7 +3898,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 3
-  attackFreq: 0.5
+  attackFreq: 0.1
   shootingRange: 5
   skillFreq: 1
   drainRatio: 2
@@ -3963,6 +3963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  isPlayer: 0
   damageClip: {fileID: 8300000, guid: f7e6f4d12b5b9e944946d0c98f205ff1, type: 3}
   deathClip: {fileID: 8300000, guid: 172c5691b9e36d54db82be9b80d1c417, type: 3}
 --- !u!114 &1155264147
