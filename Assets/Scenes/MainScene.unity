@@ -1503,8 +1503,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e087b847486c2d547993360da415b8a1, type: 2}
   - {fileID: 11400000, guid: 5c4788d4b2aa9da47b2b83f993e5da96, type: 2}
   - {fileID: 11400000, guid: 62c57f8b45cde0e4d98da1e4091aef59, type: 2}
-  chagedDash: {fileID: 0}
-  chagedFiver: {fileID: 0}
+  chagedDash: {fileID: 11400000, guid: 55c138d8994e4fe4080b2bb06ee2cfd6, type: 2}
+  chagedFiver: {fileID: 11400000, guid: 19ef11e30aae4c24c81a099e8d2257f6, type: 2}
   SkillList: []
   randomSkillList: []
 --- !u!1 &518394680
