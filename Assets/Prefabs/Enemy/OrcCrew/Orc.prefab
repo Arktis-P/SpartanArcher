@@ -293,8 +293,8 @@ MonoBehaviour:
   maxHealth: 10
   moveSpeed: 3
   attackFreq: 1
-  shootingRange: 5
-  detectionRange: 2
+  shootingRange: 1.8
+  detectionRange: 7
 --- !u!114 &5324493131628853826
 MonoBehaviour:
   m_ObjectHideFlags: 0
