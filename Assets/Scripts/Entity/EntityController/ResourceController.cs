@@ -7,6 +7,7 @@ public class ResourceController : MonoBehaviour
 {
     [SerializeField] private float healthChangeDelay = .5f;
 
+    public bool isPlayer;
     private BaseController baseController;
     private StatHandler statHandler;
     private EntityAnimationHandler animationHandler;
@@ -44,7 +45,7 @@ public class ResourceController : MonoBehaviour
 
     public bool ChangeHealth(float change)  // WeaponHandler 또는 ProjectileController에서 적용
     {
-        if (change == 0 || timeSinceLastChange < healthChangeDelay)
+        if (isPlayer && change == 0 || timeSinceLastChange < healthChangeDelay)
         {
             return false;
         }
