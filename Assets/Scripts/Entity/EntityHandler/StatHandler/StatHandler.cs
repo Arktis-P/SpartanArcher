@@ -25,12 +25,12 @@ public class StatHandler : MonoBehaviour
         set => moveSpeed = Mathf.Clamp(value, 0, 20);
     }
 
-    [Range(0.01f, 1f)][SerializeField] private float attackFreq = 1f;
+    [Range(0.01f, 20f)][SerializeField] private float attackFreq = 1f;
 
     public float AttackFreq
     {
         get => attackFreq;
-        set => attackFreq = Mathf.Clamp(value, 0.01f, 1f);
+        set => attackFreq = Mathf.Clamp(value, 0.01f, 20f);
     }
 
     [Range(1f, 100f)][SerializeField] private float shootingRange = 5f;
