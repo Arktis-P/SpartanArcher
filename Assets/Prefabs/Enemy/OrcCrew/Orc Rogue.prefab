@@ -169,7 +169,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6490003993712879642}
@@ -281,8 +281,8 @@ MonoBehaviour:
   maxHealth: 10
   moveSpeed: 3
   attackFreq: 1
-  shootingRange: 5
-  detectionRange: 2
+  shootingRange: 7
+  detectionRange: 12
 --- !u!114 &7826434772959290018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +308,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  damageClip: {fileID: 8300000, guid: 400ff198ca7a4df42b590fd4a516ffc8, type: 3}
+  deathClip: {fileID: 8300000, guid: 9684e0daaf79bdd4bb045467b0d857f1, type: 3}

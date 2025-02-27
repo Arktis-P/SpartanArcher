@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ActiveSkill : MonoBehaviour
 {
@@ -116,7 +117,7 @@ public class ActiveSkill : MonoBehaviour
             //능력치 추가
             StatUp();
             yield return null;
-            //if (isClear) break;
+            if (!GameManager.Instance.OnStage) break;
         }
         //능력치 회수
         StatDown();

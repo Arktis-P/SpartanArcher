@@ -16,16 +16,16 @@ public class HealthbarController : MonoBehaviour
         ChangeHealthBar();
     }
     
-    private void Update()  // temporary update(), make it change when there's change in player's health
-    {
-        ChangeHealthBar();
-    }
+    //private void Update()  // temporary update(), make it change when there's change in player's health
+    //{
+    //    ChangeHealthBar();
+    //}
 
     private void GetPlayerStat()  // get player's health and max health value
     {
-        PlayerStat playerStat = player.GetComponent<PlayerStat>();
-        health = playerStat.Health;
-        maxHealth = playerStat.MaxHealth;
+        ResourceController resourceController = player.GetComponent<ResourceController>();
+        health = resourceController.CurrentHealth;
+        maxHealth = resourceController.MaxHealth;
     }
     public void ChangeHealthBar()  // change health bar if there's any change in player's health
     {

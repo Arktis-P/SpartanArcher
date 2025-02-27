@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 810886431704697351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57,6 +57,7 @@ MonoBehaviour:
   isOnKnockback: 1
   knockbackPower: 0.1
   knockbackTime: 0.5
+  attackSoundClip: {fileID: 8300000, guid: 5dadb6184ec6446448a5607617c22289, type: 3}
   projectileSpawnPosition: {fileID: 8237522858167125479}
   bulletIndex: 0
   bulletSize: 0.5

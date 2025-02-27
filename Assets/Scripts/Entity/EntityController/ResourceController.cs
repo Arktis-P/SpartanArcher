@@ -18,6 +18,9 @@ public class ResourceController : MonoBehaviour
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.Health;
 
+    public AudioClip damageClip;
+    public AudioClip deathClip;
+
     private void Awake()
     {
         baseController = GetComponent<BaseController>();
@@ -30,6 +33,14 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = statHandler.Health;
     }
 
+    private void Update()
+    {
+        if (timeSinceLastChange < healthChangeDelay)
+        {
+            timeSinceLastChange += Time.deltaTime;
+            if (timeSinceLastChange >= healthChangeDelay) animationHandler.InvincibilityEnd();
+        }
+    }
 
     public bool ChangeHealth(float change)  // WeaponHandler 또는 ProjectileController에서 적용
     {
@@ -43,12 +54,14 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
+        UIManager.Instance.UpdateHealthBar();  // update healthbar
+
         OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
 
         if (change < 0)
         {
             animationHandler.Damage();  //피격 애니메이션
-
+            if ( damageClip != null ) SoundManager.PlayClip(damageClip);
             /*  피격 사운드
             if (damageClip != null)
             {
@@ -60,9 +73,13 @@ public class ResourceController : MonoBehaviour
         if (CurrentHealth <= 0f)
         {
             // send health info to game manager
+            if (deathClip != null) SoundManager.PlayClip(deathClip);
+
             GameManager.Instance.UpdateScore((int)MaxHealth);
 
             Death();
+            
+
         }
 
         return true;

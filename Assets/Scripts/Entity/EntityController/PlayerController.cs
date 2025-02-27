@@ -20,8 +20,21 @@ public class PlayerController : BaseController
 
     public override void Death()
     {
-        base.Death();
-        //gameManager.GameOver();   ���� ���� �Լ�
+        _rigidbody.velocity = Vector3.zero;
+
+        foreach (SpriteRenderer renderer in transform.GetComponentsInChildren<SpriteRenderer>())
+        {
+            Color color = renderer.color;
+            color.a = 0.3f;
+            renderer.color = color;
+        }
+
+        foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
+        {
+            component.enabled = false;
+        }
+
+        gameManager.StageFail();   // when stage failed
     }
 
     void OnMove(InputValue inputValue)  // ĳ���� ������
@@ -62,21 +75,17 @@ public class PlayerController : BaseController
             direction = lookDirection;       // y ���� -1 �Ǵ� 1�� ���� ���� �ٶ󺸴� ������ �״�� ����
         }
 
-        Vector2 enemyDirection = GetNearestEnemyDirection();  // ���� ����� �� ���� ��������
+        Vector2 enemyDirection = GetNearestEnemyDirection();  // 적 감지 이후 방향값
 
-        if (enemyDirection != Vector2.zero && isStop)
+        if (enemyDirection != Vector2.zero && isStop)  // 주변 적을 감지하면 적 방향을 조준
         {
-            direction = enemyDirection; // ������ ���Ͱ� ������ �� �������� ��ȯ
+            direction = enemyDirection;
             attackDirection = enemyDirection;
             if (isStop) isAttacking = true;
         }
         else isAttacking = false;
 
-        // ���������� �ٶ󺸴� ���� ����
-        if (direction != Vector2.zero)
-        {
-            lookDirection = direction;
-        }
+        lookDirection = direction;        
     }
     
     
@@ -84,9 +93,11 @@ public class PlayerController : BaseController
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, statHandler.ShootingRange, LayerMask.GetMask("Enemy"));
 
+        Debug.DrawRay(transform.position, lookDirection * statHandler.ShootingRange, Color.blue);
+
         if (enemies.Length == 0)
         {
-            return Vector2.zero;  // ���Ͱ� ������ �⺻�� ��ȯ
+            return Vector2.zero;  // 주변에 적이 없으면 이동방향을 리턴
         }
 
         Collider2D nearestEnemy = null;
