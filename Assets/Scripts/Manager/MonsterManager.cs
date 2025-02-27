@@ -6,6 +6,9 @@ public class MonsterManager : MonoBehaviour
 {
     private Coroutine stageRoutine;
     private bool monsterSpawnComplete;
+    public bool MonsterSpawnComplete { get => monsterSpawnComplete; }
+    private bool isTutorialClear = false;
+    public bool IsTutorialClear { get => isTutorialClear; }
     
     [SerializeField] private List<GameObject> monsterPrefabs;
     [SerializeField] private List<GameObject> bossPrefabs;
@@ -43,7 +46,8 @@ public class MonsterManager : MonoBehaviour
     // when start the stage, decide nums of monsters spawn
     public void StartStage(int stage)
     {
-        if (stage <= 0) { return; }
+        if (stage < 0) { return; }
+        if (stage == 0) { StartSpawn(1); return; }  // for monster spawned in tutorial
 
         StartSpawn(setMonsterNum(stage));  // spawn monsters
         if (stage % 10 == 0) SpawnRandomBoss();  // boss spawn
@@ -103,6 +107,11 @@ public class MonsterManager : MonoBehaviour
                 );
         }
         activeMonsters.Add(monsterController);  // make monster object work
+        // if stage == 0, make monster tutorial monster
+        if (stage == 0)
+        {
+            spawnedMonster.GetComponent<MonsterStat>().AttackFreq = 1f;
+        }
     }
     // check if monster's position is in Rect area
     public bool IsInsideSpawnArea(Vector3 position, Rect rect)
@@ -126,6 +135,10 @@ public class MonsterManager : MonoBehaviour
         activeBoss.Add(bossController);
         UIManager.Instance.SwitchBossStatus(spawnedBoss);  // start health bar of boss
     }
+    public void SpawnRandomBossPublic()
+    {
+        SpawnRandomBoss();
+    }
 
     private void OnDrawGizmosSelected()
     {
@@ -143,7 +156,15 @@ public class MonsterManager : MonoBehaviour
         activeMonsters.Remove(monster);  // remove from the list
         // remove monsters which are already dead
         // remove monsters only if player cleared the stage
-        if (monsterSpawnComplete && activeMonsters.Count == 0 && activeBoss.Count == 0) gameManager.StageClear();  // == stage clear
+        if (monsterSpawnComplete && activeMonsters.Count == 0 && activeBoss.Count == 0)
+        {
+            if (stage == 0)
+            {
+                isTutorialClear = true;
+                return;
+            }
+            gameManager.StageClear();  // == stage clear
+        }
     }
     public void RemoveBossOnDeath(BossController boss)
     {

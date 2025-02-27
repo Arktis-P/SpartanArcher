@@ -787,7 +787,7 @@ TextureImporter:
         width: 48
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
@@ -795,6 +795,90 @@ TextureImporter:
       bones: []
       spriteID: 70f5bf252ce2996468c8b38e082a9fda
       internalID: -1198422425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_smallButton1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 5, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4348f136dca8341b46ee4802112d9a
+      internalID: -378623015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_smallButton2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 4, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cd2710e25a96c49b1e3d182344f414
+      internalID: 1508063661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_arrow1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e7353d087b41c4fb2baab4f8f45fb1
+      internalID: 1173937023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_arrow2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680538152631ea44b9be39968ff0eaeb
+      internalID: -362419581
       vertices: []
       indices: 
       edges: []
@@ -817,6 +901,8 @@ TextureImporter:
       GUI_BlueButtonLong1: -257476883
       GUI_BlueButtonLong2: -682014568
       GUI_BlueButtonLong3: -1158017133
+      GUI_arrow1: 1173937023
+      GUI_arrow2: -362419581
       GUI_bar1: -1690778013
       GUI_bar2: -878724455
       GUI_bar3: -1298267536
@@ -846,6 +932,8 @@ TextureImporter:
       GUI_gui8: 1542394664
       GUI_player1: 906475698
       GUI_player2: -165602117
+      GUI_smallButton1: -378623015
+      GUI_smallButton2: 1508063661
       GUI_whiteTag: -1198422425
       GUI_whitememo1: -990995834
       GUI_whitememo2: 466672914

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
@@ -9,13 +12,30 @@ public class TutorialController : MonoBehaviour
     private int tutorialID;
 
     public TextMeshProUGUI tutorialText;
+    public GameObject nextButton;
+    private List<Image> nextButtonImages = new List<Image>();
+
+    public GameObject player;
 
     private string tempText = "";  // temporary string text for typing effect
-    private float typeSpeed = 0.1f;  // typing speed
+    private float typeSpeed = 0.03f;  // typing speed
 
-    // Start is called before the first frame update
-    void Start()
+    private bool isNextOK = false;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
+    private float checkTime = 2f;
+
+    GameManager gameManager;
+    MapManager mapManager;
+    MonsterManager monsterManager;
+
+    private void Preparation()
     {
+        this.gameManager = GameManager.Instance;
+        this.mapManager = gameManager.MapManager;
+        this.monsterManager = gameManager.MonsterManager;
+
         // set basic tutorial texts
         tutorialStrs.Add("튜토리얼에 오신 것을 환영합니다."
             + "\n이곳에서 간단한 게임 조작에 대해서 알려드립니다.");
@@ -32,6 +52,15 @@ public class TutorialController : MonoBehaviour
 
         // set basic tutorial id
         tutorialID = 0;
+
+        mapManager.LoadTutorialMap();  // load tutorial map 
+    }
+
+    public void Init()
+    {
+        Preparation();
+        SwitchNextButton();
+        UpdateText();
     }
 
     private void UpdateText()
@@ -40,16 +69,111 @@ public class TutorialController : MonoBehaviour
     }
     IEnumerator TypeText(string text)
     {
+        isNextOK = false;
+
         for (int i = 0; i < text.Length; i++)
         {
             tempText += text[i];
             tutorialText.text = tempText;
             yield return new WaitForSeconds(typeSpeed);
         }
+
+        // check next condition and switch on next button
+        isNextOK = CheckConditions();
+        SwitchNextButton();
     }
-    private void NextText()
+
+    // what to do when next button pressed
+    public void NextButton()
     {
-        if (tutorialID >= tutorialStrs.Count) tutorialID = 0;
-        else tutorialID++;
+        if (tutorialID >= tutorialStrs.Count)
+        {
+            tutorialID = 0;
+            SceneManager.LoadScene(0);
+            return;
+        }
+        // if not type next text
+        tutorialID++;
+        UpdateText();
+    }
+
+    private void SwitchNextButton()
+    {
+        nextButtonImages = nextButton.GetComponentsInChildren<Image>().ToList();
+
+        // switch on next button when it is available
+        if (isNextOK)
+        {
+            foreach (Image image in nextButtonImages) { image.color = Color.white; }
+        }
+        // swtich off next button when it should not be available
+        else
+        {
+            foreach (Image image in nextButtonImages) { image.color = Color.grey; }
+        }
+    }
+
+    // conditions for next tutorial text
+    private bool CheckConditions()
+    {
+        switch (tutorialID)
+        {
+            case 0:  // no codition
+                return true;
+            case 1:  // move condition
+                return CheckMove();
+            case 2:  // attack success
+                return CheckAttack();
+            case 3:  // damage success
+                return CheckDamage();
+            case 4:  // watch boss
+                return CheckBoss();
+            case 5:  // no condition
+                return true;
+            default: return false;
+        }
+    }
+    private bool CheckMove()
+    {
+        mapManager.ResetPlayerPosition();
+
+        startPos = player.transform.position;  // player's first position
+        StartCoroutine(CheckMoveCoroutine());
+        return startPos != endPos;
+    }
+    IEnumerator CheckMoveCoroutine()
+    {
+        yield return new WaitForSeconds(checkTime);
+        endPos = transform.position;
+    }
+
+    private bool CheckAttack()
+    {
+        StartCoroutine(CheckAttackCoroutine());
+        return monsterManager.IsTutorialClear;
+    }
+    IEnumerator CheckAttackCoroutine()
+    {
+        mapManager.ResetPlayerPosition();
+        monsterManager.Init(gameManager);
+
+        // wait until IsTutorialClear true
+        yield return new WaitUntil(() => monsterManager.IsTutorialClear);
+    }
+
+    private bool CheckDamage()
+    {
+        mapManager.ResetPlayerPosition();
+        monsterManager.Init(gameManager);
+
+        return true;
+    }
+    private bool CheckBoss()
+    {
+        mapManager.ResetPlayerPosition();
+        monsterManager.Init(gameManager);
+        monsterManager.SpawnRandomBossPublic();
+
+        return true;
     }
 }
