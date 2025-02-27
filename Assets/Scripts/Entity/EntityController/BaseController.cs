@@ -31,6 +31,7 @@ public class BaseController : MonoBehaviour
     private float knockbackDuration = 0.0f;
     public bool showDebug = false;
     protected bool isPattern = false;
+    protected bool isStopAll = false;
 
     protected MonsterStat monsterStat;
 
@@ -60,7 +61,10 @@ public class BaseController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Movement(movementDirection);
+        if(isPattern==false)
+        {
+            Movement(movementDirection);
+        }
         if (knockbackDuration > 0.0f)
         {
             knockbackDuration -= Time.deltaTime;
@@ -166,7 +170,7 @@ public class BaseController : MonoBehaviour
     public virtual void PatternEnd()
     {
         isPattern = false;
-        Debug.Log("End");
+        isStopAll = false;
     }
     public virtual void PatternStart()
     {
