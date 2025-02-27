@@ -1728,7 +1728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &546879673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3732,6 +3732,7 @@ MonoBehaviour:
   weaponPivot: {fileID: 953961284}
   weaponPrefab: {fileID: 6403442361403232660, guid: 1c5051bfce8fdee42b891e3d91cf0806, type: 3}
   attackDirection: {x: 0, y: 0}
+  showDebug: 0
   activeSkill: {fileID: 0}
 --- !u!114 &1155264143
 MonoBehaviour:
