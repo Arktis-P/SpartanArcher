@@ -39,14 +39,14 @@ namespace Assets.Scripts.Entity.Boss
                 GameObject spawnedEnemy = Instantiate(pawnPrefabs[i], new Vector3(spawnArea.x, spawnArea.y), Quaternion.identity);
                 MonsterController monsterController = spawnedEnemy.GetComponent<MonsterController>();
 
-                monsterController.Init(monsterManager, testTarget);
+                monsterController.Init(monsterManager, target);
                 monsterManager.activeMonsters.Add(monsterController);
             }
         }
 
         protected override void HandleAction()
         {
-            if (weaponHandler == null || /*target == null*/testTarget == null)
+            if (weaponHandler == null || target == null/*testTarget == null*/)
             {
                 //타깃 없을때 제로백터가 아니라면 제로백터로 
                 if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
@@ -103,7 +103,7 @@ namespace Assets.Scripts.Entity.Boss
         {
             while (true)
             {
-                yield return new WaitForSecondsRealtime(4);
+                yield return new WaitForSecondsRealtime(5);
                 switch (patternNum)
                 {
                     case 0:
