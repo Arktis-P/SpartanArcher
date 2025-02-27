@@ -129,7 +129,7 @@ public class BaseController : MonoBehaviour
         if (isAttacking && timeSinceLastAttack > statHandler.AttackFreq)
         {
             timeSinceLastAttack = 0;
-            Attack();   
+            Attack();
         }
         //if (showDebug)
         //    Debug.Log("End");
