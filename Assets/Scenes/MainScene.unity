@@ -2566,6 +2566,7 @@ MonoBehaviour:
   - {fileID: 8215608709316484566, guid: 5fc88b045a957444a8bfb2842f292676, type: 3}
   - {fileID: 8215608709316484566, guid: a0f2802c0469952449ed13f26db09016, type: 3}
   - {fileID: 7078886572357501525, guid: 2f5403e5eb2ba1b488cba129d98049b6, type: 3}
+  - {fileID: 2261675448537208072, guid: 9ca537c59d5f7f34da8eb11b846d628b, type: 3}
 --- !u!1 &792614598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +3899,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 3
-  attackFreq: 0.1
+  attackFreq: 0.5
   shootingRange: 5
   skillFreq: 1
   drainRatio: 2

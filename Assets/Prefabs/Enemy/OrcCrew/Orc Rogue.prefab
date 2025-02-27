@@ -280,7 +280,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 1
-  attackFreq: 1
+  attackFreq: 2.35
   shootingRange: 7
   detectionRange: 12
 --- !u!114 &7826434772959290018
@@ -308,5 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  isPlayer: 0
   damageClip: {fileID: 8300000, guid: 400ff198ca7a4df42b590fd4a516ffc8, type: 3}
   deathClip: {fileID: 8300000, guid: 9684e0daaf79bdd4bb045467b0d857f1, type: 3}

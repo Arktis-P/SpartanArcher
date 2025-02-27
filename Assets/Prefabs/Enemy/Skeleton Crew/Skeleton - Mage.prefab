@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chracterRenderer: {fileID: 6333179478463225669}
   weaponPivot: {fileID: 6422325266754129915}
-  weaponPrefab: {fileID: 4186240390876711266, guid: dfa040772ac249e4f88217a10f8d61d0, type: 3}
+  weaponPrefab: {fileID: 8797719435608754893, guid: dfa040772ac249e4f88217a10f8d61d0, type: 3}
   attackDirection: {x: 0, y: 0}
   showDebug: 0
 --- !u!114 &5021740047555340018
@@ -280,7 +280,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 1
-  attackFreq: 1
+  attackFreq: 3
   shootingRange: 7
   detectionRange: 12
 --- !u!114 &7826434772959290018
@@ -308,5 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  isPlayer: 0
   damageClip: {fileID: 8300000, guid: f7e6f4d12b5b9e944946d0c98f205ff1, type: 3}
   deathClip: {fileID: 8300000, guid: 9684e0daaf79bdd4bb045467b0d857f1, type: 3}
