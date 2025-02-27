@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +23,13 @@ namespace Assets.Scripts.Entity.Boss
             movementDirection = DirectionToTarget();
             base.FixedUpdate();
         }
-        protected override void Movement(Vector2 direction)
-        {
-            direction = direction * statHandler.MoveSpeed;
-            _rigidbody.velocity = direction;
+        //protected override void Movement(Vector2 direction)
+        //{
+        //    direction = direction * statHandler.MoveSpeed;
+        //    _rigidbody.velocity = direction;
 
-            animationHandler.Move(direction);
-        }
+        //    animationHandler.Move(direction);
+        //}
         public override void Start()
         {
             base.Start();
@@ -41,7 +41,7 @@ namespace Assets.Scripts.Entity.Boss
             Vector2 targetDirection = DirectionToTarget();
             if (targetDistance <= weaponHandler.AttackRange)  // check if player is in shooting range
             {
-                bossAnimationHandler.Pattern01();  // animation
+                //bossAnimationHandler.Pattern01();  // animation
 
                 // process collision
                 RaycastHit2D hit = Physics2D.Raycast(
@@ -63,7 +63,7 @@ namespace Assets.Scripts.Entity.Boss
             
             if (targetDistance <= followRange)  // find player(target)'s location
             {
-                rushDirection = targetDirection; rushPoint = target.position;  // set rush position and direction
+                rushDirection = targetDirection; rushPoint = testTarget.position;  // set rush position and direction
                 // show rush area (some larger)
                 rushLine.SetPosition(0, transform.position);
                 rushLine.SetPosition(1, rushPoint);
@@ -111,7 +111,7 @@ namespace Assets.Scripts.Entity.Boss
 
             if (targetDistance <= followRange)
             {
-                bossAnimationHandler.Pattern03();
+                //bossAnimationHandler.Pattern03();
 
                 StartCoroutine(WheelwindCoroutine(targetDirection));
             }
@@ -141,6 +141,7 @@ namespace Assets.Scripts.Entity.Boss
         {
             while (true)
             {
+                yield return new WaitForSecondsRealtime(4);
                 Debug.Log(patternNum);
                 switch (patternNum)
                 {
@@ -161,7 +162,7 @@ namespace Assets.Scripts.Entity.Boss
 
                 }
 
-                yield return new WaitForSecondsRealtime(6);
+                yield return new WaitForSecondsRealtime(2);
 
             }
         }

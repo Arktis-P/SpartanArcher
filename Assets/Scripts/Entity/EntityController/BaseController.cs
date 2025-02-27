@@ -113,12 +113,12 @@ public class BaseController : MonoBehaviour
             return;
         }
 
-            if (timeSinceLastAttack <= statHandler.AttackFreq)
+        if (timeSinceLastAttack <= statHandler.AttackFreq)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
 
-        if (isStop) timeSinceLastAttack = 0;
+        if (!isStop) timeSinceLastAttack = 0;
 
         if (isAttacking && timeSinceLastAttack > statHandler.AttackFreq)
         {
@@ -166,10 +166,10 @@ public class BaseController : MonoBehaviour
     public virtual void PatternEnd()
     {
         isPattern = false;
+        Debug.Log("End");
     }
     public virtual void PatternStart()
     {
         isPattern = true;
     }
-
 }

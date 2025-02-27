@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1559875664883978872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4341288595698726794}
+  m_Layer: 3
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4341288595698726794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559875664883978872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5714419149737204349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596118258813364989
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +285,9 @@ GameObject:
   - component: {fileID: 3621468171116670712}
   - component: {fileID: 7109518190739615354}
   - component: {fileID: 5324493131628853826}
-  - component: {fileID: 8286661783320972236}
   - component: {fileID: 6812464214718113983}
   - component: {fileID: 4390075688726335750}
+  - component: {fileID: 6929151093190290974}
   m_Layer: 3
   m_Name: Minotaur
   m_TagString: Untagged
@@ -279,6 +310,7 @@ Transform:
   m_Children:
   - {fileID: 6490003993712879642}
   - {fileID: 5291789001839479242}
+  - {fileID: 4341288595698726794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3621468171116670712
@@ -366,23 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
---- !u!114 &6929151093190290974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128543812527038501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0249bcc5322699e4e9dca37509abdecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  maxHealth: 10
-  moveSpeed: 3
-  attackFreq: 1
-  shootingRange: 5
 --- !u!114 &6812464214718113983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,8 +423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterRenderer: {fileID: 6333179478463225669}
-  weaponPivot: {fileID: 0}
-  weaponPrefab: {fileID: 0}
+  weaponPivot: {fileID: 4341288595698726794}
+  weaponPrefab: {fileID: 4186240390876711266, guid: 728a587615797444b869795c8c82fd53, type: 3}
   attackDirection: {x: 0, y: 0}
   showDebug: 0
   testTarget: {fileID: 0}
@@ -422,3 +437,22 @@ MonoBehaviour:
     height: 0
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
   rushLine: {fileID: 3214005435566405463}
+--- !u!114 &6929151093190290974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128543812527038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0249bcc5322699e4e9dca37509abdecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 10
+  moveSpeed: 3
+  attackFreq: 1
+  shootingRange: 5
+  skillFreq: 2
+  detectionRange: 2

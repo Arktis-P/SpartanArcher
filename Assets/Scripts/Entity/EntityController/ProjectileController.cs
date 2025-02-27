@@ -70,10 +70,10 @@ public class ProjectileController : MonoBehaviour
             {
                 if (FragmentProjectile)
                 {
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right *2, Vector2.up );
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.down);
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.left );
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position)+ Vector2.right * 2, Vector2.right );
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.up);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.down);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.left);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.right);
                 }
                 DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
             }
@@ -89,7 +89,36 @@ public class ProjectileController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Vector2 CheckDir(Collider2D collision)
+    {
+        Vector2 collisionPosition = collision.ClosestPoint(transform.position);
+        Vector2 dir = ((Vector2)transform.position - collisionPosition).normalized;
+        float x;
+        float y;
+        x = Mathf.Round(dir.x);
+        y = Mathf.Round(dir.y);
         
+        dir = new Vector2(x,y);
+
+        if (dir.x == 1f)
+        {
+            return Vector2.right;
+        }
+        else if (dir.y == 1f)
+        {
+            return Vector2.up;
+        }
+        else if (dir.y == -1f)
+        {
+            return Vector2.down;
+        }
+        else if (dir.x == -1f)
+        {
+            return Vector2.left;
+        }
+        return Vector2.left;
     }
 
     public void Init(Vector2 direction, RangeWeaponHandler weaponHandler)

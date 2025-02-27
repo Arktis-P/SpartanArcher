@@ -21,8 +21,6 @@ public class BossController : BaseController
 
     GameManager gameManager;
 
-
-
     //MonsterManager에서 호출해줘야함.
     public void Init(MonsterManager monsterManager, Transform target)
     {
@@ -105,16 +103,8 @@ public class BossController : BaseController
     }
     protected void PatternSelect()
     {
-        patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.End);
-    }
-
-    public override void PatternEnd()
-    {
-        isPattern = false;
-    }
-    public override void PatternStart()
-    {
-        isPattern = true;
+        //patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.End);
+        patternNum = 1;
     }
 }
 

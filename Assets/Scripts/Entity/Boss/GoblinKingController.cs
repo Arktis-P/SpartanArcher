@@ -73,6 +73,7 @@ namespace Assets.Scripts.Entity.Boss
 
                     if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                     {
+                        isStop = true;
                         isAttacking = true;
                     }
 
@@ -82,12 +83,10 @@ namespace Assets.Scripts.Entity.Boss
             }
         }
 
-        private void ThrowAttack() //Pattern02
+        public void ThrowAttack() //Pattern02
         {
             //Projectile 생기면 구현 예정
             weaponHandler.ThrowAttack();
-            Debug.Log("Throw");
-
         }
 
         private void Eat() // Pattern03
@@ -108,19 +107,16 @@ namespace Assets.Scripts.Entity.Boss
                 switch (patternNum)
                 {
                     case 0:
-                        //SpawnPawn();
-                        ThrowAttack();
                         PatternStart();
                         bossAnimationHandler.Pattern01();
                         break;
                     case 1:
-                        ThrowAttack();
                         PatternStart();
                         bossAnimationHandler.Pattern02();
                         break;
                     case 2:
                         Eat();
-                        ThrowAttack();
+                        //ThrowAttack();
                         PatternStart();
                         bossAnimationHandler.Pattern03();
                         break;
@@ -128,7 +124,7 @@ namespace Assets.Scripts.Entity.Boss
                         break;
 
                 }
-                yield return new WaitForSecondsRealtime(2);
+                yield return new WaitForSecondsRealtime(1);
 
             }
         }
