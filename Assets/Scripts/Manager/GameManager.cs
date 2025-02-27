@@ -11,8 +11,11 @@ public class GameManager : SingleTon<GameManager>
     public PlayerController player { get; private set; }
 
     private MonsterManager monsterManager;
+    public MonsterManager MonsterManager { get => monsterManager; }
     private MapManager mapManager;
+    public MapManager MapManager { get => mapManager; }
     private SkillManager skillManager;
+    private TutorialController tutorialController;
 
     private int stage;
     public int Stage { get => stage; }
@@ -103,5 +106,16 @@ public class GameManager : SingleTon<GameManager>
     {
         this.score += score;
         uiManager.UpdateScore();
+    }
+
+    public void ToTutorial()
+    {
+        uiManager.SwitchStartTitle();
+        uiManager.SwitchTutorial();
+
+        tutorialController = FindObjectOfType<TutorialController>();
+        tutorialController.Init();
+
+        onStage = true;
     }
 }

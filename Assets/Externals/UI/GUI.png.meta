@@ -379,6 +379,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI_transparent_board
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94ffa592f48cc349b82c009db5e4efa
+      internalID: 344302595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -412,6 +433,7 @@ TextureImporter:
       GUI_player6: 247265676
       GUI_player7: 1123161434
       GUI_player8: 2089651870
+      GUI_transparent_board: 344302595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

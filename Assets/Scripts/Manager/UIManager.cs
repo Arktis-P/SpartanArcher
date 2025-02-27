@@ -24,6 +24,7 @@ public class UIManager : SingleTon<UIManager>
     public GameObject zButton;
     public GameObject xButton;
     public GameObject bossStatus;
+    public GameObject tutorialUI;
 
     private GameManager gameManager;
 
@@ -118,5 +119,11 @@ public class UIManager : SingleTon<UIManager>
     public void UpdateHealthBar()
     {
         playerHealthBar.GetComponent<HealthbarController>().ChangeHealthBar();
+    }
+
+    // to tutorial page
+    public void SwitchTutorial()
+    {
+        tutorialUI.SetActive(true);
     }
 }
