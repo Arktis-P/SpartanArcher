@@ -653,69 +653,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_whitetag1
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55aea5e0290e30a4e9cfbd73b66072c7
-      internalID: 1367538126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetag2
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ebd837e80d51064eb44da6746a299dd
-      internalID: 1368337911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetag3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d044d89c9f25594f9d8a1e8da6a49ef
-      internalID: 749460012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: GUI_whitememo5
       rect:
         serializedVersion: 2
@@ -753,195 +690,6 @@ TextureImporter:
       bones: []
       spriteID: 3ad2908c2b39c2644a138f923bfacbb6
       internalID: -78140446
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall1
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 232
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf130be7e9d2a594fa226fc992fd0bc2
-      internalID: -656636312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 224
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e41563148c404f48be8e4b63e7a91e6
-      internalID: -566295073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall5
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 228
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec1aef84a181dd44ab9bbfa9df685c84
-      internalID: 796769267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall4
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 232
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a834665f13c15a4facb93eaf5fad3a6
-      internalID: -3751574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall2
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 228
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98065a4ca9fe934cb6e8d7b5f61f28f
-      internalID: -541839047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall6
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 224
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 152c2132b6c05774d975164f566b3b0b
-      internalID: -1457350302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall7
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 232
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0129f5f41e058364d9fb9037e519d4c4
-      internalID: -1587296322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall8
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 228
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de718119b3aa10e49b8f06856d26b558
-      internalID: -174685375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_whitetagsmall9
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 224
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20c7df9bc40551b439ee3b6857c37ddc
-      internalID: 2071725980
       vertices: []
       indices: 
       edges: []
@@ -1030,6 +778,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI_whiteTag
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f5bf252ce2996468c8b38e082a9fda
+      internalID: -1198422425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1077,6 +846,7 @@ TextureImporter:
       GUI_gui8: 1542394664
       GUI_player1: 906475698
       GUI_player2: -165602117
+      GUI_whiteTag: -1198422425
       GUI_whitememo1: -990995834
       GUI_whitememo2: 466672914
       GUI_whitememo3: -1367154826
