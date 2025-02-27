@@ -83,6 +83,19 @@ public class RangeWeaponHandler : WeaponHandler
             projectileSpawnPosition.position,
             _lookDirection,true);
     }
+    public override void StompAttack()
+    {
+        base.StompAttack();
+
+        CreateStompProjectile();
+    }
+    private void CreateStompProjectile()
+    {
+        ProjectileManager.Instance.ShootBullet(this,transform.position, Vector2.up);
+        ProjectileManager.Instance.ShootBullet(this,transform.position , Vector2.down);
+        ProjectileManager.Instance.ShootBullet(this,transform.position , Vector2.left);
+        ProjectileManager.Instance.ShootBullet(this,transform.position , Vector2.right);
+    }
 
     private static Vector2 RotateVector2(Vector2 v, float degree)
     {

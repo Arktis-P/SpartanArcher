@@ -8,11 +8,15 @@ public class PatternEvent : MonoBehaviour
     BossController bossController;
     GoblinKingController goblinKingController;
     MinotaurController minotaurController;
+    CyclopsController CyclopsController;
+    CyclopsLaser cyclopsLaser;
     private void Start()
     {
         bossController = GetComponentInParent<BossController>();
         goblinKingController = bossController.GetComponentInChildren<GoblinKingController>();
         minotaurController = bossController.GetComponentInChildren<MinotaurController>();
+        CyclopsController = bossController.GetComponentInChildren<CyclopsController>();
+        cyclopsLaser = bossController.GetComponentInChildren<CyclopsLaser>();
     }
 
     public void PatternEnd()
@@ -42,4 +46,19 @@ public class PatternEvent : MonoBehaviour
     {
         minotaurController.RushToTarget();
     }
+    public void PatternThrowRockAttack()
+    {
+        CyclopsController.ThrowAttack();
+    }
+    public void PatternStompAttack()
+    {
+        CyclopsController.StompAttack();
+    }
+
+
+    public void PatternLaserStart()
+    {
+        cyclopsLaser.SetLaser();
+    }
+
 }

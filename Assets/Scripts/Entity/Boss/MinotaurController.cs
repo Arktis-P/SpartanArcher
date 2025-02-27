@@ -54,16 +54,7 @@ namespace Assets.Scripts.Entity.Boss
             }
         }
 
-        public void StopAll()
-        {
-            isStopAll = true;
-            _rigidbody.velocity = Vector2.zero;
-            lookDirection = Vector2.zero;
-        }
-        public void StopOnlyMovement()
-        {
-            _rigidbody.velocity = Vector2.zero;
-        }
+
         public void RushAttack()
         {
             float targetDistance = DistanceToTarget();
@@ -75,8 +66,6 @@ namespace Assets.Scripts.Entity.Boss
                 // show rush area (some larger)
                 rushLine.SetPosition(0, transform.position);
                 rushLine.SetPosition(1, rushPoint);
-                
-                //Invoke("RushToTarget", 1f);  // wait for 1 sec and rush 
             }
         }
 

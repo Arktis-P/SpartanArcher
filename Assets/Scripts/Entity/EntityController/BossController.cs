@@ -116,7 +116,21 @@ public class BossController : BaseController
     protected void PatternSelect()
     {
         patternNum = Random.Range((int)Pattern.Pattern01, (int)Pattern.Pattern04);
-        //patternNum = 2;
+        //patternNum = 1;
+    }
+    public void StopAll()
+    {
+        isStopAll = true;
+        _rigidbody.velocity = Vector2.zero;
+        lookDirection = Vector2.zero;
+    }
+    public void StopOnlyMovement()
+    {
+        _rigidbody.velocity = Vector2.zero;
+    }
+    public override void Death()
+    {
+        base.Death();
     }
 }
 
