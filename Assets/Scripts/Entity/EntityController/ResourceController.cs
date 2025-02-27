@@ -30,6 +30,14 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = statHandler.Health;
     }
 
+    private void Update()
+    {
+        if (timeSinceLastChange < healthChangeDelay)
+        {
+            timeSinceLastChange += Time.deltaTime;
+            if (timeSinceLastChange >= healthChangeDelay) animationHandler.InvincibilityEnd();
+        }
+    }
 
     public bool ChangeHealth(float change)  // WeaponHandler 또는 ProjectileController에서 적용
     {
@@ -42,6 +50,8 @@ public class ResourceController : MonoBehaviour
         CurrentHealth += change;
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
+
+        UIManager.Instance.UpdateHealthBar();  // update healthbar
 
         OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
 

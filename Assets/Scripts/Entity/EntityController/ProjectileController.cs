@@ -50,6 +50,9 @@ public class ProjectileController : MonoBehaviour
         //}
 
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+
+        // if stage is over, destroy all projectile
+        if (!GameManager.Instance.OnStage) DestroyProjectile(transform.position, false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,6 +82,21 @@ public class ProjectileController : MonoBehaviour
             }
             else if (rangeWeaponHandler.target.value == (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
             {
+                // process damage
+                ResourceController resourceController = collision.GetComponent<ResourceController>();
+                if (resourceController != null)
+                {
+                    resourceController.ChangeHealth(-rangeWeaponHandler.Power);
+                    if (rangeWeaponHandler.IsOnKnockback)
+                    {
+                        BaseController controller = collision.GetComponent<BaseController>();
+                        if (controller != null)
+                        {
+                            controller.ApplyKnockback(transform, rangeWeaponHandler.KnockbackPower, rangeWeaponHandler.KnockbackTime);
+                        }
+                    }
+                }
+
                 if (_penetration > 0)
                 {
                     _penetration--;

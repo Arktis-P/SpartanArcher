@@ -20,8 +20,21 @@ public class PlayerController : BaseController
 
     public override void Death()
     {
-        base.Death();
-        //gameManager.GameOver();   ���� ���� �Լ�
+        _rigidbody.velocity = Vector3.zero;
+
+        foreach (SpriteRenderer renderer in transform.GetComponentsInChildren<SpriteRenderer>())
+        {
+            Color color = renderer.color;
+            color.a = 0.3f;
+            renderer.color = color;
+        }
+
+        foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
+        {
+            component.enabled = false;
+        }
+
+        gameManager.StageFail();   // when stage failed
     }
 
     void OnMove(InputValue inputValue)  // ĳ���� ������
