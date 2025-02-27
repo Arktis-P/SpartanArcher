@@ -42,8 +42,8 @@ public class TutorialController : MonoBehaviour
         tutorialStrs.Add("먼저 이동에 대해서 알려드리겠습니다."
             + "\n캐릭터를 이동하려면, WASD 혹은 방향키를 입력해 주세요.");
         tutorialStrs.Add("다음은 캐릭터의 공격에 대해서 알려드리겠습니다."
-            + "\n캐릭터가 움직이지 정지한 상태에서 사정거리 내에 있는 가장 가까운 적을 자동으로 공격합니다."
-            + "\n캐릭터를 움직여 적을 사정거리 내(빨간 원 안)에 위치시켜 보세요.");
+            + "\n캐릭터가 정지한 상태에서 사정거리 내에 있는 가장 가까운 적을 자동으로 공격합니다."
+            + "\n캐릭터를 움직여 적을 사정거리 내에 위치시켜 보세요.");
         tutorialStrs.Add("반대로 적이 캐릭터를 공격하면 캐릭터가 피해를 입을 수도 있습니다.");
         tutorialStrs.Add("매 10스테이지 마다 보스가 등장합니다."
             + "\n보스는 강력한 공격과 여러 패턴으로 무장하고 있으니 조심하길 바랍니다.");
@@ -70,6 +70,7 @@ public class TutorialController : MonoBehaviour
     IEnumerator TypeText(string text)
     {
         isNextOK = false;
+        tempText = "";
 
         for (int i = 0; i < text.Length; i++)
         {
@@ -86,7 +87,7 @@ public class TutorialController : MonoBehaviour
     // what to do when next button pressed
     public void NextButton()
     {
-        if (tutorialID >= tutorialStrs.Count)
+        if (tutorialID >= tutorialStrs.Count - 1)
         {
             tutorialID = 0;
             SceneManager.LoadScene(0);
@@ -94,22 +95,26 @@ public class TutorialController : MonoBehaviour
         }
         // if not type next text
         tutorialID++;
+        SwitchNextButton();
         UpdateText();
     }
 
     private void SwitchNextButton()
     {
         nextButtonImages = nextButton.GetComponentsInChildren<Image>().ToList();
+        Button nextButtonButton = nextButton.GetComponent<Button>();
 
         // switch on next button when it is available
         if (isNextOK)
         {
             foreach (Image image in nextButtonImages) { image.color = Color.white; }
+            nextButtonButton.interactable = true;
         }
         // swtich off next button when it should not be available
         else
         {
             foreach (Image image in nextButtonImages) { image.color = Color.grey; }
+            nextButtonButton.interactable = false;
         }
     }
 

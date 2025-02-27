@@ -115,5 +115,7 @@ public class GameManager : SingleTon<GameManager>
 
         tutorialController = FindObjectOfType<TutorialController>();
         tutorialController.Init();
+
+        onStage = true;
     }
 }
