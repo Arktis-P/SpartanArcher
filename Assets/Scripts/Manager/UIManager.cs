@@ -108,7 +108,7 @@ public class UIManager : SingleTon<UIManager>
         if (!bossStatus.activeSelf)
         {
             bossStatus.SetActive(true);
-            BossHealthbarController bossHealthBar = bossStatus.GetComponent<BossHealthbarController>();
+            BossHealthbarController bossHealthBar = bossStatus.GetComponentInChildren<BossHealthbarController>();
             bossHealthBar.Init(boss);
         }
         else bossStatus.SetActive(false);
