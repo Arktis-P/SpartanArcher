@@ -26,6 +26,8 @@ public class TutorialController : MonoBehaviour
     private Vector3 endPos;
     private float checkTime = 2f;
 
+    private bool attackCoroutineRunning = false;  // trace whether coroutine is running or not
+
     GameManager gameManager;
     MapManager mapManager;
     MonsterManager monsterManager;
@@ -37,18 +39,13 @@ public class TutorialController : MonoBehaviour
         this.monsterManager = gameManager.MonsterManager;
 
         // set basic tutorial texts
-        tutorialStrs.Add("튜토리얼에 오신 것을 환영합니다."
-            + "\n이곳에서 간단한 게임 조작에 대해서 알려드립니다.");
-        tutorialStrs.Add("먼저 이동에 대해서 알려드리겠습니다."
-            + "\n캐릭터를 이동하려면, WASD 혹은 방향키를 입력해 주세요.");
-        tutorialStrs.Add("다음은 캐릭터의 공격에 대해서 알려드리겠습니다."
-            + "\n캐릭터가 정지한 상태에서 사정거리 내에 있는 가장 가까운 적을 자동으로 공격합니다."
-            + "\n캐릭터를 움직여 적을 사정거리 내에 위치시켜 보세요.");
+        tutorialStrs.Add("튜토리얼에 오신 것을 환영합니다.\n이곳에서 간단한 게임 조작에 대해서 알려드립니다.");
+        tutorialStrs.Add("먼저 이동에 대해서 알려드리겠습니다.\n캐릭터를 이동하려면, WASD 혹은 방향키를 입력해 주세요.");
+        tutorialStrs.Add("다음은 캐릭터의 공격에 대해서 알려드리겠습니다.\n캐릭터가 정지한 상태에서 사정거리 내에 있는 가장 가까운 적을 자동으로 공격합니다.\n캐릭터를 움직여 적을 사정거리 내에 위치시켜 보세요.");
         tutorialStrs.Add("반대로 적이 캐릭터를 공격하면 캐릭터가 피해를 입을 수도 있습니다.");
-        tutorialStrs.Add("매 10스테이지 마다 보스가 등장합니다."
-            + "\n보스는 강력한 공격과 여러 패턴으로 무장하고 있으니 조심하길 바랍니다.");
-        tutorialStrs.Add("이것으로 튜토리얼을 마칩니다."
-            + "\n다음을 누르면 시작 화면으로 돌아갑니다.");
+        tutorialStrs.Add("매 10스테이지 마다 보스가 등장합니다.\n보스는 강력한 공격과 여러 패턴으로 무장하고 있으니 조심하길 바랍니다.");
+        tutorialStrs.Add("이것으로 튜토리얼을 마칩니다.\n다음을 누르면 시작 화면으로 돌아갑니다.");
+
 
         // set basic tutorial id
         tutorialID = 0;
@@ -59,7 +56,7 @@ public class TutorialController : MonoBehaviour
     public void Init()
     {
         Preparation();
-        SwitchNextButton();
+        SwitchNextButton(false);
         UpdateText();
     }
 
@@ -80,8 +77,13 @@ public class TutorialController : MonoBehaviour
         }
 
         // check next condition and switch on next button
-        isNextOK = CheckConditions();
-        SwitchNextButton();
+        yield return StartCoroutine(WaitForConditions());
+        isNextOK = true;
+        SwitchNextButton(true);
+    }
+    private IEnumerator WaitForConditions()
+    {
+        while (!CheckConditions()) yield return null;
     }
 
     // what to do when next button pressed
@@ -95,27 +97,22 @@ public class TutorialController : MonoBehaviour
         }
         // if not type next text
         tutorialID++;
-        SwitchNextButton();
+        SwitchNextButton(false);
         UpdateText();
     }
 
-    private void SwitchNextButton()
+    private void SwitchNextButton(bool interactable)
     {
         nextButtonImages = nextButton.GetComponentsInChildren<Image>().ToList();
         Button nextButtonButton = nextButton.GetComponent<Button>();
 
         // switch on next button when it is available
-        if (isNextOK)
+        foreach (Image img in nextButtonImages)
         {
-            foreach (Image image in nextButtonImages) { image.color = Color.white; }
-            nextButtonButton.interactable = true;
+            // if true == no color, else == grey color
+            img.color = interactable ? Color.white : Color.grey;
         }
-        // swtich off next button when it should not be available
-        else
-        {
-            foreach (Image image in nextButtonImages) { image.color = Color.grey; }
-            nextButtonButton.interactable = false;
-        }
+        nextButtonButton.interactable = interactable;
     }
 
     // conditions for next tutorial text
@@ -154,18 +151,11 @@ public class TutorialController : MonoBehaviour
 
     private bool CheckAttack()
     {
-        StartCoroutine(CheckAttackCoroutine());
-        return monsterManager.IsTutorialClear;
-    }
-    IEnumerator CheckAttackCoroutine()
-    {
         mapManager.ResetPlayerPosition();
         monsterManager.Init(gameManager);
 
-        // wait until IsTutorialClear true
-        yield return new WaitUntil(() => monsterManager.IsTutorialClear);
+        return true;
     }
-
     private bool CheckDamage()
     {
         mapManager.ResetPlayerPosition();
