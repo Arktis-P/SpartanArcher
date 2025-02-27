@@ -11,8 +11,11 @@ public class GameManager : SingleTon<GameManager>
     public PlayerController player { get; private set; }
 
     private MonsterManager monsterManager;
+    public MonsterManager MonsterManager { get => monsterManager; }
     private MapManager mapManager;
+    public MapManager MapManager { get => mapManager; }
     private SkillManager skillManager;
+    private TutorialController tutorialController;
 
     private int stage;
     public int Stage { get => stage; }
@@ -56,6 +59,7 @@ public class GameManager : SingleTon<GameManager>
         uiManager.SwitchStartTitle();  // switch off start title
         uiManager.SwitchOnStageUI();  // switch on on-stage ui
         UpdateScore(score);
+        mapManager.LoadRandomMap();  // load new map
         monsterManager.Init(this);  // call monster manager
     }
     // after fail, restart the game
@@ -102,5 +106,25 @@ public class GameManager : SingleTon<GameManager>
     {
         this.score += score;
         uiManager.UpdateScore();
+    }
+
+    public void ToTutorial()
+    {
+        uiManager.SwitchStartTitle();
+        uiManager.SwitchTutorial();
+
+        tutorialController = FindObjectOfType<TutorialController>();
+        tutorialController.Init();
+
+        onStage = true;
+    }
+
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

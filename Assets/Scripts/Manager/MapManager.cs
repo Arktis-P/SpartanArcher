@@ -24,6 +24,15 @@ public class MapManager : MonoBehaviour
         LoadRandomMap();
     }
 
+    public void LoadTutorialMap()
+    {
+        if (lastMap != null) Destroy(lastMap);
+
+        ResetPlayerPosition();
+
+        lastMap = Instantiate(mapPrefabs[0]);
+    }
+
     private int RandomMapCount()
     {   
         int mapCounts = mapPrefabs.Count();

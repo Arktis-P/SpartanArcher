@@ -34,9 +34,11 @@ public class BaseController : MonoBehaviour
     protected bool isStopAll = false;
 
     protected MonsterStat monsterStat;
+    protected ResourceController resourceController;
 
     protected virtual void Awake()
     {
+        resourceController = GetComponent<ResourceController>();
         _rigidbody = GetComponent<Rigidbody2D>();
         animationHandler = GetComponent<EntityAnimationHandler>();
         statHandler = GetComponent<StatHandler>();
@@ -127,7 +129,7 @@ public class BaseController : MonoBehaviour
         if (isAttacking && timeSinceLastAttack > statHandler.AttackFreq)
         {
             timeSinceLastAttack = 0;
-            Attack();   
+            Attack();
         }
         //if (showDebug)
         //    Debug.Log("End");

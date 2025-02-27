@@ -32,7 +32,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private float knockbackTime = 0.5f;
     public float KnockbackTime { get => knockbackTime; set => knockbackTime = value; }
 
-    //private static readonly int IsAttack = Animator.StringToHash("IsAttack");
+    private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
     public AudioClip attackSoundClip;
 
@@ -73,7 +73,7 @@ public class WeaponHandler : MonoBehaviour
 
     public void AttackAnimation()
     {
-        animator.SetTrigger("IsAttack");
+        animator.SetTrigger(IsAttack);
     }
 
     public virtual void Rotate(bool isLeft)

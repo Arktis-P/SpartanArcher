@@ -35,13 +35,15 @@ public class MonsterController : BaseController
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
         }
-            isStop = false;
-            isAttacking = false;
-            float distance = DistanceToTarget();
-            Vector2 direction = DirectionToTarget();
-            RaycastHit2D head = Physics2D.Raycast(transform.position, direction, 2f, (1 << LayerMask.NameToLayer("Obstacle")));
-            Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
-        if (head.collider == null)
+        isStop = false;
+        isAttacking = false;
+        float distance = DistanceToTarget();
+        Vector2 direction = DirectionToTarget();
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << (LayerMask.GetMask("Player", "Obstacle"))));
+        
+        Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
+
+        if (head.collider != null && head.collider.CompareTag("Player"))
         {
             //Target의 거리가 추적거리 안쪽인지
             if (distance <= monsterStat.DetectionRange)
@@ -63,11 +65,10 @@ public class MonsterController : BaseController
                 //공격범위가 아니면 이동
                 movementDirection = direction;
             }
+            else movementDirection = Vector2.zero;
         }
-        else
-        {
-            movementDirection = Vector2.zero;
-        }
+
+        else movementDirection = Vector2.zero;
     }
 
     //병합시 override추가
