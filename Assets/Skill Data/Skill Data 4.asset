@@ -18,7 +18,7 @@ MonoBehaviour:
   moveSpeed: 0
   attackFreq: 0
   skillFreq: 0
-  drainRatio: 0.2
+  drainRatio: 20
   knockbackResistance: 0
   projectileNumber: 0
   shootingRange: 0
@@ -28,3 +28,7 @@ MonoBehaviour:
   penetration: 0
   reflection: 0
   knockbackDistance: 0
+  dash: 0
+  dashDistance: 0
+  isFeverTime: 0
+  feverTime: 0
