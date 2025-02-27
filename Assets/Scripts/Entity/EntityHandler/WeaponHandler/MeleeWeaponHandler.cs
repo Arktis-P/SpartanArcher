@@ -13,6 +13,7 @@ public class MeleeWeaponHandler : WeaponHandler
         base.Start();
         collideBoxSize = collideBoxSize * WeaponSize;
     }
+
     public override void Attack()
     {
         base.Attack();
