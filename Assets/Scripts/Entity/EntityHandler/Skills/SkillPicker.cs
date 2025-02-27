@@ -78,6 +78,7 @@ public class SkillPicker : MonoBehaviour
                 playerStat.DrainRatio += selectedSkill.DrainRaio;
                 playerStat.KnockbackResistance += selectedSkill.KnockbackResistance;
                 playerStat.ProjectileNumber += selectedSkill.ProjectileNumber;
+                playerStat.AttackFreq += selectedSkill.AttackFreq; // 발사 속도 감소
                 break;
             case SkillCategory.Projectile:
                 //< 투사체 스탯 >
@@ -88,7 +89,6 @@ public class SkillPicker : MonoBehaviour
                 //반사 횟수 reflection
                 //넉백 거리 knockbackDistance
                 //waponHandler에 적용 시키기
-                playerStat.AttackFreq -= selectedSkill.AttackFreq; // 발사 속도 감소
                 rangeWeaponHandler.Power += selectedSkill.Damage; //데미지 증가
                 rangeWeaponHandler.Speed += selectedSkill.ProjectileSpeed; // 투사체 속도 증가
                 rangeWeaponHandler.BulletSize += selectedSkill.Size; // 투사체 크기 증가
