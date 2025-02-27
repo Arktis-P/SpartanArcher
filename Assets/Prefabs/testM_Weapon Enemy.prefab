@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 810886431704697351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57,6 +57,7 @@ MonoBehaviour:
   isOnKnockback: 0
   knockbackPower: 0.1
   knockbackTime: 0.5
+  attackSoundClip: {fileID: 8300000, guid: 79e6202ec7cba5f4babc8797ecc5656f, type: 3}
   collideBoxSize: {x: 1, y: 1}
 --- !u!1 &2080236369375516467
 GameObject:

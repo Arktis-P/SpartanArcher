@@ -34,6 +34,8 @@ public class WeaponHandler : MonoBehaviour
 
     //private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
+    public AudioClip attackSoundClip;
+
     public BaseController Controller { get; private set; }
 
     private Animator animator;
@@ -57,6 +59,8 @@ public class WeaponHandler : MonoBehaviour
     public virtual void Attack()
     {
         AttackAnimation();
+
+        if (attackSoundClip != null) SoundManager.PlayClip(attackSoundClip);
     }
     public virtual void ThrowAttack()
     {
