@@ -107,16 +107,17 @@ namespace Assets.Scripts.Entity.Boss
                 switch (patternNum)
                 {
                     case 0:
+                        //Call At Animation Event
                         PatternStart();
                         bossAnimationHandler.Pattern01();
                         break;
                     case 1:
+                        //Call At Animation Event
                         PatternStart();
                         bossAnimationHandler.Pattern02();
                         break;
                     case 2:
                         Eat();
-                        //ThrowAttack();
                         PatternStart();
                         bossAnimationHandler.Pattern03();
                         break;

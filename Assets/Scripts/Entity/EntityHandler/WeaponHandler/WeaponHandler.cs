@@ -66,6 +66,10 @@ public class WeaponHandler : MonoBehaviour
     {
 
     }
+    public virtual void StompAttack()
+    {
+
+    }
 
     public void AttackAnimation()
     {

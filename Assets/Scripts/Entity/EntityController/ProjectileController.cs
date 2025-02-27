@@ -73,10 +73,11 @@ public class ProjectileController : MonoBehaviour
             {
                 if (FragmentProjectile)
                 {
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.up);
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.down);
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.left);
-                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + CheckDir(collision) * 1.3f, Vector2.right);
+                    Vector2 startDir = CheckDir(collision);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + startDir * 1.3f, Vector2.up);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + startDir * 1.3f, Vector2.down);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + startDir * 1.3f, Vector2.left);
+                    ProjectileManager.Instance.ShootBullet(rangeWeaponHandler, collision.ClosestPoint(transform.position) + startDir * 1.3f, Vector2.right);
                 }
                 DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
             }
@@ -138,21 +139,13 @@ public class ProjectileController : MonoBehaviour
         dir = new Vector2(x,y);
 
         if (dir.x == 1f)
-        {
             return Vector2.right;
-        }
         else if (dir.y == 1f)
-        {
             return Vector2.up;
-        }
         else if (dir.y == -1f)
-        {
             return Vector2.down;
-        }
         else if (dir.x == -1f)
-        {
             return Vector2.left;
-        }
         return Vector2.left;
     }
 

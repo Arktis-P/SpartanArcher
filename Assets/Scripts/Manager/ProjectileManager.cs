@@ -23,6 +23,5 @@ public class ProjectileManager : SingleTon<ProjectileManager>
         ProjectileController projectileController = obj.GetComponent<ProjectileController>();
         projectileController.FragmentProjectile = true;
         projectileController.Init(direction, rangeWeaponHandler);
-     
     }
 }
