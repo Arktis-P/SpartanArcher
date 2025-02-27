@@ -95,6 +95,23 @@ public class ProjectileController : MonoBehaviour
                             controller.ApplyKnockback(transform, rangeWeaponHandler.KnockbackPower, rangeWeaponHandler.KnockbackTime);
                         }
                     }
+                    // if collided object is boss or monster
+                    MonsterStat monster = collision.GetComponent<MonsterStat>();
+                    BossStat boss = collision.GetComponent<BossStat>();
+                    if (monster != null || boss != null)
+                    {
+                        // player drains its damage (change health (0+)
+                        GameObject player = GameObject.FindGameObjectWithTag("Player");
+                        if (player != null)
+                        {
+                            ResourceController playerResourceController = player.GetComponent<ResourceController>();
+                            if (playerResourceController != null)
+                            {
+                                float drain = player.GetComponent<PlayerStat>().DrainRatio * 0.01f * rangeWeaponHandler.Power;
+                                playerResourceController.ChangeHealth(drain);
+                            }
+                        }
+                    }
                 }
 
                 if (_penetration > 0)
