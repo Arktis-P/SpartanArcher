@@ -99,11 +99,13 @@ public class SkillPicker : MonoBehaviour
             case SkillCategory.Active:
                 if (selectedSkill.Name == skillManager.SkillInfoList[14].Name)
                 {
+                    if (!playerStat.Dash && selectedSkill.Dash) UIManager.Instance.SwitchZButton();
                     playerStat.Dash = selectedSkill.Dash;
                     playerStat.DashDistance += selectedSkill.DashDistance;
                 }
                 else if (selectedSkill.Name == skillManager.SkillInfoList[15].Name)
                 {
+                    if (!playerStat.IsFeverTime && selectedSkill.IsFeverTime) UIManager.Instance.SwitchXButton();
                     playerStat.IsFeverTime = selectedSkill.IsFeverTime;
                     playerStat.FeverTime += selectedSkill.FeverTime;
                 }

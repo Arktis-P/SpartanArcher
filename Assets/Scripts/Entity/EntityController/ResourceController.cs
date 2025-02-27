@@ -18,6 +18,9 @@ public class ResourceController : MonoBehaviour
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.Health;
 
+    public AudioClip damageClip;
+    public AudioClip deathClip;
+
     private void Awake()
     {
         baseController = GetComponent<BaseController>();
@@ -58,7 +61,7 @@ public class ResourceController : MonoBehaviour
         if (change < 0)
         {
             animationHandler.Damage();  //피격 애니메이션
-
+            if ( damageClip != null ) SoundManager.PlayClip(damageClip);
             /*  피격 사운드
             if (damageClip != null)
             {
@@ -70,9 +73,13 @@ public class ResourceController : MonoBehaviour
         if (CurrentHealth <= 0f)
         {
             // send health info to game manager
+            if (deathClip != null) SoundManager.PlayClip(deathClip);
+
             GameManager.Instance.UpdateScore((int)MaxHealth);
 
             Death();
+            
+
         }
 
         return true;

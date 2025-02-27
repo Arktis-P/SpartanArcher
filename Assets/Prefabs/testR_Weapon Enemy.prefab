@@ -57,14 +57,17 @@ MonoBehaviour:
   isOnKnockback: 1
   knockbackPower: 0.1
   knockbackTime: 0.5
+  attackSoundClip: {fileID: 0}
   projectileSpawnPosition: {fileID: 8237522858167125479}
-  bulletIndex: 0
+  bulletIndex: 1
   bulletSize: 0.5
   duration: 10
   spread: 1
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 3
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  penetration: 0
+  reflection: 0
 --- !u!1 &2080236369375516467
 GameObject:
   m_ObjectHideFlags: 0

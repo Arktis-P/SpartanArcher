@@ -21,21 +21,8 @@ public class ActiveButtonController : MonoBehaviour
         { Debug.LogError("Active Button Controller Error!"); return; }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (activeSkill.isDashReady)  // if dash ready
-        {
-            activeButtonImage.sprite = readySprite;
-            activeButtonImage.rectTransform.sizeDelta = new Vector2(activeButtonImage.rectTransform.sizeDelta.x, 120.0f);
-            activeButtonImage.color = Color.white;
-            activeText.color = Color.white;
-        }
-        else
-        {
-            activeButtonImage.sprite = cooldownSprite;
-            activeButtonImage.rectTransform.sizeDelta = new Vector2(activeButtonImage.rectTransform.sizeDelta.x, 112.5f);
-            activeButtonImage.color = Color.grey;
-            activeText.color = Color.grey;
-        }
+        
     }
 }

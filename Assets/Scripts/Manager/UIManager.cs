@@ -114,7 +114,7 @@ public class UIManager : SingleTon<UIManager>
         else bossStatus.SetActive(false);
     }
 
-    // update player health method
+    // update player health
     public void UpdateHealthBar()
     {
         playerHealthBar.GetComponent<HealthbarController>().ChangeHealthBar();
