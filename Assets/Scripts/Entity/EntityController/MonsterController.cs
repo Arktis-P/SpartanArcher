@@ -39,7 +39,7 @@ public class MonsterController : BaseController
         isAttacking = false;
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
-        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("Obstacle")));
+        RaycastHit2D head = Physics2D.Raycast(transform.position, direction, monsterStat.DetectionRange, (1 << (LayerMask.GetMask("Player", "Obstacle"))));
         
         Debug.DrawRay(transform.position, direction * monsterStat.DetectionRange, Color.green);
 
