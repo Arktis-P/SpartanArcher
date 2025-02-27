@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillInfo:
-  - {fileID: 11400000, guid: 8a7d5fab1e3187d4c9296e0dc181a928, type: 2}
+  - {fileID: 11400000, guid: 3b8daacafc2aa3644a1c0aa1c6ac84fd, type: 2}
   - {fileID: 11400000, guid: 8a7d5fab1e3187d4c9296e0dc181a928, type: 2}
   - {fileID: 11400000, guid: 81581c1b077d3e64494e418a4767ab59, type: 2}
   - {fileID: 11400000, guid: 7bba21a666e7ddc4fa12ee0789bc7722, type: 2}
