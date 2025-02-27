@@ -119,7 +119,7 @@ namespace Assets.Scripts.Entity.Boss
         {
             while (true)
             {
-                if (isLaserAttack == true) yield return new WaitForSecondsRealtime(5); 
+                if (isLaserAttack == true) yield return new WaitForSecondsRealtime(3); 
                 yield return new WaitForSecondsRealtime(7);
                 switch (patternNum)
                 {

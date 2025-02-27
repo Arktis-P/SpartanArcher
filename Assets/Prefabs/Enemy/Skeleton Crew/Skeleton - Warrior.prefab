@@ -235,7 +235,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0106909275, y: -0.032072365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -246,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.3}
+  m_Size: {x: 1.2690833, y: 1.9463865}
   m_EdgeRadius: 0
 --- !u!114 &5298084618542258437
 MonoBehaviour:
@@ -308,5 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  isPlayer: 0
   damageClip: {fileID: 8300000, guid: f7e6f4d12b5b9e944946d0c98f205ff1, type: 3}
   deathClip: {fileID: 8300000, guid: 9684e0daaf79bdd4bb045467b0d857f1, type: 3}

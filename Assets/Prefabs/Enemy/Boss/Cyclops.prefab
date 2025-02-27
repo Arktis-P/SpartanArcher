@@ -394,10 +394,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 119
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 959
+    m_Bits: 904
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  isPlayer: 0
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
 --- !u!114 &1772591882724147909
@@ -567,7 +568,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1100
+  m_SortingOrder: 110
   m_Sprite: {fileID: 2021976117, guid: 33aae58ea08d15d4aa940bccd549d5ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
