@@ -8,7 +8,7 @@ public class StatHandler : MonoBehaviour
     public int Health
     {
         get => health;
-        set => health = Mathf.Clamp(value, 0, health);
+        set => health = Mathf.Clamp(value, 0, 100);
     }
     [Range(1, 100)][SerializeField] private int maxHealth = 10;
     public int MaxHealth
