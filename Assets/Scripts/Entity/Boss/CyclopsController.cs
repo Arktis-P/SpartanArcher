@@ -109,11 +109,14 @@ namespace Assets.Scripts.Entity.Boss
         {
             cyclopsLaser.gameObject.SetActive(false);
             isLaserAttack = false;
+            bossAnimationHandler.LaserPatternEnd();
+            isPattern = false;
         }
 
         public void StompAttack()
         {
             weaponHandler.StompAttack();
+            Debug.Log("Stomp");
         }
         IEnumerator PatternAction()
         {

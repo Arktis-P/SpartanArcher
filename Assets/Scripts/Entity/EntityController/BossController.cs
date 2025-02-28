@@ -9,7 +9,6 @@ enum Pattern{
 
 public class BossController : BaseController
 {
-    protected ResourceController resourceController;
     private MonsterManager monsterManager;
     protected BossAnimationHandler bossAnimationHandler;
 
@@ -36,7 +35,6 @@ public class BossController : BaseController
     {
         base.Awake();
         bossAnimationHandler = GetComponent<BossAnimationHandler>();
-        resourceController = GetComponent<ResourceController>();
     }
     protected override void Movement(Vector2 direction)
     {
