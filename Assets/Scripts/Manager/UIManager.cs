@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,10 +18,10 @@ public class UIManager : SingleTon<UIManager>
 
     public GameObject startTitle;
     public GameObject onStageUI;
-    public Text stageText;
+    public TextMeshProUGUI stageText;
     public GameObject stageClearUI;
     public GameObject stageFailUI;
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     public GameObject zButton;
     public GameObject xButton;
     public GameObject bossStatus;

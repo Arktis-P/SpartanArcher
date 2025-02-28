@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,9 +14,9 @@ public class SkillPicker : MonoBehaviour
     private RangeWeaponHandler rangeWeaponHandler;
 
     //테스트용 UI
-    public Text text1;
-    public Text text2;
-    public Text text3;
+    public TextMeshProUGUI text1;
+    public TextMeshProUGUI text2;
+    public TextMeshProUGUI text3;
     public Button[] buttons;
     //테스트용 UI
 

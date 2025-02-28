@@ -21,6 +21,10 @@ public class SoundManager : MonoBehaviour
         musicAudioSource.volume = musicVolume;
         musicAudioSource.loop = true;
     }
+    private void Update()
+    {
+        musicAudioSource.volume = musicVolume;
+    }
 
     private void Start()
     {
