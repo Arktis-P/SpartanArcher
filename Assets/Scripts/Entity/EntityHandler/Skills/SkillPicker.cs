@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -35,6 +36,7 @@ public class SkillPicker : MonoBehaviour
             int value = i; // 현재 인덱스 값을 복사
             buttons[i].onClick.AddListener(() => SelectSkill(value));
         }
+        
 
     }
 
@@ -43,14 +45,22 @@ public class SkillPicker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SkillPickerList();
-            
-
+        }
+        if (!GameManager.Instance.OnStage)
+        {
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (Input.GetKeyDown((KeyCode)(KeyCode.Alpha1 + i))) // Alpha1, Alpha2, Alpha3로 번호키 입력 처리
+                {
+                    SelectSkill(i); // 선택된 번호에 맞는 스킬을 적용
+                }
+            }
         }
     }
 
     public void SkillPickerList()
     {
-        Debug.Log("Input A Key");
+        Debug.Log("Input R Key");
         skillManager.GetRandomSkill(3);
         //테스트용 UI
         text1.text = skillManager.randomSkillList[0].Name;
@@ -124,7 +134,6 @@ public class SkillPicker : MonoBehaviour
         {
             skillManager.ChangedFever();
         }
-
         GameManager.Instance.ContinueGame();
     }
 }
