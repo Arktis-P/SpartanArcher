@@ -11,7 +11,7 @@ public class CyclopsLaser : MonoBehaviour
     private Animator childAnimator;
     CyclopsController cyclopsController;
     float rotationZ;
-    private float speed = 3f;
+    private float speed = 2f;
 
     private void Awake()
     {

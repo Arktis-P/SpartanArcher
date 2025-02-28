@@ -20,4 +20,9 @@ public class BossAnimationHandler : EntityAnimationHandler
     {
         animator.SetTrigger("Pattern04");
     }
+
+    public void LaserPatternEnd()
+    {
+        animator.SetTrigger("IsLaserEnd");
+    }
 }

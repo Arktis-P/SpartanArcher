@@ -5,12 +5,10 @@ using UnityEngine;
 public class CyclopsLaserCollision : CyclopsLaser
 {
     private Animator _animator;
-    private BoxCollider2D boxCollider2D;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
     }
     private void Start()
     {
