@@ -22,6 +22,8 @@ public class GameManager : SingleTon<GameManager>
     public int Score { get => score; }
     private bool onStage;
     public bool OnStage { get => onStage; }
+    private bool isWASD = true;
+    public bool IsWASD { get => isWASD; }
 
     public bool isGod = false;
 
@@ -123,6 +125,10 @@ public class GameManager : SingleTon<GameManager>
     {
         uiManager.SwitchStartTitle();
         uiManager.SwitchSettings();
+    }
+    public void ConvertInput()
+    {
+        isWASD = !isWASD;
     }
 
     public void ExitGame()
