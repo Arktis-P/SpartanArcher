@@ -635,6 +635,8 @@ MonoBehaviour:
   musicVolume: 0.1
   musicClip: {fileID: 8300000, guid: ba4268932c445604ba44fdb5676611dd, type: 3}
   soundSourcePrefab: {fileID: 8968231960795008292, guid: b3cab17a87250594ba42fcb3231581bb, type: 3}
+  BGMSlider: {fileID: 769118776}
+  SFXSlider: {fileID: 1584367127}
 --- !u!1 &104365880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1774,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 223133022}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 76843292}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: DecreaseBGMVolumne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &232816948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1999,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 254454517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 76843292}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: DecreaseSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &254454517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4265,11 +4291,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 758880831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 200}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 230, y: 200}
   m_SizeDelta: {x: 240, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &769118777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4664,7 +4690,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 930888651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 76843292}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: IncreaseBGMVolumne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &930888651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5672,7 +5710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1160299687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7826,11 +7864,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 220819136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 230, y: 100}
   m_SizeDelta: {x: 240, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1584367128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7884,7 +7922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1590974716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8504,7 +8542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1770571284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 76843292}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: IncreaseSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1770571284
 MonoBehaviour:
   m_ObjectHideFlags: 0
