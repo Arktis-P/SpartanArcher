@@ -3676,7 +3676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 646976839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1590974717}
+        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_MethodName: SwitchPlayerInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &646976839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5660,7 +5672,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Player0
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1155264145
@@ -6226,7 +6238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1243474413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1590974717}
+        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_MethodName: SwitchPlayerInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1243474413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7930,6 +7954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590974716}
+  - component: {fileID: 1590974717}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -7958,6 +7983,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1590974717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590974715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77a1494775a22c40b770964c245aa42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActions: {fileID: -944628639613478452, guid: 6d3392f1c08d5ad40a54df025f5f77a9, type: 3}
+  wasdButton: {fileID: 646976836}
+  udlrButton: {fileID: 1243474410}
 --- !u!1 &1592342177
 GameObject:
   m_ObjectHideFlags: 0
