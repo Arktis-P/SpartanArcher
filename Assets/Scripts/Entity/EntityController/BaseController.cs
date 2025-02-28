@@ -124,7 +124,7 @@ public class BaseController : MonoBehaviour
             timeSinceLastAttack += Time.deltaTime;
         }
 
-        if (!isStop) timeSinceLastAttack = 0;
+        //if (!isStop) timeSinceLastAttack = 0;     //공격 딜레이 초기화
 
         if (isAttacking && timeSinceLastAttack > statHandler.AttackFreq)
         {
