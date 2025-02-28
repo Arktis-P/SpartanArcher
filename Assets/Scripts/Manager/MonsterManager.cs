@@ -125,7 +125,7 @@ public class MonsterManager : MonoBehaviour
     private void SpawnRandomBoss()
     {
         // gen random boss from prefab list
-        GameObject randomPrefab = bossPrefabs[/*Random.Range(0, bossPrefabs.Count)*/0];
+        GameObject randomPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
 
         // instantiate boss instance
         GameObject spawnedBoss = Instantiate(randomPrefab, bossPos, Quaternion.identity);
