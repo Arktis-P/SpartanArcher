@@ -295,12 +295,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5714419149737204349}
+  - component: {fileID: 6929151093190290974}
   - component: {fileID: 3621468171116670712}
   - component: {fileID: 7109518190739615354}
   - component: {fileID: 5324493131628853826}
   - component: {fileID: 6812464214718113983}
   - component: {fileID: 4390075688726335750}
-  - component: {fileID: 6929151093190290974}
   m_Layer: 3
   m_Name: Minotaur
   m_TagString: Untagged
@@ -326,6 +326,25 @@ Transform:
   - {fileID: 4341288595698726794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6929151093190290974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128543812527038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0249bcc5322699e4e9dca37509abdecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  maxHealth: 30
+  moveSpeed: 3
+  attackFreq: 1
+  shootingRange: 5
+  skillFreq: 2
+  detectionRange: 2
 --- !u!50 &3621468171116670712
 Rigidbody2D:
   serializedVersion: 4
@@ -453,22 +472,3 @@ MonoBehaviour:
     height: 0
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
   rushLine: {fileID: 3214005435566405463}
---- !u!114 &6929151093190290974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128543812527038501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0249bcc5322699e4e9dca37509abdecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 10
-  moveSpeed: 3
-  attackFreq: 1
-  shootingRange: 5
-  skillFreq: 2
-  detectionRange: 2

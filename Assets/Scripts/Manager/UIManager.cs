@@ -64,6 +64,7 @@ public class UIManager : SingleTon<UIManager>
     // switch on/off on stage UIs
     public void SwitchOnStageUI()
     {
+        isOnClear = false;
         isOnStage = !isOnStage;
         onStageUI.SetActive(isOnStage);  // switch entire on Stage UI
         stageText.text = gameManager.Stage.ToString();  // update stage text
@@ -75,6 +76,7 @@ public class UIManager : SingleTon<UIManager>
     {
         isOnClear = !isOnClear;
         stageClearUI.SetActive(isOnClear);
+        isOnStage = false;
     }
     // switch on stage fail UI
     public void SwitchStageFail()

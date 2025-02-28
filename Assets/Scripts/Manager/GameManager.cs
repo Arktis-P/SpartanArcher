@@ -86,6 +86,7 @@ public class GameManager : SingleTon<GameManager>
     public void StageClear()
     {
         onStage = false;
+        
 
         uiManager.SwitchOnStageUI();  // switch off on-stage UI
         uiManager.SwitchStageClear();  // switch on stage-clear UI
