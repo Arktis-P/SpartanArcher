@@ -42,6 +42,15 @@
 10 라운드마다 보스를 배치해 두어 더 어려운 난이도에 도전할 수 있도록 만들었습니다.
 
 ----
+----
+
+##  ⚙ 구조 및 와이어 프레임
+Monster와 Boss와 Player의 이동,행동 등은 BaseController를 상속 받아서 사용하도록 했고,  
+MonsterManager를 통해서 매 라운드 몬스터를 생성할 수 있도록 만들었습니다.
+EntityAnimationHandler를 통해서 겹치게 되는 애니메이션을 함께 관리해주고 있고 Animation을 따로쓰는 Boss는 BossAnimationHandler를 통해서 관리해주고 있습니다.
+![GR7](https://github.com/user-attachments/assets/16527ccb-af3c-4b39-96f3-dea6f9ed5b69)
+
+----
   
 ## 🛠️ 주요 기능
 #### 1️⃣ 튜토리얼 
