@@ -18,9 +18,9 @@ public class BossHealthbarController : MonoBehaviour
 
     private void GetBossStat()
     {
-        BossStat bossStat = boss.GetComponent<BossStat>();
-        health = bossStat.Health;
-        maxHealth = bossStat.MaxHealth;
+        ResourceController resource = boss.GetComponent<ResourceController>();
+        health = resource.CurrentHealth;
+        maxHealth = resource.MaxHealth;
     }
     public void ChangeHealthBar()
     {

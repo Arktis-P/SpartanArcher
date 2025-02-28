@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIManager : SingleTon<UIManager>
 {
     public HealthbarController playerHealthBar;
-    // public HealthbarController bossHealthBar;
+    public BossHealthbarController bossHealthBar;
 
     private bool isOnStartTitle = false;
     private bool isOnStage = false;
@@ -105,7 +105,11 @@ public class UIManager : SingleTon<UIManager>
     // switch boss health bar when boss is on stage  // but do not consider here whether it is boss stage or not
     public void SwitchBossStatus()
     {
-        if (!bossStatus.activeSelf) bossStatus.SetActive(true);
+        if (!bossStatus.activeSelf)
+        {
+            bossStatus.SetActive(true);
+            UpdateBossHealthBar();
+        }
         else bossStatus.SetActive(false);
     }
     public void SwitchBossStatus(GameObject boss)
@@ -122,7 +126,12 @@ public class UIManager : SingleTon<UIManager>
     // update player health
     public void UpdateHealthBar()
     {
-        playerHealthBar.GetComponent<HealthbarController>().ChangeHealthBar();
+        playerHealthBar.ChangeHealthBar();
+    }
+    // update boss health
+    public void UpdateBossHealthBar()
+    {
+        bossHealthBar.ChangeHealthBar();
     }
 
     // to tutorial page

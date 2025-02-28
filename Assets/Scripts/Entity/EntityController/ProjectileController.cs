@@ -99,9 +99,14 @@ public class ProjectileController : MonoBehaviour
                             controller.ApplyKnockback(transform, rangeWeaponHandler.KnockbackPower, rangeWeaponHandler.KnockbackTime);
                         }
                     }
+                    // if collide object is boss update boss health bar
                     // if collided object is boss or monster
                     MonsterStat monster = collision.GetComponent<MonsterStat>();
                     BossStat boss = collision.GetComponent<BossStat>();
+                    if (boss != null)
+                    {
+                        UIManager.Instance.UpdateBossHealthBar();
+                    }
                     if (monster != null || boss != null)
                     {
                         // player drains its damage (change health (0+)

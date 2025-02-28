@@ -129,6 +129,9 @@ public class BossController : BaseController
     public override void Death()
     {
         base.Death();
+        // boss status off
+        UIManager.Instance.SwitchBossStatus();
+
         animationHandler.Die();
         monsterManager.RemoveBossOnDeath(this);
     }
