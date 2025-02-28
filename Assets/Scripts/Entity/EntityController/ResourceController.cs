@@ -16,7 +16,7 @@ public class ResourceController : MonoBehaviour
 
     private Action<float, float> OnChangeHealth;
 
-    public float CurrentHealth { get; private set; }
+    public float CurrentHealth { get => statHandler.Health; }
     public float MaxHealth => statHandler.Health;
 
     public AudioClip damageClip;
@@ -29,10 +29,10 @@ public class ResourceController : MonoBehaviour
         animationHandler = GetComponent<EntityAnimationHandler>();
     }
 
-    private void Start()
-    {
-        CurrentHealth = statHandler.Health;
-    }
+    //private void Start()
+    //{
+    //    CurrentHealth = statHandler.Health;
+    //}
 
     private void Update()
     {

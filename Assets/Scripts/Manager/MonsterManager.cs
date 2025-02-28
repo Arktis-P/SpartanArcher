@@ -134,6 +134,7 @@ public class MonsterManager : MonoBehaviour
 
         activeBoss.Add(bossController);
         UIManager.Instance.SwitchBossStatus(spawnedBoss);  // start health bar of boss
+        UIManager.Instance.UpdateBossHealthBar();
     }
     public void SpawnRandomBossPublic()
     {
