@@ -5623,12 +5623,12 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 4
-  attackFreq: 0.5
+  attackFreq: 1.5
   shootingRange: 8
   skillFreq: 1
   drainRatio: 2
   knockbackResistance: 2
-  projectileNumber: 2
+  projectileNumber: 1
   dash: 0
   dashDistance: 1.5
   isFeverTime: 0

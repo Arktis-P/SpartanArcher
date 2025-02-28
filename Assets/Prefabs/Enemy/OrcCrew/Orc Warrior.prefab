@@ -282,7 +282,7 @@ MonoBehaviour:
   moveSpeed: 2
   attackFreq: 1
   shootingRange: 1.8
-  detectionRange: 7
+  detectionRange: 12
 --- !u!114 &7826434772959290018
 MonoBehaviour:
   m_ObjectHideFlags: 0
