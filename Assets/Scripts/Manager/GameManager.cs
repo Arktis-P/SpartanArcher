@@ -119,6 +119,12 @@ public class GameManager : SingleTon<GameManager>
         onStage = true;
     }
 
+    public void Settings()
+    {
+        uiManager.SwitchStartTitle();
+        uiManager.SwitchSettings();
+    }
+
     public void ExitGame()
     {
 #if UNITY_EDITOR

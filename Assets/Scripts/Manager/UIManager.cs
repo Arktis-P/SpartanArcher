@@ -26,6 +26,7 @@ public class UIManager : SingleTon<UIManager>
     public GameObject xButton;
     public GameObject bossStatus;
     public GameObject tutorialUI;
+    public GameObject Settings;
 
     private GameManager gameManager;
 
@@ -126,5 +127,12 @@ public class UIManager : SingleTon<UIManager>
     public void SwitchTutorial()
     {
         tutorialUI.SetActive(true);
+    }
+
+    // to settings
+    public void SwitchSettings()
+    {
+        if (Settings.activeSelf) Settings.SetActive(false);
+        else Settings.SetActive(true);
     }
 }

@@ -29,10 +29,6 @@ public class SoundManager : MonoBehaviour
         if (BGMSlider != null) UpdateBGMSlider();
         if (SFXSlider != null) UpdateSFXSlider();
     }
-    private void Update()
-    {
-        musicAudioSource.volume = musicVolume;
-    }
 
     private void Start()
     {
