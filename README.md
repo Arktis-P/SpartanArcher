@@ -49,16 +49,23 @@
 ![GR1](https://github.com/user-attachments/assets/c4f73c69-dd9a-49af-a1ef-843f353e0f13)
 
 #### 2️⃣ 맵 랜덤 생성
+매 라운드 클리어 시 맵 Manager에 등록된 맵 배열에서 랜덤한 맵을 선택하여 생성하도록 구성
+![GR5](https://github.com/user-attachments/assets/89bba361-3c88-4892-94df-74b729698f1f)
 
 #### 3️⃣ 몬스터 랜덤 생성 
+매 라운드마다 MonsterManager에서 등록된 몬스터 배열에서 랜덤한 몬스터를 선택하여 생성하도록 구성
+![GR6](https://github.com/user-attachments/assets/377ae367-b537-479e-a57b-f39a2216251d)
 
 #### 4️⃣ 스킬 선택 로직 
+라운드를 클리어시 랜덤한 3개의 효과와 액티브 스킬 중에서 하나를 선택 하여 성장하도록 구성
 ![GR2](https://github.com/user-attachments/assets/c468ac21-1777-4510-9f67-1cd192460ba5)
 
 #### 5️⃣ 액티브 스킬 사용 
+스킬 선택에서 액티브 스킬을 선택 시 화면 UI에 해당하는 스킬의 버튼과 쿨타임을 적용
 ![GR3](https://github.com/user-attachments/assets/361acd7a-19db-47ff-9c18-4e62f2964963)
 
 #### 6️⃣ 보스 패턴 
+10라운드마다 3개의 보스 중 랜덤으로 생성하고 보스는 일정 주기마다 패턴 중 랜덤으로 선택하여 공격
 ![GR4](https://github.com/user-attachments/assets/0e93244c-e9e3-4c70-ad76-291468ffe892)
 
 ----
