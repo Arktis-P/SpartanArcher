@@ -65,6 +65,7 @@
   
 ## 🎥 게임 시연 영상
   
+![GamePlayVideo](https://youtu.be/MhgsGzov4m0)
   
 ----
   
